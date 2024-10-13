@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.2: Slope Fields}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Slope Fields}
+
+A general first order ODE looks like $\frac{dy}{dx} = f(x,y)$. By plugging in values for $x,y$, $f(x,y)$ tells you the slope of $y(x)$ at every point in the plane. If we draw a line with the slope that $f(x,y)$ gives us at every point in the plane, we have made a slope field.
+
+To find a particular solution to a slope field, just pick a starting point, and draw a curve that is tangent to every line you encounter on the slope field.
+
+\subsection{Existence and Uniqueness}
+
+\textbf{Def:} A solution \textbf{exists} if there is a valid solution at a given point.
+
+\textbf{Def:} A solution is \textbf{unique} if there is only one solution at that point.
+
+\textbf{Theorem:} Picard's Theorem on Existence and Uniqueness: If $\frac{dy}{dx} = f(x,y)$ is defined at $(x_0,y_0)$ and $\frac{\partial f}{\partial y}$ is also defined at $(x_0,y_0)$, then there exists a unique solution at and around $(x_0,y_0)$.
+\end{document}

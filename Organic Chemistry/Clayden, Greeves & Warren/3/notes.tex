@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[version=4,arrows=pgf-filled,
+textfontname=sffamily,
+mathfontname=mathsf]{mhchem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3: Determining Organic Structures}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} \textbf{Spectroscopy} is the study of molecular structures using radiation and light. X-rays are scattered by atoms, and can tell us about bond lengths and angles via their scattering pattern, radio waves make nuclei resonate, and we can make charts of the resonant frequencies to see the symmetries in a hydrocarbon skeleton, and infrared waves make bonds vibrate, and by plotting charts of wave absorption, we can see the functional groups in a molecule. 
+
+\subsection{X-Ray Crystallography}
+
+X-ray crystallography is a technique in which x-rays are beamed at a crystal, and scattered by a molecule's electrons. Bond lengths and angles are determined by this scattering, and in this manner, we can see that carbon chains are zigzagged.
+
+However, X-ray crystallography has its limits. It can't see hydrogen atoms, so it sometimes gets things wrong, and it takes a comparatively long time to work, and requires high skill technicians. An NMR robot, in contrast, can do over a hundred samples overnight. 
+
+\subsection{Mass Spectrometry}
+
+\textbf{Def:} \textbf{Mass spectrometry} is the process of ionizing molecules and running them through a magnetic field to determine their mass to charge ratio. Smaller particles have less inertia and will curve more with the magnetic field, larger particles have more inertia and will curve less. 
+
+There are three main ways to ionize molecules:
+
+\begin{enumerate}
+    \item Electron impact involves bombarding a sample with a beam of electrons, causing lone pairs and high-energy electrons in the molecule to be knocked away. The \textbf{radical cations}, called that because they have unbonded electrons, and are positively charged, are then shot through a magnetic field to deterine their mass. However, the ions tend to fragment, causing lower mass/charge ratios to appear. The mass of the original molecule is always the highest on the spectrum. Sometimes, molecules fragment completely, making an utterly unreadable spectrum.
+    \item Chemical ionization involves mixing a gas like ammonia into a chamber with a substrate. The ammonia (\ce{NH3}) will steal electrons off of the substrate, and the ions are accelerated into the detector. Masses via this method are usually $M+1$ or $M+18$ because of the mass of the \ce{NH4+} ion. 
+    \item Electrospray involves spraying an aerosolized version of the substrate, and ionizing it with sodium atoms. This means that masses are usually either $M-1, M+1$, or $M+23$. 
+\end{enumerate}
+
+Mass spectrometry can detect isotopes as well. If you have two adjacent values, that may be because you are getting two different isotopes of an element in your spectra.
+
+Out of all the common elements found in organic compounds, carbon, nitrogen, oxygen, sulfur, and hydrogen, only hydrogen has an odd mass number. However, all other elements except for nitrogen only form an even number of bonds with hydrogen. That means, if you have an odd mass value, you have an odd number of nitrogen atoms, and if you have an even mass value, you have an even number of nitrogen atoms. 
+
+\subsection{Nuclear Magnetic Resonance}
+
+NMR uses strong pulses of electromagnetic energy to temporarily align the spin of nuclei with the magnetic field. When the pulse passes, the nuclei return to their original spin and give off radio waves when doing so. Different nuclei give off different frequencies, and using that and the relative intensity of the frequencies, we can construct a spectrum of the concentrations of different isotopes in a sample. 
+
+Some isotopes don't interact with the magnetic field at all, but \ce{H} and \ce{^{13}C} do. However, the distribution of electrons around the nucleus affects the magnetic pulse it recieves, the nucleus' resonating frequency, and the chemistry of the molecule at the atom. This frequency variation is called \textbf{chemical shift}, and is symbolized $\delta$.
+
+On an NMR graph, the scale reads in "parts per million". This is a measure of magnetic shift. This is because the exact frequencies differ from machine to machine, as it depends on pulse strength, so each machine is calibrated differently. The stronger the field, the higher the frequency, so the strength of NMR machines is expressed in "operating frequency", the frequency an isolated proton will oscillate at under the magnetic field.
+
+To calibrate a machine, a reference sample of tetramethylsilane, which is a silicon atom bonded to four methyl groups \ce{CH3}. The four carbon atoms are nearly identitcal, and also shielded from the magnetic pulse, as carbon is more electronegative than silicon, so this compound oscillates at a frequency somewhat less than most organic compounds. 
+
+Chemical shift is defined as $\delta = \frac{\text{operating frequency (Hz)} - \text{TMS frequency (Hz)}}{\text{TMS frequency (MHz)}}$. Different atoms in different molecules will always resonate at the same ppm. 
+
+For \ce{^{13}C}, 0-50 ppm indicates a saturated carbon atom, 50-100 ppm indicates a saturated coarbon atom next to oxygen, which is more electronegative, so it pulls away electrons, leaving carbon unshielded, 100-150 ppm indicates an unsaturated carbon atom, and 150-200 indicates an unsaturated carbon next to oxygen. 
+
+As ppm increases, chemical shift increases, interference field around the atom decreases, resonance frequency increases, and shielding decreases. 
+\end{document}

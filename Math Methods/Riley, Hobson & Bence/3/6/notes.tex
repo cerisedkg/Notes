@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.6: Applications to Differentiation and Integration}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Differentiation}
+
+Suppose we want to find $\frac{d}{dx} (e^{3x} \cos 4x)$. This is hard to do by itself, but we can bake this into the real component of a complex number to make it easier. Take the complex number $z = e^{3x}(\cos 4x + i\sin 4x)$. This number is equal to $e^{3x}e^{4ix}$ by De Moivre's Theorem, and by rearranging we get $e^{(3+4i)x}$. Differentiating, we get $(3+4i)e^{(3+4i)x} = (3+4i)e^{3x}(\cos 4x + i\sin 4x)$ We multiply through, then keep only the real component, and get $e^{3x}(3\cos 4x - 4\sin 4x)$. By keeping the imaginary parts, we get the derivative for $e^{3x} \sin 4x$ as well!
+
+\subsection{Integration}
+
+Suppose we want to find $\int e^{ax} \cos bx dx$. Lets put this as a real component of a complex number $e^{ax}(\cos bx + i\sin bx) = e^{ax}e^{ibx} = e^{a+ib}x$. Integrating, we get $\int e^{(a+ib)x} = \frac{e^{(a+ib)x}}{a+ib} + c = \frac{(a-ib) e^{(a+ib)x}}{(a+ib)(a-ib)} + c = \frac{e^{ax}}{a^2 + b^2}(ae^{ibx} - ibe^{ibx}) + c$. Taking the real component, we get $\frac{e^{ax}}{a^2 + b^2}(a\cos bx + b\sin bx) + c_1$
+
+\end{document}

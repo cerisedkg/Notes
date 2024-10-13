@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.6: Taylor Series}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Theorem:} \textbf{Taylor's Theorem:} Taylor's Theorem suggests that we can turn any constantly differentiable function into a power series around an interval. 
+
+Suppose we have a function $f(x)$. We want to make a function that can predict future values of $f(x)$ from a starting point $a$. Lets start by noticing that $$\int_{a}^{a+h} f'(x) dx = f(a+h) - f(a)$$meaning that for some starting point $a$ and some point $a+h$ near $a$, the increase in the function is shown by the integral above.
+
+Lets rearrange to get $$f(a+h) = f(a) + \int_a^{a+h} f'(x)$$However, we can probably replace the $f'(x)$ under the integral with $f'(a)$ and still get a pretty reasonable solution, so lets do that. Evaluating the integral, we get $$f(a+h) = f(a) + hf'(a)$$Notice that $f'(a)$ gives us the slope, and $h$ gives us how far we go in the $x$-direction, so $hf'(a)$ gives us our prediction for where $f(h+a)$ is. 
+
+Now, lets turn this into a function. Let $h = x-a$, and substitute it into our approximation to get $$f(x) = f(a) + (x-a)f'(a)$$
+
+Now, lets take the derivative of the above function to get $$f'(x) = f'(a) + (x-a)f''(a)$$We can substitute this new $f'(x)$ into our original integral, and get $$f(a+h) = f(a) + hf'(a) + \frac{h^2}{2}f''(a)$$So long as derivatives of $f(x)$ exist, we can keep repeating this process. 
+
+We get the general formula to be:$$f(a+h) = f(a) + hf'(a) + \frac{h^2}{2}f''(a) + ... + \frac{h^{n-1}}{(n-1)!}f^{n-1}(a)$$where $f^{n-1}$ is the $n-1$th derivative of $f(x)$. 
+
+Substituting $h = x-a$ gives you a function in terms of $x$. If we do this, we get $$f(x) = f(a) + (x-a)f'(a)+\frac{(x-a)^2}{2!}f''(a) + ... + \frac{(x-a)^{n-1}}{(n-1)!}f^{n-1}(a)$$
+
+The error of this approximation is the order of the next term in the series, so the error for the above formula would be $R_n(h) = \frac{h^n}{n!}f^{(n)}(\zeta)$ or $R_n(x) = \frac{(x-a)^n}{n!}f^{n}(\zeta)$ for some $\zeta$ in our range. 
+
+If a function is infinitely differentiable, we can get an infinitely accurate function within the interval of convergence, and our error converges to zero when the number of terms in the series approaches infinity. 
+
+\textbf{Def:} When we do a Taylor approximation about $x=0$, it is called a \textbf{Maclaurin series}.  
+
+Some useful Maclaurin series to know:
+
+\begin{enumerate}
+    \item $\sin x = x-\frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$ for $-\infty \leq x \leq \infty$
+    \item $\cos x = 1-\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...$ for $-\infty \leq x \leq \infty$
+    \item $\tan ^{-1} = x-\frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + ...$ for $ -1 < x < 1$
+    \item $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + ...$ for $-\infty \leq x \leq \infty$
+    \item $\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}$
+    \item $(1+x)^n = 1 +nx + n(n-1)\frac{x^2}{2!} + n(n-1)(n-2)\frac{x^3}{3!} + ...$ for $-\infty \to \infty$
+\end{enumerate}
+
+
+
+\end{document}

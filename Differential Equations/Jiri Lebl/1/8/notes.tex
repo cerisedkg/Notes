@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.8: Exact Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} Suppose we are given a function $F(x,y)$ called a \textbf{potential function}. This function might describe, say the strength of an electric field, or potential energy, etc. Lets take lines of constant energy, $F(x,y) = C$, and compute their \textbf{total derivative}. The total derivative of a multivariable function is $dF(x_1,x_2,x_3, ...)  = \frac{\partial F}{\partial x_1} dx_1 + \frac{\partial F}{\partial x_2} dx_2 + \frac{\partial F}{\partial x_3} + ...$.
+
+The total derivative of our potential function will be $dF = 0$. We can rewrite it as $dF = M dx + N dy = 0 \rightarrow dF = M + N \frac{dy}{dx} = 0$ and an equation in this form is called an \textbf{exact equation}.
+
+An exact equation actually describes a vector fields with vectors consisting of $\vec{v} = (\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y})$, and is a conservative vector field, because by definition, it is the gradient of the potential function $F(x,y)$. 
+
+If we think of $\gamma$ as a path starting at $(x_1,y_1)$ and ending at $(x_2,y_2)$, and want to find the work (change in energy) done to traverse this path, we get that $\int_\gamma = \vec{v}(\vec{r}) d\vec{r} = \int_\gamma M dx + N dy = F(x_2,y_2) - F(x_1,y_1)$. 
+
+\subsection{Solving Exact Equations}
+
+Differentiate the equation with respect to $x$ to get $F(x,y) = \int(M) dx + A(y)$. $A(y)$ is a constant of integration with respect to $x$. Then, derive $A(y)$ and set $A'(y) = N$, then integrate $N$ to get $A(y) = \int N dy$, then substitute back into $F(x,y)$
+
+\subsection{Integrating Factor}
+
+Sometimes, $M dx + N dy = 0$ is not exact. However, maybe $u(x,y)M dx + u(x,y)N dy = 0$ is exact. In fact, a linear equation is always exact. Let $r(x) = e^{\int p(x) dx}$, and multiply a linear equation by $r(x)$ to get $r(x)p(x)y - r(x)f(x) + r(x)\frac{dy}{dx} = 0$. Then $M = r(x)p(x)y - r(x)f(x)$ so $\frac{\partial M}{\partial y} = r(x)p(y)$ and $N = r(x)$ so $\frac{\partial N}{\partial x} = r(x)p(x)$. Actually, linear equations are just a special case of exact equations. 
+
+How do we find $u(x,y)$? It should be a function such that $\frac{\partial uM}{\partial y} = \frac{\partial u}{\partial y}M + \frac{\partial M}{\partial y}u = \frac{\partial uN}{\partial x} = \frac{\partial u}{\partial x}N + \frac{\partial N}{\partial x}u$, therefore $(\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x})u = \frac{\partial u}{\partial x}N - \frac{\partial u}{\partial y}N$.
+
+Some equations that fulfill this are when $u$ is a function of $x$ or $y$ alone, but not both. Then, by rearranging terms, we get $\frac{\partial u}{\partial x} = \frac{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}}{N}$, and we can set that as our integrating factor. 
+\end{document}

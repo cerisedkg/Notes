@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.3: Convergence of a Series}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+If the partial sum of the first $n$ terms of a series tends towards a finite number as $n$ approaches infinity, the series is said to converge.
+
+\subsection{Absolute and Conditional Convergence}
+
+\textbf{Def:} Suppose we have an infinite series $\sum u_n$, where $u_n$ are the terms of the series which can be complex, real, positive, or negative. If the series $\sum \vert u_n \vert$ converges (the modulus of all terms), then the series $\sum u_n$ will converge also. This type of series is called \textbf{absolutely convergent}. For an absolutely convergent series, you may rearrang the terms without affecting its convergence. 
+
+\textbf{Def:} In some cases, $\sum \vert u_n \vert$ will diverge while $\sum u_n$ will converge. These series are called \textbf{conditionally convergent}. Rearranging the terms of a conditionally convergent series will affect its convergence.
+
+\subsection{Tests for Series with Real Positive Terms}
+
+A nessecary, but not sufficient, criteria is that the $n$th term of a positive real series must tend towards zero as $n$ tends towards infinity. That is to say, $$\lim_{n \to \infty} u_n = 0$$
+
+If this condition is not satisfied, the series will diverge.
+
+\textbf{Def:} The \textbf{comparison test} is the most basic test for convergence. Suppose we have a series $\sum v_n$ that we know converges, and a series $\sum u_n$ which we want to test. If every term of $u_n \leq v_n$ for some $n>N$, then we know that $\sum u_n$ converges. The exact $N$ where this comparison starts mattering differs from series to series. 
+
+\textbf{Def:} The \textbf{ratio test} determines convergence by comparing ratios. If $$\lim_{n \to \infty}(\frac{u_{n+1}}{u_n}) < 1$$then the series is convergent. If it is greater than one, the series is divergent. If it is equal to 1, the test is inconclusive.  
+
+\textbf{Def:} The \textbf{ratio comparison test} combines the two former tests. Let us consider two series $\sum u_n$ and $\sum v_n$, and we know that $\sum v_n$ is convergent. If the ratio $\frac{u_{n+1}}{u_n} \leq \frac{v_{n+1}}{v_n}$, then $\sum u_n$ is convergent. The same can be said if the ratio is greater than that of a known divergent series. 
+
+\textbf{Def:} Another way to combine the ratio and comparison test is the \textbf{quotient test}. Let us have $\sum u_n$ and $\sum v_n$, and take the limit $$\lim_{n \to \infty}(\frac{u_n}{v_n})$$If this limit is nonzero and finite, then both series converge or diverge. If the limit is equal to zero, then they both converge, and if its infinity, they both diverge. 
+
+\textbf{Def:} The \textbf{integral test} is another test. We want to test the convergence of $\sum u_n$. Suppose there is some function $f(x)$ that constantly decreases for $x$ greater than some value $x_0$, and for which, $f(n) = u_n$, that is, the value of the function at $n$ corresponds to the value of the series. Then, if the limit of the integral $$\lim_{N \to \infty} \int^{N} f(x) dx$$ exists, then the series is convergent, otherwise, it diverges. 
+
+\textbf{Def:} The \textbf{root test} starts by defining a limit $$\lim_{n\to\infty}(u_n)^{\frac{1}{n}}$$then the series $\sum u_n$ converges if the limit is less than $1$, and if the limit is greater than $1$, the series diverges. The test is inconclusive if the limit equals $1$. 
+
+We can also group terms to turn series into more comparable forms, and then perform the above tests. 
+
+\subsection{Tests for Alternating Series}
+
+An alternating series will converge if $u_n$ tends towards zero as $n$ approaches infinity, and each successive term is smaller in magnitude than the previous term, starting at some finite $N$. If these conditions aren't met, then the series will oscillate. 
+\end{document}

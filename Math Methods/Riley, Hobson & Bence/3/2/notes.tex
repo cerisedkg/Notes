@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.2: Manipulation of Complex Numbers}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Addition and Subtraction}
+
+To add or subtract complex numbers, just add or subtract like terms.
+
+$z_1 + z_2 = (a_1 + a_2) + i(b_1 + b_2)$
+
+The addition of complex numbers is commutative and associative
+
+\subsection{Modulus and Argument}
+
+\textbf{Def:} The \textbf{modulus} of a complex number is the distance from the origin in the Argand diagram and is denoted $$\vert z \vert = \sqrt{a^2 + b^2}$$
+
+\textbf{Def:} The \textbf{argument} of a complex number is the angle the complex number makes from the positive x-axis on an Argand diagram, and is denoted $$\arg z = \arctan(\frac{b}{a})$$Remember, if the complex number is in quadrant II or III, the angle the arctan function gives is in relation to the negative x-axis, and you will have to add $\pi$ radians to correct for it.
+
+\subsection{Multiplication}
+
+The product of two complex numbers is the same as multiplying two binomials, remember, $i \cdot i = -1$. $$z_1 \cdot z_2 = (a_1 + ib_1)(a_2 + ib_2) = a_1a_2 + ia_1b_2 + ia_2b_1 - b_1b_2$$
+
+Multiplying a complex number by $i$ rotates it around the origin by $\frac{\pi}{2}$ radians anticlockwise.
+
+\subsection{Complex Conjugate}
+
+\textbf{Def:} If $z = a + bi$, then the \textbf{comlex conjugate} of $z$ is denoted $$z^* = a - bi$$A complex conjugate is a reflection of a complex number about the real axis in an Argand diagram, and multiplying a complex number with its complex conjugate leaves a real number with no imaginary component.
+
+\subsection{Division}
+
+The division of two complex numbers is $$\frac{z_1}{z_2} = \frac{a_1 + ib_1}{a_2 + ib_2}$$and we multiply both the top and the bottom by the complex conjugate of the denominator to get $$\frac{z_1}{z_2} = \frac{(a_1a_2 + b_1b_2) + i(a_2b_1 - a_1b_2)}{a_2^2 + b_2^2}$$
+
+\end{document}

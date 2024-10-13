@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.5: Substitution}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Method}
+
+The equation $\frac{dy}{dx} = (x-y+1)^2$ is not separable or linear, but we can turn it into a solvable form by implementing a change in variables. Let $v = x-y+1$. We want to know $\frac{dy}{dx}$ in terms of $\frac{dv}{dx}$, $v$, and $x$. By differentiating, we get $\frac{dv}{dx} = 1 - \frac{dy}{dx}$. We then plug in and get $\frac{dv}{dx} - 1 = v^2$. This is a separable equation. We get $\frac{1}{1-v^2} dv = dv$ and by integrating, we get $\frac{1}{2} ln\vert \frac{v+1}{v-1} \vert = x+C \rightarrow \frac{v+1}{v-1} = C_1e^{2x}$. Now, substitute for $v = x-y+1$ to get $\frac{x-y+2}{x-y} = De^{2x}$.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c}
+    When you see & Substitute\\
+    \hline
+    $y \frac{dy}{dx}$ & $v=y^2$\\
+    $y^2 \frac{dy}{dx}$ & $v=y^3$\\
+    $\cos (y) \frac{dy}{dx}$ & $v=\sin y$\\
+    $\sin (y) \frac{dy}{dx}$ & $v = \cos y$\\
+    $e^y \frac{dy}{dx}$ & $v = e^y$ 
+\end{tabular}
+
+\subsection{Bernoulli Equations}
+
+One of the special equations with a predefined substitution is the Bernoulli equations. They come in the form $$\frac{dy}{dx} + p(x)y = q(x)y^n$$The substitution $v = y^{1-n}$ turns the equation linear. Keep in mind that $n$ does not need to equal an integer, it can be any number.
+
+\textbf{Ex:} Solve $x \frac{dy}{dx} + y(x+1) + xy^5 = 0$ for $y(1) = 1$ \\ \textbf{Solution:} This is a Bernoulli equation so we substitute $v = y^{1-5} = y^{-4} \rightarrow \frac{dv}{dx} = -4y^{-5} \frac{dy}{dx} \rightarrow \frac{dy}{dx} = \frac{-1}{4}y^5 \frac{dv}{dx}$. Then, we substitute and get $(x-\frac{1}{4}y^5)\frac{dv}{dx} + y(x+1) + xy^5 = 0 \rightarrow -\frac{1}{4}\frac{dv}{dx} + y^{-4}(x+1) + x = 0 \rightarrow \frac{dv}{dx} - \frac{4(x+1)}{x}v = 4$. The last part is a linear equation, and so our integrating factor is $e^{\int \frac{-4x-4}{x} dx} = e^{-4x-ln(x)+4} = e^{-4x+4}{x^4}$, and $e^{-\int \frac{-4x-4}{x}} = e^{4x-4}x^4$. This means our entire linear equation evaluates to $e^{4x-4}x^4(\int 4\frac{e^{-4x+4}}{x^4}dx + 1)$, which is not possible to evaluate in closed form. We then unsubstitute to get $y = \frac{e^{-x+1}}{x(4\int \frac{e^-4x+4}{x^4}dx+1)^{\frac{1}{4}}}$
+
+\subsection{Homogeneous Equations}
+
+Another type of special equation is the homogeneous equation. Suppose we can write a differential in the form $\frac{dy}{dx} = F(\frac{y}{x})$. Then, a substitution might be $v = \frac{y}{x}$ and therefore, $\frac{dy}{dx} = x\frac{dv}{dx} + v$. Then, by substituting, we get $v + x\frac{dv}{dx} = F(v) \rightarrow x\frac{dv}{dx} = F(v) - v \rightarrow \frac{\frac{dv}{dx}}{F(v) - v} = \frac{1}{x}$, and as such, an implicit solution is $\int \frac{1}{F(v) - v} dv = \ln \vert x \vert + C$
+
+\end{document}

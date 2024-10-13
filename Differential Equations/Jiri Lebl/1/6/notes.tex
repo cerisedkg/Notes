@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.6: Autonomous Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+A first order ordinary autonomous equation comes in the form $\frac{dx}{dt} = f(x)$, where the derivative only depends on the dependent variable. 
+
+\subsection{Stable and Unstable Critical Points}
+
+\textbf{Def:}  Take the cooling equation, $\frac{dx}{dt} = k(A-x)$. In this equation, if we vary the starting temperature, $x$, it will eventually always proceed to $A$. In fact, $x = A$ is an \textbf{equilibrium solution}, because it is a horizontal line. We call $x = A$ a \textbf{critical point}, and it is a \textbf{stable critical point} because if we vary the inital conditions, the outcome as $t \rightarrow \infty$ will not change all that much.  
+
+To constrast, take the logistic growth equation, $\frac{dx}{dt} = kx(M-x)$ for a positive $k, M$. This equation models capped growth, and has three equilibrium points. If you start with positive $x$ initial conditions, the solution will converge to $x = M$, and in fact, the particular solution $x=M$ is a stable critical point. However, if you start with negative $x$ initial conditions, the solution will go to negative infinity. If you start with $x=0$ as an initial condition, the solution will not change, and $x=0$ is an \textbf{unstable critical point}. If you vary the initial conditions even a miniscule amount from $x=0$, the solution will either converge to $M$ or negative infinity. 
+
+\subsection{Phase Portraits}
+
+To model this behavior, imagine a vertical number line. At every critical point, we will draw a tick mark, and label it with the corresponding number. We then draw two arrows, one above and one below, pointing either towards the tick mark for a stable solution, or away for an unstable solution. This indicates that if we stray from the tick mark, our solution will follow the arrows to converge onto the next equilibrium solution, so if it is stable, it will converge back to the same one, and if it is unstable, it will converge to a different solution. 
+\end{document}

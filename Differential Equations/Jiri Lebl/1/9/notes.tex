@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.9: First Order PDEs}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Method}
+
+Consider the equation $$a(x,y)\frac{\partial u}{\partial x} + b(x,t)\frac{\partial u}{\partial t} + c(x,t)u = g(x,t) \ \ \ u(x,0) = f(x) \ \ \ -\infty < x < \infty, t > 0$$Notice that our initial conditions are $u(x,0) = f(x)$, a function of $x$. 
+
+The method we will use is called the \textbf{method of characteristics}. The goal is to find lines of constant $x$ or $t$ along which the equation is an ODE. 
+
+\subsection{Examples}
+
+\textbf{Ex:} Consider $$\frac{\partial u}{\partial t} + \alpha\frac{\partial u}{\partial x} = 0 \ \ \ \ u(x,0) = f(x)$$This equation is called the transport equation. The idea is that data varies along certain coordinates, called \textbf{characteristic coordinates}. For example, maybe an equation which is radial in nature can be solved by changing into polar coordinates. 
+
+For this equation, we will change into characteristic coordinates $(\zeta, s)$, and let $\zeta = x- \alpha t$ and $s = t$
+
+\textbf{Def:} \textbf{Generalized Chain Rule:} If $f(x,y)$ is a function, but $x,y$ are themselves functions $x = x(s,t), y = y(s,t)$, then the entire function becomes $f(x(s,t),y(s,t))$ and the partial derivatives of $f$ with respect to $s, t$ become $$\frac{\partial f}{\partial s} = \frac{\partial f}{\partial x} \frac{\partial x}{\partial s} + \frac{\partial f}{\partial y} \frac{\partial y}{\partial s} \ \ \ \ \ \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \frac{\partial y}{\partial t}$$
+In fact, if you have a function $f = f(x_0,x_1,x_2,...,x_n)$ in $n$ variables and each of those variables are dependent on $x_n = x_n(y_0,y_1,y_2,...,y_m)$; $m$ other variables, then the chain rule goes: $$\frac{\partial f}{\partial y_m} = \frac{\partial f}{\partial x_0} \frac{\partial x_0}{\partial y_m} + \frac{\partial f}{\partial x_1} \frac{\partial x_1}{\partial y_m} + ... + \frac{\partial f}{\partial x_n} \frac{\partial x_n}{\partial y_m}$$for all $y_m$.
+
+Applying generalized chain rule to our variables, we get $$\frac{\partial u}{\partial t} = \frac{\partial u}{\partial \zeta} \frac{\partial \zeta}{\partial t} + \frac{\partial u}{\partial s}\frac{\partial s}{\partial t} = -\alpha\frac{\partial u}{\partial \zeta} + \frac{\partial u}{\partial s}$$
+and$$\frac{\partial u}{\partial x} = \frac{\partial u}{\partial \zeta} \frac{\partial \zeta}{\partial x} + \frac{\partial u}{\partial s} \frac{\partial s}  {\partial x} = \frac{\partial u}{\partial \zeta}$$
+
+Then, the equation becomes $-\alpha\frac{\partial u}{\partial \zeta} + \frac{\partial u}{\partial s} + \alpha \frac{\partial u}{\partial \zeta} = 0$, and by simplifying, we get $\frac{\partial u}{\partial s} = 0$. 
+
+This means that there is some function $u = A(\zeta) = A(x-at)$. Our initial conditions stipulate that $t = 0$, so we end up with $f(x) = A(x)$, so $A = f$, and our particular solution is $u(x,t) = f(x-at)$.
+
+Basically, by choosing a good change in variables and applying generalized chain rule, we get a easy differential equation to solve. 
+\end{document}

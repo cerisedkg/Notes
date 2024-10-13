@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.1: The Need for Complex Numbers}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} A \textbf{complex number} is a number in the form $a+bi$, where $i = \sqrt{-1}$. $a$ is called the \textbf{real term} of the complex number and $bi$ is called the \textbf{imaginary term}.
+
+The conventional representation of a complex number is the letter $z = a+bi$. Sometimes, for compactness, a complex number is written $z = (a,b)$, with the real, then imaginary component in a tuple.
+
+\textbf{Def:} An \textbf{Argand diagram} is a 2D plot of complex numbers, with the horizontal axis corresponding to the real component of a complex number, and the vertical axis corresponding to an imaginary component. 
+
+\begin{tikzpicture}
+    \draw [->] (-5,0) -- (5,0) node [above left] {$Re(z)$};
+    \draw [->] (0,-5) -- (0,5) node [below right] {$Im(z)$};
+    \filldraw[white] (3,2) circle (2pt) node [above right] {$z = a+bi$};
+    \draw [dashed] (3,2) -- (3,0) node [below right] {$a$};
+    \draw [dashed] (3,2) -- (0,2) node [above left] {$b$};
+\end{tikzpicture}
+
+\end{document}

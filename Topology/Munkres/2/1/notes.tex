@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{2.1: Topological Spaces}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} A \textbf{topology} on a set $x$ is a collection $\mathcal{T}$ of subsets of $X$ having the following properties:
+
+\begin{enumerate}
+    \item $\varnothing$ and $X$ are in $\mathcal{T}$
+    \item The union of any number of elements in $\mathcal{T}$ is in $\mathcal{T}$
+    \item The intersection of any elements in $\mathcal{T}$ is in $\mathcal{T}$
+\end{enumerate}
+
+\textbf{Def:} A \textbf{topological space} is an ordered pair of elements $(X,\mathcal{T})$, a set $X$ with a toplology $\mathcal{T}$ on $X$. 
+
+\textbf{Def:} If $X$ is a topological space with topology $\mathcal{T}$, then a subset $U \subset X$ is an \textbf{open set} if $U \in \mathcal{T}$. 
+
+There can be many topologies on a set. 
+
+\textbf{Def:} The collection of all subsets of $X$ is called the \textbf{discrete topology}, and the collection of ${\varnothing, X}$ is called the \textbf{trivial topologies}. Both are valid topologies.
+
+\textbf{Def:} Let $\mathcal{T}_f$ be a topology such that any subset $U$ that fulfills the criteria: $X-U$ is finite or all of $X$ is in $\mathcal{T}_f$. This is called the \textbf{finite complement topology}, because the complement of every member is finite (or all of $X$). $\varnothing$ and $X$ are in $\mathcal{T}_f$, the complement of $\varnothing$ is all of $X$, and the complement of $X$ is finite. $\mathcal{T}_f$ is complete under unions because $X-\bigcup U_a = \bigcap (X-U_a)$, where $U_a \in \mathcal{T}_f$, because $X-U_a$, the complements of membersof $\mathcal{T}_f$, are finite, and the intersection of finite sets are finite, so $\bigcup U_a$ is a complement of a finite set. Likewise, the same goes for intersections, and the union of finite sets is finite, so $\mathcal{T}_f$ is closed under union and intersection, therefore, it is a topology.     
+
+\textbf{Def:} Consider two topologies, $\mathcal{T}, \mathcal{T'}$ on a set $X$. If $\mathcal{T'} \supset \mathcal{T}$, then we say that $\mathcal{T'}$ is \textbf{finer} than $\mathcal{T}$. If the reverse is true, we say that $\mathcal{T'}$ is coarser than $\mathcal{T}$. If one set contains the other, we say the two are \textbf{comparable}. Remember, the superset is finer, the subset is coarser. 
+
+
+
+\end{document}

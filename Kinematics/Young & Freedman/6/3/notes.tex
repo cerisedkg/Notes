@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{6.3: Work and Energy with Varying Forces}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+Work is the integral of the $x$ component of force with respect to $x$:
+$$W = \int F_x dx$$
+
+\textbf{Def:} The force required to stretch a string past its resting position is given by $F = kx$, where $k$ is the \textbf{spring constant}. The force increases linearly with stretch distance. The work required to stretch a string to a given position is given by $W = \frac{1}{2}kx^2$.
+
+\textbf{Ex:} Work Done by a Spring Scale:
+
+A $600$ N woman steps on a spring scale, and the spring is compressed by 1 cm. Find the spring constant and the total work done during compression. 
+
+\textbf{Solution:} The spring and the woman are at equilibrium after the 1 cm compression, so the spring constant is $600$ N/cm. The total work done is $\frac{1}{2}*600*1^2 = 300$ centijoules, or $3$ joules of work.  
+
+Work along a curve is given by $$W = \int \vec{F} \cdot d\vec{l} = \int F \cos\theta dl = \int F_{\vert\vert} dl$$where $d\vec{l}$ is the vector tangent to the curve and $F_{\vert\vert}$ is the component of $\vec{F}$ parallel to the curve. 
+
+\end{document}

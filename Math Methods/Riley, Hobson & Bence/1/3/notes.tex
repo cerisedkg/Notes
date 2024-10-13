@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.3: Coordinate Geometry}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Lines}
+
+The formula for a straight line graph is $$y = mx+c$$
+
+An alternate form is $$ax + by + k = 0$$
+where $m = \frac{-a}{b}$ and $c = \frac{-k}{b}$
+and the x and y intercepts are $\frac{-k}{a}$ and $\frac{-k}{b}$ respectively.
+
+If there is a power relationship between the two variables, $y = Ax^n$, then this can also be turned into a straight line by taking the natural log of both sides: $\ln y = n\ln x + \ln A$. In this form, the slope gives the power of $x$.
+
+\subsection{Conics}
+
+\textbf{Def:} A conic section takes the form $Ax^2 + By^2 + Cxy + Dx + Ey + F = 0$, and represent plane intersections of a double cone (an hourglass shape). They can take the form of either a parabola, a hyperbola, an ellipse, or a degenerate form, two straight lines. 
+
+The standard form for an ellipse: $\frac{(x-a)^2}{a^2} + \frac{(y-b)^2}{b^2} = 1$
+
+The standard form for a parabola: $(y-b)^2 = 4a(x-a)$
+
+The standard form for a hyperbola: $\frac{(x-a)^2}{a^2} - \frac{(y-b)^2}{b^2} = 1$
+
+If $C$ is nonzero, this indicates that the conic section is rotated, and so cannot be placed in standard form without a rotation of the axes.
+\end{document}

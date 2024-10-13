@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.4: Operations with Series}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+$\sum ku_n = k(\sum u_n)$
+
+If $\sum u_n = S$ and $\sum v_n = T$ then $\sum(u_n+v_n) = S+T$
+
+If $\sum u_n = S$ then $a+\sum u_n = a+S$. This indicates that the insertion of a finite number of terms anywhere in the series doesn't affect its convergence.
+
+If infinite series $\sum u_n$ and $\sum v_n$ are both convergent, then the series $w_n = u_1v_n + u_2 v_{n-1} + u_3 v_{n-2} + ... + u_n v_1$ is also convergent. This operation is called the \textbf{Cauchy product} of the two series.
+
+In general, term by term integration or differentiation will not always preserve convergence or divergence. 
+
+\end{document}

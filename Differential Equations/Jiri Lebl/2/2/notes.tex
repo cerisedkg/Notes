@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{2.2: Constant Coefficients}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+A linear homogeneous equation with constant coefficients comes in the form $\frac{d^2y}{dx^2} + C_1 \frac{dy}{dx} + C_2 y = 0$
+
+A solution of this equation will need to stay pretty much the same when we differentiate it, so we can add up a combination of it and its derivativess to get $0$. 
+
+Lets try a solution of the form $y(x) = e^{rx}$. Then, $\frac{dy}{dx} = re^{rx}$ and $\frac{d^2y}{dx^2} = r^2e^{rx}$. We can then divide through by $e^{rx}$ to get a polynomial we can solve for to find solutions for $r$.
+
+\textbf{Ex:} $\frac{d^2y}{dx^2} - 6 \frac{dy}{dx} + 8y = 0$. Lets replace $y$ and its derivatives with $e^{rx}$. We get $r^2e^{rx} - 6re^{rx} + 8e^{rx} = 0$. Then, divide by $e^{rx}$ to get $r^2 - 6r + 8 = 0$. This is an easy polynomial to solve for. We get $(r-2)(r-4) = 0$, and our solutions become $y_1 = e^{2x}$ and $y_2 = e^{4x}$. 
+
+Since this is a second order linear homogeneous differential equation, our general solution is $y = C_1e^{4x} + C_2e^{2x}$.
+
+\subsection{Complex Roots}
+
+Sometimes, the roots to the $r$ polynomial (characteristic polynomial) are complex. We then get solutions that look like $e^{(a\pm bi)x}$. We can separate the exponential to get $e^{ax}e^{\pm bix}$, and then using De Moivre's theorem, put the solution into the form $e^{ax}(\cos bx \pm i\sin bx)$. And we can linearly combine both solutions to isolate $\cos$ and $\sin$ as well. 
+
+\subsection{Exercises}
+
+$2.2.101$: Find solutions to the equation $\frac{d^2y}{dx^2} + 4 \frac{dy}{dx} + 2y = 0$
+
+\textbf{Solution:} If we substitute $y = e^{rx}$ we get $r^2 e^{rx} + 4re^{rx} + 2e^{rx} = 0$, then we can divide by $e^{rx}$ to get $r^2 + 4r + 2 = 0$. Solving for the roots, we get $r = -2 + \sqrt{2}, -2 - \sqrt{2}$. This means our solution is $y=C_1e^{(-2 + \sqrt{2})x} + C_2 e^{(-2 - \sqrt{2}) x}$
+
+$2.2.102$: Find solutions to the equation $\frac{d^2y}{dx^2} -6\frac{dy}{dx} + 9y = 0$
+
+\textbf{Solution:} Using the technique above, we get $r^2 -6r + 9 = 0$, and the factor for this is $r = 3$. If we have a duplicated root, we need to make our combination linearly independent, so we add an $x$ to one of them. Our solution becomes $y= C_1e^{3x} + C_2xe^{3x}$
+\end{document}

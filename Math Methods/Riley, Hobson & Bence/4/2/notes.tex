@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.2: Summation of Series}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} An \textbf{arithmetic} series is a series where the difference between consecutive terms is constant, that is, the series looks like $a, a+d, a+2d, a+3d, a+4d$, etc. 
+
+The summation of an arithmetic series is $\frac{n}{2}(a_1 + a_n)$, the first term plus the last term multiplied by half the size of the series. Evidently, an infinitely long arithmetic series will always diverge. 
+
+\textbf{Def:} A \textbf{geometric} series is a series where the ratio of consecutive terms remains constant, and it takes the form $a + ar + ar^2 + ar^3 + ar^4 + ...$.
+
+The summation of a geometric series is $\frac{a(1-r^n)}{1-r}$, where $r$ is the ratio between terms, $a$ is the starting term, and $n$ is the size of the series. A geometric series may converge or diverge. If $\vert r \vert < 1$, then the series will converge to $\frac{a}{1-r}$, and if it is greater than or equal to $1$, it will diverge or oscillate.
+
+\textbf{Def:} An \textbf{arithmetico-geometric} series is a combination of both an arithmetic and geometric series, in the form $a+(a+d)r + a+(a+2d)r^2 + a+(a+3d)r^3 + ...$. 
+
+The summation of the first $n$ terms of an arithmetico-geometric series is equal to $\frac{a-(a+(n-1)d)r^n}{1-r} + \frac{rd(1-r^{n-1})}{(1-r)^2}$ and an infinite series with $\vert r \vert < 1$ tends towards $\frac{a}{1-r} + \frac{rd}{(1-r)^2}$, and if $\vert r \vert \geq 1$, then the series oscillates or diverges.
+
+\subsection{The Difference Method}
+
+If we have a series $u_1 + u_2 + u_3 + ... + u_n$, where the terms can be expressed by $u_n = f(n) - f(n-1)$, then by expanding every term, we find that many of them cancel, until we are left with the sum of the first $n$ terms being $S_n = f(n) - f(0)$.
+
+\subsection{Series with Natural Numbers}
+
+We can actually write series of squares and cubes of natural numbers using the difference method.
+
+Take the function $f(n) = n(n+1)(2n+1)$, then $f(n-1) = (n-1)n(2n+1)$ and $f(n) - f(n-1) = 6n^2$. We can then write the series of squares of natural numbers in this form, and by the difference method, the partial sum of the first $n$ terms comes out to be $\frac{1}{6}n(n+1)(2n+1)$
+
+The same can be done for cubes. Take $f(n) = (n(n+1))^2$, then $f(n-1) = ((n-1)n)^2$, and $f(n) - f(n-1) = 4n^3$, and the partial sum of the first $n$ terms is $\frac{1}{4}n^2+n(+1)^2$
+
+\subsection{Transformation of a Series}
+
+You can multiply, divide, add, subtract, differentiate, or integrate a series to put it in a more solvable form, as long as you reverse all your changes when solving. 
+
+\end{document}

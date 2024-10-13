@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.7: Hyerbolic Functions}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Definitions}
+
+\textbf{Def:} $\cosh x = \frac{1}{2}(e^x + e^{-x})$
+
+\textbf{Def:} $\sinh x = \frac{1}{2}(e^x - e^{-x})$
+
+\textbf{Def:} $\tanh x = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
+
+\textbf{Def:} $\mathrm{sech}\ x = \frac{2}{e^x + e^{-x}}$
+
+\textbf{Def:} $\mathrm{csch}\ x = \frac{2}{e^x - e^{-x}}$
+
+\textbf{Def:} $\coth x = \frac{e^x + e^{-x}}{e^x - e^{-x}}$
+
+\subsection{Identities}
+
+Imaginary Identities:
+
+$\cosh x = \cos ix$
+
+$i\sinh x = \sin ix$
+
+$\cos x = \cosh ix$
+
+$i\sin x = \sinh ix$
+
+Pythagorean Identities:
+
+$\mathrm{sech}^2\ x = 1-\tanh^2 x$
+
+$\mathrm{csch}^2\ x = \coth^2 x -1$
+
+$\sinh 2x = 2\sinh x\cosh x$
+
+$\cosh 2x = \cosh^2x + \sinh^2 x$
+
+\subsection{Calculus}
+
+$\frac{d}{dx} \sinh x = \cosh x$
+
+$\frac{d}{dx} \cosh x = \sinh x$
+
+$\frac{d}{dx} \tanh x = \mathrm{sech}^2\ x$
+
+$\frac{d}{dx} \mathrm{sech}\ x = -\mathrm{sech}\ x\tanh x$
+
+$\frac{d}{dx} \mathrm{csch}\ x = -\mathrm{csch}\ x\coth x$
+
+$\frac{d}{dx} \coth x = -\mathrm{csch}^2\ x$
+
+$\frac{d}{dx} \cosh ^{-1} \frac{x}{a} = \frac{1}{\sqrt{x^2 - a^2}}$
+
+$\frac{d}{dx} \sinh ^{-1} \frac{x}{a} = \frac{1}{\sqrt{x^2 + a^2}}$
+
+$\frac{d}{dx} \tanh ^{-1} \frac{x}{a} = \frac{a}{a^2-x^2}$ for $x^2 < a^2$
+
+$\frac{d}{dx} \coth ^{-1} \frac{x}{a} = \frac{-a}{x^2 - a^2}$ for $x^2 > a^2$
+\end{document}

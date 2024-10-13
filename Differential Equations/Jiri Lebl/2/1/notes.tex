@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{2.1: Second Order Linear ODEs}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+\subsection{Linear Homogeneous Equations}
+
+Linear homogeneous equations come in the form $\frac{d^2y}{dx^2} + p(x)\frac{dy}{dx} + q(x)y = 0$. 
+
+\textbf{Theorem:} \textbf{Superposition Theorem}: If $y_1$ and $y_2$ are solutions of a homogeneous equation, then $y(x) = C_1y_1(x) + C_2y_2(x)$ are also solutions, where $C_1, C_2$ are arbitrary constants. 
+
+\textbf{Proof:} Let $y = C_1y_1(x) + C_2y_2(x)$. Then, $\frac{d^2y}{dx^2} + p(x) \frac{dy}{dx} + q(x)y = 0 \rightarrow \frac{d^2}{dx^2} (C_1y_1(x) + C_2y_2(x)) + p(x)\frac{d}{dx}(C_1y_1(x) + C_2y_2(x)) + q(x)(C_1y_1(x) + C_2y_2(x)) = \frac{d^2}{dx^2}C_1y_1 + \frac{d^2}{dx^2} C_2y_2 + \frac{d}{dx} C_1p(x)y_1 + \frac{d}{dx}C_2p(x)y_2 + C_1q(x)y_1 + C_2q(x)y_2 = C_1(\frac{d^2y}{dx^2}y_1 + p(x)y_1\frac{dy}{dx} + q(x)y_1) + C_1(\frac{d^2y}{dx^2}y_2 + p(x)y_2\frac{dy}{dx} + q(x)y_2) = 0$. As we can see, substituting in $C_1y_1(x) + C_2y_2(x)$ fulfills the equality, so it is a solution. 
+
+\textbf{Theorem:} \textbf{Existence and Uniqueness}: Suppose $p,q,f$ are continuous functions on an interval $I$, and $a$ is a number in $I$, and $b_0,b_1$ are constants. Then, the equation $\frac{d^2y}{dx^2} + p(x)\frac{dy}{dx} + q(x)y = f(x)$ has exactly one solution on the interval $I$ statisfying the initial conditions $y(a) = b_0$ and $y'(a) = b_1$
+
+\textbf{Def:} We say that functions $y_1$ and $y_2$ are \textbf{linearly independent} if they are not a constant multiple of each other. 
+
+\textbf{Theorem:} Let $p,q$ be continuous functions. Let $y_1, y_2$ be two linearly independent solutions to the homogeneous equation $\frac{d^2y}{dx^2} + p(x)\frac{dy}{dx} + q(x)y = 0$. Then, every other solution is of the form $y = C_1y_1 + C_2y_2$
+
+
+\subsection{Exercises:}
+
+$2.1.101$: Are $\sin x$ and $e^x$ linearly independent? Justify.
+
+\textbf{Solution:} Yes, as they cannot be written as a linear combination of each other.
+
+$2.1.102$: Are $e^x$ and $e^{x+2}$ linearly independent? Justify.
+
+\textbf{Solution:} No, $e^{x+2} = e^xe^2$.
+
+$2.1.103$: Guess the solution to $\frac{d^2y}{dx^2} + \frac{dy}{dx} + y = 5$
+
+\textbf{Solution:} $y = 5$
+
+$2.1.104$: Guess the solution to $x \frac{d^2y}{dx^2} + \frac{dy}{dx} = 0$
+
+\textbf{Solution:} $y = C_1 \ln x + C_2$
+
+$2.1.105$: Write down an equation for which we have the solutions $e^x$ and $e^{2x}$.
+
+\textbf{Solution:} We want an equation of the form $\frac{d^2y}{dx^2} + A \frac{dy}{dx} + By = 0$. By plugging in $e^x$ and $e^{2x}$ we get $e^x + Ae^x + Be^x = 0$ and $4e^{2x} + 2A e^{2x} + B e^{2x} = 0$. Dividing these equations by $e^x$ and $e^{2x}$ respectively gives us $A + B = -1$ and $2A + B = -2$. Solving the system, we get $A = -3$ and $B = 2$.      
+\end{document}

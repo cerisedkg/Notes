@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.8: Exercises}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+\setcounter{section}{4}
+\subsection{}Sum the numbers between 1000 and 2000 inclusive.
+
+\textbf{Solution:} $\frac{(1000+2000)500}{2} = 750,000$
+
+\subsection{}
+If you invest \$1000 on the first day of each year, and interest is paid at 5\% on your balance at the end of each year, how much money do you have after 25 years?
+
+\textbf{Solution:} $(1.05)S_{25} = 1000(1.05)^24 + 1000(1.05)^23 + ... + 1000(1.05) + 1000 = 1.05(\frac{1000(1-1.05^25)}{1-1.05}) = 50113.45$
+
+\subsection{}
+How does the convergence of the series $$\sum_{n=r}^{\infty} \frac{(n-r)!}{n!}$$depend on $r$?
+
+\textbf{Solution:} When $r = 1$, the series resembles $\frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...$ which diverges. For any smaller values, the series also diverges since each term will be greater than the terms in the series above. For any greater values, the series converges, since the terms in the series will go to zero at $n \to \infty$ and the ratio between successive terms is constantly decreasing and appreaches zero. 
+
+\subsection{}
+Show that for testing the convergence of the series$$x + y + x^2 + y^2 + x^3 + y^3 + ... $$where $0 < x < y < 1$, the D'Alembert ratio test fails but the Cauchy root test is successful.
+
+\textbf{Solution:} Using the ratio test, we get $$\lim_{n\to\infty} \frac{x^n+y^n}{x^{n-1}+y^{n-1}} = \lim_{n\to\infty} (\frac{x}{y^{n-1}}+\frac{y}{x^{n-1}})$$We do not know at what proportion $x$ and $y$ grow at so this test is inconclusive.
+
+Using the root test, we get $$\lim_{n\to\infty}(x^n y^n)^{\frac{1}{n}}$$and since $x < y$, we can simplify this to $$\lim_{n\to\infty}(y^n)^\frac{1}{n} = y$$and since $y<1$ the series converges. 
+
+\subsection{}
+Find the sum SN of the first N terms of the following series, and hence determine whether the series are convergent, divergent or oscillatory:
+
+a: $$\sum_{n=1}^{\infty} \ln \frac{n+1}{n}$$
+\textbf{Solution:} $\ln \frac{n+1}{n} = \ln (n+1) - \ln n$. These will cancel with the previous term until we are left with $S_N = \ln N+1$. THis partial sum does not go to zero, so this series diverges.
+
+b: $$\sum_{n=0}^{\infty} (-2)^n$$
+\textbf{Solution:} Each term is twice the last and opposite magnitude, so the partial sum is $S_N = (-2)^{N-1}$ and it oscillates infinitely.
+
+c: $$\sum_{n=1}^{\infty} \frac{-1^{n+1}n}{3^n}$$
+\textbf{Solution:} Its pretty easy to see that as $n \to \infty$, successive terms of this alternating series will get smaller and smaller, therefore, this series will converge.   
+\end{document}

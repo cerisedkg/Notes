@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{chemfig}
+\usepackage{enumitem}
+\usepackage[version=4,arrows=pgf-filled,
+textfontname=sffamily,
+mathfontname=mathsf]{mhchem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{2: Organic Structures}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+Guidelines for Drawing Organic Strutcures:
+
+\begin{enumerate}
+    \item Draw chains of atoms as zig-zags
+    \item Omit hydrogens attached to carbon atoms, unless they are really important
+    \item Omit capital Cs representing carbon atoms, unless they are really important
+    \item Structures can be modified to fit the occasion
+\end{enumerate}
+
+\subsection{Hydrocarbon Frameworks}
+
+\textbf{Def:} The simplest type of hydrocarbon framework are chains of single bonded carbon atoms, called \textbf{alkyl groups}. We refer to them by a name indicating their length. They are denoted by the formula $-($\ce{CH2}$)_n$ \ce{CH3}. Adding a simple hydrogen to the end of one of these chains turns it into an \textbf{alkane}. A chain with one carbon atom is called a \textbf{methyl group}, with two, its called an \textbf{ethyl group}, then a \textbf{propyl group}, \textbf{butyl group}, and \textbf{pentyl group}. Afterwards, they go up using greek number names. 
+
+Often, hydrocarbons are branched, or form hexagonal rings.
+
+\textbf{Def:} \textbf{Isomers} are molecules with the same kinds and numbers of atoms joined up in a different way. Isomers need not have the same functional groups. 
+
+\textbf{Def:} The prefixes \textbf{sec} and \textbf{tert} are used to differentiate some isomers. They refer to carbon atoms in the structure of the isomers. A primary carbon atom is a carbon atom attached to only one other carbon atom, a secondary carbon atom is attached to two other carbon atoms, and a tertiary carbon atom is attached to three others, and a quaternary is attached to four others. As such, some isomers, like n-butanol, sec-butanol, tert-butional, are named after whether they have a primary, secondary, or tertiary carbon atom respectively.
+
+\subsection{Functional Groups}
+
+\textbf{Def:} \textbf{Functional groups} are "addons" to organic compounds that decide the properties of that compound, such as reactivity, acidity, etc.
+
+\textbf{Def:} \textbf{Alkanes} are organic compounds with no functional groups, and single bonded carbon backbones. They are very unreactive, apart from burning, and as such, are used a solvents. Compounds like methane, octane, and butane are alkanes. The names of alkanes will end with "-ane".
+
+\textbf{Def:} \textbf{Alkenes}, sometimes called olefins, are compounds with \ce{C=C} double bonds. These double bonds impart some special properties, and are often found in plants and perfumes. Alkenes end with "-ene", like $\beta$-Carotene.
+
+\textbf{Def:} \textbf{Alkynes} have \ce{C#C} triple bonds, and like double bonds, have a special kind of reactivity. Alkynes often end in "-yne".
+
+\textbf{Def:} \textbf{Alcohols} are hydrocarbons with a \textbf{hydroxyl}, or \ce{-OH} group. This lets them be soluble in water. Some famous alcohols include ethanol, sucrose, and other carbohydrates, or methanol. Alcohols end in "-ol".
+
+\textbf{Def:} \textbf{Ethers} consist of two alkyl groups linked with an oxygen in the middle, forming a \ce{R_1 - O - R_2} structure. Some ethers are used as solvents, and others as anesthetics. Ethers will sometimes end with the term "ether".
+
+\textbf{Def:} \textbf{Amines} are compounds containing the \textbf{amino}, or \ce{-NH_2} group. Some famous amines include the amino acids, the building blocks of proteins, methamphetamine, or putrescine. Many amines will end in "-ine".
+
+\textbf{Def:} \textbf{Nitro compounds} contain the \textbf{nitro}, or \ce{-NO2} group. Many nitro groups in one molecule makes it very unstable, and prone to explosion, like nitroglycerine!
+
+\textbf{Def:} \textbf{Alkyl halides} are a general name for a set of functional groups of halogens, \ce{R-F} for alkyl fluoride, \ce{R-Cl} for alkyl chloride, etc. Alkyl iodide is the most reactive of the set, and alkyl fluoride is the least reactive. Famous alkyl halides include polyvinyl chloride (PVC), and polyvinyl fluoride (Tedlar).
+
+\textbf{Def:} \textbf{Aldehydes} \ce{R-CHO} and \textbf{ketones} \ce{R_1-CO-R_2} contain the \textbf{carbonyl group} \ce{C=O}
+
+\textbf{Def:} \textbf{Carboxylic acids} \ce{R-CO_2H} contains the carboxyl group \ce{CO_2H} can react with bases, losing the proton on the end to form \textbf{carboxylic salts}. 
+
+\textbf{Def:} \textbf{Esters} \ce{R_1-CO_2-R_2} contain a carboxyl group with an extra alkyl group on the end. 
+
+\textbf{Def:} \textbf{Amides} \ce{R-CONH_2} or \ce{R_1-CONH-R_2} or \ce{R_1 CON-R_2-R_3}. Proteins are amides.
+
+\textbf{Def:} \textbf{Nitriles} or \textbf{cyanides} contain the \textbf{cyano group} \ce{-C#N}, and can be introduced by adding potassium cyanide to alkyl halides. 
+
+\textbf{Def:} \textbf{Acyl chlorides} \ce{R-COCl} are reactive hydrocarbons derived by replacing the \ce{-OH} group in carboxylic acids with a chlorine atom.
+
+\textbf{Def:} \textbf{Acetals} are compunds with two single-bonded oxygen atoms attached to the same carbon atoms. 
+
+\subsection{Classifying by Oxidation Level}
+
+\textbf{Def:} \textbf{Oxidation level} is a way of classifying functional groups by the number of \textbf{heteroatoms} a carbon has, or atoms that are not \ce{C} or \ce{H}. Molecules in the same oxidation level can be converted to each other without needing oxidizing or reducing agents.
+
+The carboxylic acid oxidation level has a carbon with three bonds to heteroatoms, and contains carboxylic acids, esters, amides, nitriles, and acyl chlorides.
+
+The aldehyde oxidation level has carbons with two bonds to heteroatoms, and contains aldehydes, ketones, acetals, and the compound dichloromethane.
+
+The alcohol oxidation level has carbons with one bond to heteroatoms, and contains alcohols, ethers, and alkyl halides.
+
+The alktane oxidation level has no bonds to heteroatoms, and contains the alkanes.
+
+The carbon dioxide oxidation level has a carbon with four bonds to heteroatoms, and contains carbon dioxide, diethyl carbonate, carbon tetrachloride, and CFC-12, alongside other wonderful compounds. 
+
+\subsection{Systematic Nomenclature}
+
+Names of alkanes are just names of alkyl groups without the -yl and with an -ane at the end. The names for functional groups can go at the front or end of a compound. Numbers can be used to locate a functional group, just count numbers from both ends until you reach the functional group, and use the lower of the two. Some examples include "propan-1-ol", "2-aminobutane", "pentan-2-one", etc. Numbers always go directly before a functional group's prefix or suffix. If there are multiple of the same functional group, put a comma between them, like "1,6-diaminohexane". For cyclic groups, start at one carbon with a functional group, and count until you hit another one. For cyclics, you can also use the words \textbf{ortho} as a substitute for "1,2", \textbf{meta}, as a substitute for "1,3", and \textbf{para} as a substitute for "1,4".
+
+Always give a diagram with a name, unless the compound is braindead simple. 
+
+There are some carbon structures that have special names, like vinyl, \chemfig[angle increment=30,atom sep=2em]{-[11]=[1]}, allyl, \chemfig[angle increment=30,atom sep=2em]{-[1]-[11]=[1]}, phenyl, \chemfig[angle increment=30,atom sep=2em]{-[1]=[3]-[1]=[11]-[9]=[7]-[5]}, and benzyl, \chemfig[angle increment=30,atom sep=2em]{-[11]-[1]=[3]-[1]=[11]-[9]=[7]-[5]}
+
+\subsection{Guide to Naming Compounds}
+
+\begin{enumerate}
+    \item Draw it first, worry about names later
+    \item Learn the names of functional groups
+    \item Learn the names of a few simple compounds
+    \item Refer to a diagram and say "that compound"
+    \item Learn the IUPAC naming Guidelines
+    \item Keep a journal of acronyms and jargon for chemical compounds
+\end{enumerate}
+
+\end{document}

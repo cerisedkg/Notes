@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.3: Separable Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Method}
+
+\textbf{Def:} An equation in the form $\frac{dy}{dx} = f(x)g(y)$ is called a \textbf{separable equation}.  
+
+We can put this equation in the form $\frac{1}{g(y)} \frac{dy}{dx} = f(x)$, then multiply over the $dx$ to get $\frac{1}{g(y)} dy = f(x) dx$. Then, we can integrate on both sides to get a solution.
+
+\subsection{Proof}
+
+Generally, you can not "multiply" over $dx$ because you can't treat a derivative in Leibniz notation as a fraction. However, what we did is a shortcut, and below is an equivalent, more well defined solution.
+
+\textbf{Proof:} Suppose we have a separable equation in the form $g(y) \frac{dy}{dx} = f(x)$. Then, let $u = y(x)$, so $du = frac{dy}{dx} dx$. If we perform integration on both sides of the separable equation, we get $\int g(y) \frac{dy}{dx} dx = \int f(x) dx$, and we can substitute $u$ for $y$ to get $\int g(u) du = \int f(x) dx$. This takes the same form as our shortcut above, so if we just rename the variables, so the shortcut and this well defined method are equivalent. 
+
+\subsection{Implicit Solutions}
+
+Sometimes it is hard to separate out $y$ from a given equation, so we just leave it as-is and call it an \textbf{implicit solution}.
+
+\subsection{Exercises}
+
+$1.3.1$   $\frac{dy}{dx} = \frac{x}{y}$ \\ \textbf{Solution:} $\frac{dy}{dx} = x\frac{1}{y} \rightarrow \int y dy = \int x dx \rightarrow \frac{1}{2}y^2 = \frac{1}{2}x^2 \rightarrow y^2 = x^2$. This is the best we can do as $y^2 = x^2$ is not a function. 
+
+\end{document}

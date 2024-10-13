@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.4: Linear Equations and the Integrating Factor}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Method}
+
+\textbf{Def:} A \textbf{first order linear equation} is an equation that can be put in the form $\frac{dy}{dx} + p(x)y = f(x)$. Linear refers to the equation being linear in terms of $\frac{dy}{dx}$ and $y$
+
+To solve, we want to find a function $r(x)$ such that $\frac{d}{dx}(r(x)y) = r(x)\frac{dy}{dx} + r(x)p(x)y$. Then, if we multiply the linear equation by $r(x)$, we get $r(x)\frac{dy}{dx} + r(x)p(x)y = r(x)f(x)$. Then, substituting the equality above, we get $\frac{d}{dx} r(x)y = r(x)f(x)$. We then integrate both sides and divide out $r(x)$. 
+
+\textbf{Def:} The function $r(x)$ is called the \textbf{integrating factor}.
+
+We want $\frac{d}{dx} r(x) = r(x)p(x)$, and $e^{\int p(x) dx}$ is a function with this property.
+
+Now we have: $\frac{dy}{dx} + p(x)y = f(x) \rightarrow e^{\int p(x)dx}\frac{dy}{dx} + e^{\int p(x) dx}p(x)y = e^{\int p(x)dx}f(x) \rightarrow \frac{d}{dx}(e^{\int p(x) dx} y) = e^{\int p(x) dx} f(x) \rightarrow e^{\int p(x) dx}y = \int(e^{\int p(x) dx}f(x)) dx + C \rightarrow y = e^{-\int p(x) dx}(\int e^{\int p(x)dx}f(x)dx + C)$.
+
+\subsection{Exercises:}
+
+$1.4.4$ Solve $\frac{dy}{dx} + xy = x$ \\ \textbf{Solution:} $p(x) = x$, $r(x) = e^{\frac{1}{2} x^2}$, so $\frac{d}{dx}(e^{\frac{1}{2}x^2}y) = e^{\frac{1}{2}x^2}x \rightarrow e^{\frac{1}{2}x^2}y = e^{\frac{1}{2}x^2} + C \rightarrow y = 1+\frac{C}{e^{\frac{1}{2}x^2}}$
+\end{document}

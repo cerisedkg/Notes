@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{0.2: Introduction to Differential Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} A \textbf{differential equation} is an equation with one or more derivatives in it. 
+
+\textbf{Ex:} $\frac{dx}{dt} + x = 2\cos t$
+
+In the above scenario, $t$ is the independent variable and $x$ is the dependent variable.
+
+\textbf{Def:} A \textbf{solution} to a differential equation is a function that satisfies the equation. 
+
+\textbf{Ex:} We claim that $x = x(t) = \cos t + \sin t$ is a solution for $\frac{dx}{dt} + x = 2 \cos t$. 
+
+To verify, we plug $x$ into the equation. Then, $\frac{dx}{dt} = \cos t - \sin t$, and the entire equation evaluates to $\cos t - \sin t + \cos t + \sin t = 2 \cos t$ which is true. 
+
+\textbf{Ex:} We can also claim that $x(t) = \cos t + \sin t + e^{-t}$ is a solution. Then, $\frac{dx}{dt} = -\sin t + \cos t - e^{-t}$ and the entire equation evaluates to $\cos t -\sin t -e^{-t} + \cos t + \sin t + e^{-t} = 2\cos t$ which is true. 
+
+As it turns out, solutions to this equation take the form $x(t) = \cos t + \sin t + Ce^{-t}$ for a constant $C$. 
+
+There can be multiple solutions to a differential equation. 
+
+\textbf{Def:} A \textbf{general solution} to a differential equation is a set of equations which includes all possible solutions, and often has variables that can be changed. A \textbf{particular solution} is a solution to a differential equation that often satisfies a set of starting conditions, like $x(0) = 0$.
+
+
+
+\end{document}

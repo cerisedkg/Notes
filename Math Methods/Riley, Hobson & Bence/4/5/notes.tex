@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.5: Power Series}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+\textbf{Def:} \textbf{Power series} are series in the form $$P(x) = a_0 + a_1x + a_2x^2 + a_3 x^3 + ...$$
+
+The ratio test shows us that if $$\lim_{n \to \infty} \vert \frac{a_{n+1}}{a_n}x \vert <1 \rightarrow \vert x\vert \lim_{n \to\infty}\vert \frac{a_{n+1}}{a_n} \vert<1$$the series converges. 
+
+As you can see, the convergence depends on $x$, so we will often get an \textbf{interval of convergence} where $P(x)$ converges.
+
+\subsection{Operations}
+
+If $P(x)$ and $Q(x)$ are power series, then the interval of convergence of $P(x) \pm Q(x)$ is the overlap of the two intervals of convergence.
+
+If two power series converge for all values $x$, you may substitute one into the other to get another series that converges for all values $x$. For example, $e^x$ and $\sin x$ both converge for all $x$, and so does $e^{\sin x}$.
+
+The derivative or integral of a power series also converges in the same range.
+
+
+\end{document}

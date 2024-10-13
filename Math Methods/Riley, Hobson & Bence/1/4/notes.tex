@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{1.4: Partial Fractions}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Method}
+
+\textbf{Def:} \textbf{Partial fractions} is a way to break apart a complex fraction into its constitutent parts, which is useful for integration. 
+
+The behavior of a polynomial fraction is determined by the location of the zeroes in its denominator, so we will try to emulate the location of these zeroes. 
+
+We can write a polynomial fraction in the form $$f(x) = \frac{A_1}{(x-\alpha_1)^n_1} + \frac{A_2}{(x-\alpha_2)^n_2} + ...$$ We can then set $\alpha_1, \alpha_2 ... $ to be the zeroes of the fraction.
+
+\textbf{Ex:} Write $\frac{4x+2}{x^2 + 3x + 2}$ as a partial fraction. \\ \textbf{Solution:} This fraction has two zeroes so we use two terms. We factor the bottom to find that our zeroes are $x=-1,-2$, so our fraction becomes $\frac{A_1}{(x+1)} + \frac{A_2}{(x+2)}$. We then put the partial fraction over a common denominator $(x+1)(x+2)$ multiply everything by $(x+1)(x+2)$ to get $4x+2 = A_1(x+2) + A_2(x+1)$. Then, by setting $x=-1$, we can solve for $A_1 = -2$ and by setting $x=-2$, we can solve for $A_2 = 6$. We get our final fraction as $\frac{6}{(x+2)} - \frac{2}{(x+1)}$.
+
+\subsection{Complications:}
+
+\textbf{The degree of the numerator is greater than the degree of the denominator:}  
+
+Divide the numerator into the denominator to get a polynomial and a remainder, then perform the partial fraction on the remainder. 
+
+\textbf{A repeated zero in the denominator:} 
+
+If you have a quadratic such as $\frac{x-4}{(x+1)(x-2)^2}$, with a repeated zero, you have to put your partial fraction in the form $\frac{A}{(x-4)} + \frac{Bx+C}{(x-2)^2}$.
+
+    
+
+\end{document}

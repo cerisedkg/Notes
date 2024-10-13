@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.4: De Moivre's Theorem}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Theorem:} De Moivre's Theorem: $(\cos\theta + i\sin\theta)^n = (e^{i\theta})^n = e^{in\theta} = \cos n\theta + i\sin n\theta$
+
+\subsection{Roots of Unity}
+
+\textbf{Def:} The $n$th \textbf{roots of unity} are complex numbers $z$ that fulfill the equation $z^n = 1$
+
+To solve, rewrite the equation as $z^n = e^{ik2\pi}$ with $k \in \mathbb{Z}$ (any number with modulus 1 and argument as a multiple of 2$\pi$ is equal to 1). Now, we take the $n$th root of each side to get $z = e^{\frac{ik2\pi}{n}}$, and you can find solutions by plugging in $n$ and iterating over values for $k$.
+
+\subsection{Solving Polynomial Equations}
+
+\textbf{Ex:} Solve the equation $z^6 - z^5 + 4z^4 - 6z^3 + 2z^2 -8z + 8 =0$ \\ \textbf{Solution:} We factorize to get $(z^3 -2)(z^2 + 4)(z-1) = 0$. This means that $z^3 = 2 = 2e^{ik2\pi}$. By taking the cube root of both sides, we get $z = 2^{\frac{1}{3}}e^{\frac{ik2\pi}{3}}$, and we find that we get three solutions, $z_1 = 2^{\frac{1}{3}}$ $z_2 = 2^{\frac{1}{3}}(-\frac{1}{2} + \frac{\sqrt{3}}{2}i)$, and $z_3 = 2^{\frac{1}{3}}(-\frac{1}{2} - \frac{\sqrt{3}}{2}i)$. Paired with the other three solutions from our other terms, $z_4 = 2i$, $z_5 = -2i$, $z_6 = 1$, we have six solutions for a sixth order equation.
+
+\end{document}

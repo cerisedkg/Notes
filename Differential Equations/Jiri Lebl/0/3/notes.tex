@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{Classification of Differential Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} An \textbf{ordinary differential equation} is an equation with only one independent variable.
+
+\textbf{Ex:} $\frac{dy}{dx} = x^2$
+
+\textbf{Def:} A \textbf{partial differential equation} is an equation with several independent variables
+
+\textbf{Ex:} $\frac{\partial y}{\partial t} + c\frac{\partial y}{\partial x} = 0$
+
+\textbf{Def:} If there are several simultaneous true differential equations, they are called a \textbf{system of equations}.
+
+\textbf{Ex:} $y' = x \ \ \ \ x' = y$
+
+\textbf{Ex:} $\mathbf{\nabla} \cdot \vec{D} = \rho$, $\mathbf{\nabla} \cdot \vec{B} = 0$, $\mathbf{\nabla} \times \vec{E} = \frac{\partial \vec{B}}{\partial t}$, $\mathbf{\nabla} \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}$
+
+\textbf{Def:} The \textbf{order} of an equation or a system is the number of the highest appearing derivative in that equation or system.
+
+\textbf{Ex:} $a^4 \frac{\partial^4y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0$ is a fourth order PDE.
+
+\textbf{Def:} An equation is \textbf{linear} when the dependent variable (or variables) and their derivatives are not multiplied together, and no other functions of them appear. They will appear in the form $$a_n(x)\frac{d^n y}{dx^n} + a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}+...+a_1(x)\frac{dy}{dx} + a_0(x)y = b(x)$$
+
+The functions $a_0, a_1, ... ,a_n$ are called the \textbf{coefficients}.
+
+\textbf{Ex:} $\frac{dx}{dt} = x^2$ is nonlinear because the dependent variable, $x$, is multiplied with itself. 
+
+\textbf{Ex:} $\frac{dx}{dt} = \sin x$ is nonlinear because a function of $x$, $\sin x$, appears.
+
+\textbf{Def:} A $homogeneous$ differential equation is an equation where all terms depend on the dependent variable. There are no terms with only the independent variable or a function of it.
+
+\textbf{Ex:} $\frac{dx}{dt} + x\sin t = 0$ is a homogeneous equation.
+
+\textbf{Ex:} $\frac{dx}{dt} + x\sin t = 1$ is not a homogeneous equation. The $1$ term does not depend on the dependent variable.
+
+\textbf{Def:} A linear equation has \textbf{constant coefficients} if every coefficient is a constant. 
+
+\textbf{Ex:} $3\frac{dy}{dx} = 12x$
+
+\textbf{Def:} An \textbf{autonomous} equation is a differential equation that depends only on the dependent variable. The independent variable never appears in the equation.
+
+\textbf{Ex:} $\frac{dy}{dx} = f(y)$ is a general first order autonomous equation.
+
+\end{document}

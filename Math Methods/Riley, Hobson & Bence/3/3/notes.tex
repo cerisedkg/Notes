@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.3: Polar Representation of Complex Numbers}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+Previously, we were using the cartesian system of complex coordinates, but now its time for another form, which has different use cases.
+
+\subsection{Definition}
+
+\textbf{Def:} The \textbf{polar form} of a complex number is the form $$z = re^{i\theta}$$where $r = \vert z\vert$ and $\theta = \arg z$. This form makes the modulus and argument of a complex number clear.
+
+\subsection{Multiplication and Division}
+
+$z_1 z_2 = r_1e^{i\theta_i}r_2e^{i\theta_2} = r_1r_2 e^{i(\theta_1 + \theta_2)}$
+
+$\frac{z_1}{z_2} = \frac{r_1}{r_2}e^{i(\theta_1 - \theta_2)}$
+
+\end{document}

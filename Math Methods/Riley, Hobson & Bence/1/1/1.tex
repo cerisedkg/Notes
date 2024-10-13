@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{Simple Functions and Equations}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Def:} A \textbf{polynomial equation} is an expression in the form $$f(x) = a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0 = 0$$and the values of $x$ that satisfy this equation are called the \textbf{roots} of $f(x)$. $n$ is an integer that is greater than zero and is called the \textbf{degree} of the polynomial, and $a_0, a_1 ... a_n$ are called \textbf{coefficients}, and are real numbers with $a_n \neq 0$.
+
+For polynomials with degree $>4$, there is not a general method for finding roots of polynomials, and the methods for polynomials of degree $3$ and $4$ are so complicated that its better to use an approximation most of the time.
+
+\textbf{Def:} The general formula for a polynomial of degree one is: $$a_1x + a_0 = 0$$and the formula for finding a root $\alpha_1$ is $\alpha_1 = -a_0/a_1$.
+
+\textbf{Def:} The general formula for a polynomial of degree two is: $$a_2x^2 + a_1x + a_0 = 0$$and the formula for finding roots $\alpha_1, \alpha_2$ is $$\alpha_{1,2} = \frac{-a_1 \pm \sqrt{a_1^2-4a_2a_0}}{2a_2}$$and is called the \textbf{quadratic formula}.
+
+\textbf{Def:} The \textbf{discriminant} $b^2-4ac$ determines what form the roots will take. If the discriminant is positive, both roots are real and the quadratic will cross the x-axis in two points. If both are negative, both roots are complex and the curve never crosses the x-axis, and if the value is zero, both roots are equal and the curve touches the x-axis in exactly one location.
+
+\textbf{Theorem:} The fundamental theorem of algebra: a $n$th degree polynomial has $n$ roots, though they may be real or complex. 
+
+
+
+\end{document}

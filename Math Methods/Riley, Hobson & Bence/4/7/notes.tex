@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{4.7: Evaluation of Limits}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item A limit may be $\pm \infty$.
+    \item A limit's value may differ when approached from the left or the right.
+    \item The limit of the sum of two functions is the sum of the two limits. The same is for products and quotients, but only for quotients if the two terms are not both equal to zero or infinity. 
+    \item Taking the natural log of a limit that itself depends on a variable can bring that variable out of consideration. Ex: $$\lim_{x\to\infty} (1-\frac{a^2}{x^2})^{x^2} = \lim_{X\to\infty}(x^2 \ln (1-\frac{a^2}{x^2}))$$
+    \item L'Hopital's rule may be used if both the numerator and denominator of a limit are zero or infinity.
+\end{enumerate}
+
+\end{document}

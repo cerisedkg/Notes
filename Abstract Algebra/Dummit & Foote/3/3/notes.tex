@@ -21,7 +21,7 @@
 \begin{document}
 \maketitle
 
-\textbf{Theorem:} \textbf{The First Isomorphism Theorem:} If $\varphi : G \rightarrow H$ is a homomrophism of groups, then $\ker \varphi \trianglelefteq G$ and $G/ \ker \varphi  \simeq \varphi G$
+\textbf{Theorem:} \textbf{The First Isomorphism Theorem:} If $\varphi : G \rightarrow H$ is a homomrophism of groups, then $\ker \varphi \trianglelefteq G$ and $G/ \ker \varphi  \cong \varphi G$
 
 \textbf{Corrolary 17:} Let $\varphi : G \rightarrow H$ be a homomorphism of groups.
 \begin{enumerate}
@@ -31,6 +31,12 @@
 
 \textbf{Theorem:} \textbf{The Second Isomorphism Theorem} Let $G$ be a group, let $A$ and $B$ be subgroups of $G$ and assume $A \leq N_G(B)$. Then, $AB$ is a subgroup of $G$, $B \trianglelefteq AB$, $A \cap B \trianglelefteq A$, and $AB/B \simeq A/(A\cap B)$. (Remember that $N_G(A)$ is the set of elements in $G$ that commute with all elements in $A$)
 
-\textbf{Proof:} Note: all elements of $A$ do normalize $B$. Then, by definition, $aba ^{-1}$ is in $B$. Therefore, $a (aba ^{-1})$ is in $AB$. 
+\textbf{Proof:} Note: all elements of $A$ do normalize $B$. Then, by a previous corrolary in 3.2, $AB$ is a subgroup of $G$. Every element in $G$ normalizes $AB$ because $b ab b ^{-1}  = ba$, and by a previous theorem, $BA = AB$ if $A \leq N_G(B)$, so $ba$ is equal to some element in $AB$. 
+
+To show everything else, lets establish a map $\varphi: A \rightarrow AB/B$ mapping elements of $A$ to their equivalence classes in $AB$ by $\varphi (a) = aB$. $\varphi$ is a homomorphism because $\varphi (a_1 a_2) = (a_1 a_2)B = a_1 B a_2 B = \varphi (a_1) \varphi (a_2)$. The kernel of the homomorphism is all elements in $A$ that fulfill $aB = 1B$, or in other words, elements in $A$ that are closed in $B$. The only elements that do this are ones that are in the group $B$, by definition of closure, so $\ker \varphi  = A \cap B$. By the First Isomorphism Theorem, the kernel of $\varphi$ is normal in $G$, so by extension, $\ker \varphi = A\cap B  \trianglelefteq A$. 
+
+The First Isomorphism Theorem also tells us that $A/\ker \varphi \cong \varphi (A)$, and by substituting, we get $A/A \cap B \cong AB/B$.
+
+This theorem is called the Diamond Isomorphism Theorem, because the lattice forms a diamond, with $A \cap B$ being a subgroup of both $A$ and $B$, and those two being both subgroups of $AB$, which is a subgroup of $G$. 
 
 \end{document}

@@ -51,6 +51,12 @@
 
 \textbf{Proof:} $HK$ is actially the set of left cosets of $K$ with elements of $H$. We want to find how many distinct left cosets of $K$ there are. 
 
+\textbf{Prop:} If $H$ and $K$ are subgroups of a group, then $HK$ is a subgroup if and only if $HK - KH$.
+
+\textbf{Proof:} $HK$ is the group of one element of $H$ multiplied by another element from $K$. Forward Proof: Let $h_1k_1, h_2k_2$ be elements in $HK$. $HK$ has an identity because both $H$ and $K$ have an identity. We want to show that $h_1k_1(h_2k_2) ^{-1} $ is in $HK$. First, note that $(h_2k_2) ^{-1} $ is equal to $k_2 ^{-1} h_2 ^{-1}$. Substituting, we get $h_1k_1k_2 ^{-1} h_2 ^{-1}$. Since $K$ is a group, $k_1 k_2 ^{-1} $ is equal to another element in $K$, $k_3$. Substituting, we get $h_1 k_3 h_2 ^{-1}$. Since $HK = KH$, for every element $kh$ in $KH$, there is a corresponding $hk$ in $HK$. As such, $k_3 h_2 ^{-1} $ is equal to $h_3 k_4$ in $HK$. Then, we get $h_1 h_3 k_4$, and since $H$ is a group, the equation evaluates to $h_4 k_4$. This is obviously in $HK$, so our proof is done. 
+
+Reverse Proof: We want to show that given the conditions that $HK$ is a group, then $HK = KH$. To show equality of groups, we need to show they are subgroups of each other. Since $K \leq HK$ because $1_H k$, and $H \leq HK$, we know that $KH \subseteq HK$. To show the opposite, note that $hk = (h_1 k_1) ^{-1}  =  k_1 ^{-1} h_1 ^{-1}$, which is in $KH$, so every element of $HK$ is in $KH$. We have established our two inclusions, so these sets are equal. 
+
 \subsection{Exercises:}
 
 \begin{enumerate}

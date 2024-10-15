@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{7.7: Equations of Lines, Spheres, and Planes}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\subsection{Line}
+
+Consider the fact that a line has a fixed position vector $a$, and from that point, a vector $b$ that decides where the line points from $a$. As such, we can write the equation of a line as $$\vec{r}(\lambda) = \vec{a} + \lambda\vec{b}$$Remember that all vectors are pointing from the origin to a point. Different values of $\lambda$ give different points on the line. 
+
+Taking the components of the vector equation, we get $$\vec{r}(\lambda) = <a_x + \lambda b_x, a_y + \lambda b_y, a_z + \lambda b_z>$$giving three parametric equations for the line: $$x(\lambda) = a_x \lambda b_x,\ \ \ y(\lambda) = a_y \lambda b_y,\ \ \ z(\lambda) = a_z \lambda b_z$$Solving for $\lambda$, and setting all of them equal to each other, and turn $x(\lambda)$ into $x$ and so on, and we get three simultaneous equations:$$\frac{x -a_x}{b_x} = \frac{y - a_y}{b_y} = \frac{z - a_z}{b_z} = c$$where $c$ is some constant. 
+
+Alternatively, if we subtract $\vec{a}$ to the other side of the original equation, and take the cross product with respect to $\vec{b}$ on both sides, since $\vec{b} \times \vec{b} = 0$, we get$$(\vec{r} - \vec{a}) \times \vec{b} = 0$$and since the equation doesn't depend on $\lambda$ anymore, we remove it. 
+
+We can find the equation of a line passing through two fixed points by setting one of our fixed points to be $a$, and set $b$ to be the vector pointing from the first point to the second point. Given two points $\vec{a}$ and $\vec{c}$, the equation becomes $$\vec{r}(\lambda) = \vec{a} + \lambda(\vec{c} - \vec{a})$$
+
+\subsection{Planes}
+
+A plane can be defined by a point $\vec{a}$ and a unit normal vector perpendicular to the plane $\hat{n}$. The equation for a plane is given by$$(\vec{r}-\vec{a})\cdot \hat{n} = 0$$This make sense because given a point $\vec{r}$, the vector pointing from $\vec{a}$ to $\vec{r}$ is $\vec{r} - \vec{a}$, and if that is perpendicular to our normal vector, it is in the plane, so the dot product between the two is zero. 
+
+If the components of $\hat{n}$ are $<n_x, n_y, n_z>$, then the plane can be expressed as$$n_xx + n_yy + n_zz = d$$where $d$ is the length a vector perpendicular to the plane pointing to the origin is. 
+
+If we have three points $\vec{a}, \vec{b}, \vec{c}$, the equation of a plane can be written $$r(\lambda,\mu) = \vec{a} + \lambda(\vec{b} - \vec{a}) + \mu(\vec{c} - \vec{a})$$Again, we start with a point $\vec{a}$, and find vectors pointing from $\vec{a}$ to the other points. These three vectors form a plane. 
+
+Another equation is given by$$\vec{r} = \alpha\vec{a} + \beta\vec{b} + \gamma\vec{c}$$so long as $\alpha + \beta + \gamma = 1$. 
+
+\subsection{Spheres}
+
+The equation of a sphere can be given by$$\vert \vec{r} - \vec{c}\vert^2 = a^2$$where $\vec{c}$ is the center and $a$ is the radius. 
+\end{document}

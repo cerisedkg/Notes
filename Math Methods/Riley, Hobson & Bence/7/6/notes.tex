@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{7.6: Multiplication of Vectors}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+\textbf{Def:} The \textbf{scalar product} or \textbf{dot product} of two vectors is denoted $\vec{a} \cdot \vec{b} = \vert a\vert \vert b\vert \cos\theta$, where $\theta$ is the angle between the two vectors, and is equal to the magnitude of $a$ multiplied by the magnitude of the projection of $b$ onto $a$.
+
+The dot product of two perpendicular vectors is $0$. 
+
+The dot product is distributive over vector addition.
+
+If the basis vectors are mutually orthogonal, the dot product of two $n$-dimensional vectors is given by $x\cdot y = x_1y_1 + x_2y_2 + x_3y_3 + ... + x_ny_n$. Cross terms are zero because the components are mutually perpendicular, so they evaluate to zero. 
+
+For non-orthogonal basis vectors, simply break the vector into a sum of its components and apply the distributive property (or use multinomial theorem).
+
+\textbf{Def:} The \textbf{vector product} or \textbf{cross product} is denoted $\vec{a} \times \vec{b}$ and $\vert \vec{a} \times \vec{b} \vert = \vert \vec{a}\vert\vert\vec{b}\vert\sin\theta$, and the direction of the cross product is perpendicular to both $a$ and $b$. The direction is found by the "right hand rule", where if your index and middle finger are $a$ and $b$ respectively, then the thumb denotes the direction of $\vec{a} \times \vec{b}$. 
+
+The cross product is distributive over addition, but not commutative and not associative. The cross product is also not well defined for dimensions higher than 3, in which case you will use the wedge or exterior product. 
+
+The cross product is also equal to $$\vec{a} \times \vec{b} = \det \begin{bmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+a_x & a_y & a_z \\
+b_x & b_y & b_z
+\end{bmatrix}$$
+
+The cross product also gives the area of a parallelogram with sides equal to the two vectors
+
+\textbf{Def:} The \textbf{scalar triple product} is a way of multiplying three vectors. Given $a,b,c$, the scalar triple product is defined as $[a,b,c] = a\cdot(b\times c)$, and outputs a scalar. The scalar triple product gives the volume of a parallelipiped with legs equal to $a,b,c$. 
+
+An important identity of the scalar triple product is that $a \cdot (b\times c) = (a \times b) \cdot c$. 
+
+The triple product is equal to$$a \cdot (b\times c) = \det \begin{bmatrix}
+    a_x & a_y & a_z \\
+    b_x & b_y & b_z \\ 
+    c_x & c_y & c_z
+\end{bmatrix}$$
+
+Swapping two vectors of the scalar triple product will result in the opposite sign, but cycling all three vectors will keep the triple product the same. 
+
+\textbf{Def:} The \textbf{vector triple product} is defined as $a \times (b\times c)$.
+
+There are two useful identities associated with this:
+\begin{enumerate}
+    \item $a\times (b\times c) = (a\cdot c)b- (a\cdot b)c$
+    \item $(a\times b)\times c = (a\cdot c)b - (b\cdot c)a$
+\end{enumerate}
+
+Another identity is as follows: $a \times (b\times c) + b \times (c\times a) + c\times (a\times b) = 0$
+\end{document}

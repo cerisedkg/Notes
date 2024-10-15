@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{7.8: Using Vectors to Find Distances}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+\subsection{Point to Line}
+
+The shortest distance from a point to a line is the vector that is orthogonal to the line and points to the point. 
+
+If we have a line starting at point $\vec{a}$ with direction $\vec{b}$, and have a point $\vec{p}$ we are finding the distance to, the orthogonal vector is given by $\vec{d}$. This forms a right triangle with corners $\vec{p}, \vec{a}$, and when $\vec{d}$ meets the line, and with sides $\vec{d}$ and $\vec{p} - \vec{a}$. We can then see that $\vert d\vert = \vert p-a\vert\sin\theta$, and by definition of the cross product, $$\vert d\vert = \vert(\vec{p} - \vec{a})\times\vec{b}\vert$$
+
+\subsection{Point to Plane}
+The shortest distance from a point to a plane is the vector that is orthogonal to the plane and points to the point.
+
+We already have a vector normal to the plane, $\hat{n}$, so our equation consists of finding a vector that points from $\vec{a}$ to $\vec{p}$, and then projecting it onto $\hat{n}$, so the equation is given by$$d = (\vec{p} - \vec{a})\cdot \hat{n}$$
+
+\subsection{Line to Line}
+
+The distance between two intersecting lines is zero. The shortest distance between two nonintersecting lines is the magnitude of the vector normal to both lines pointing from one point on one line to another point on the other. 
+
+If the lines have direction $\vec{a}$ and $\vec{b}$, the unit vector normal to both of them is $\hat{n} = \frac{\vec{a} \times \vec{b}}{\vert \vec{a}\times\vec{b}\vert}$, and if we have position vectors $\vec{p}$ and $\vec{q}$ on each line, the vector pointing between them is $\vec{p} - \vec{q}$, and we just project that onto $\hat{n}$, giving us$$d = (\vec{p} - \vec{q}) \cdot \frac{\vec{a} \times \vec{b}}{\vert \vec{a}\times\vec{b}\vert}$$
+
+\subsection{Line to Plane}
+
+In much the same way. the distance between a parallel line and plane is given by$$d = (\vec{a} - \vec{r}) \cdot \hat{n}$$where $\vec{r}$ is any point in the plane. 
+\end{document}

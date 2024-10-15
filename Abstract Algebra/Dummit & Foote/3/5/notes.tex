@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{3.5: Transpositions and Alternating Groups}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+The elements of $S_n$ are the possible permutations of a set of size $n$. 
+
+\textbf{Def:} Each element of $S_n$ can be written as a sequence of cycles of size 2, called \textbf{transpositions}. Imagine a cycle $(a_1,a_2,a_3,...,a_n)$. This moves element number $a_1$ to element number $a_2$, $a_2$ to $a_3$, and so on. We can describe this with the following sequence of transpositions (read right-to-left): $(a_1a_n)(a_1a_{n-1})...(a_1a_3)(a_1a_2)$. In this sequence, $a_1$ is used as a placeholder, and successive elements are moved with their previous element, in $a_1$. 
+
+\textbf{Ex:} $\sigma = (1\ 12\ 8\ 10\ 4)(2\ 13)(5\ 11\ 7)(6\ 9)$ can be written as $(1\ 4)(1\ 10)(1\ 8)(1\ 12)(2\ 13)(5\ 7)(5\ 11)(6\ 9)$
+
+\subsection{The Alternating Group}
+
+Let $x_1, ... ,x_n$ be independent variables, and let $\Delta$ be a polynomial defined as $$\Delta = \prod_{1\leq i < j \leq n} (x_i - x_j)$$For example, when $n = 4$, we get $\Delta = (x_1 - x_2)(x_1 - x_3)(x_1-x_4)(x_2 - x_3)(x_2 - x_4)(x_3 - x_4)$. Notice how the second term's number is always greater than the first term's number. 
+
+Now, lets define a function $\sigma(\Delta)$, which takes in a delta function and permutes each number according to an element of $S_n$. For example, if we chose $(1,2,3,4)$ and our polynomial from above, we get $\sigma(\Delta) = (x_2 - x_3)(x_2 - x_4)(x_2 - x_1)(x_3 - x_4)(x_3-x_1)(x_4 - x_1)$, as you can see, the number of every variable gets mapped to a new number according to our permutation.
+
+However, now some of the first terms are larger than the second terms, for example, in our example, $(x_2 - x_1), (x_3 - x_1), (x_4-x_1)$ are now all out of order. To fix this, we can factor out a minus sign and get $-(x_1 - x_2), -(x_1 - x_3), - (x_1 - x_4)$. We then multiply out these minus signs and get that the overall sign of $\sigma(\Delta)$ is now $-1$, but the individual terms haven't changed. 
+
+As a matter of fact, no matter what permutation you choose for $\sigma$, the result of $\sigma(\Delta) = \pm \Delta$.
+
+For each $\sigma$ in $S_n$, lets define a function that tells us if $\sigma(\Delta)$ is positive or negative. We will call this function $\epsilon(\sigma)$, or the sign function.
+
+\textbf{Def:} 
+\begin{enumerate}
+    \item $\epsilon(\sigma)$ is called the sign of $\sigma$
+    \item $\sigma$ is called an even permutation if $\epsilon(\sigma) = 1$ and an odd permutation if $\epsilon(\sigma) = -1$
+\end{enumerate}
+
+\textbf{Prop:} The map $\epsilon: S_n \rightarrow \{1,-1\}$ is a homomorphism. 
+
+\textbf{Proof:} Let $\tau, \sigma$ be elements of $S_n$. Then, $\epsilon(\tau\sigma) = \tau \cdot \sigma (\Delta) = \prod_{1\leq i < j \leq n} (x_{\tau\sigma(i)} - x_{\tau\sigma(j)})$. Lets evaluate just $\sigma(\Delta)$ first, and this will result in $\Delta$, but with $k$ factors of the form $(x_j - x_i)$, which we will flip. The end result is $\epsilon(\sigma) \Delta$, with all the values of $\Delta$ in order as they were originally. Then, we evaluate $\tau$, and order the variables again, to get $\epsilon(\tau)\epsilon(\sigma) \Delta$, showing that $\epsilon$ is a homomorphism. 
+
+\textbf{Prop:} Transpositions are odd permutations and $\epsilon$ is a surjective homomorphism.
+
+\textbf{Proof:} A non-trivial group $S_n$ will have
+
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{textcomp, gensymb}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\pgfplotsset{compat=1.18}
+\title{2.3: Higher Order Linear ODEs}
+\author{Alex L.}
+\date{\today}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %white
+
+\begin{document}
+\maketitle
+
+\textbf{Theorem:} \textbf{Superposition:} If $y_1, y_2, y_3, ... , y_n$ are linearly independent solutions of an equation, then $y = C_1y_1 + C_2y_2 + C_3y_3 + ... + C_ny_n$.
+
+\textbf{Def:} \textbf{Linear independence} of multiple functions $y_1, y_2, ... , y_n$, is when there is only one soluttion to the equation $c_1y_1 + c_2y_2 + c_3y_3 + ... + c_ny_n = 0$, the trivial solution, where $[c_1, c_2, c_3, ... , c_n] = 0$
+
+\subsection{Constant Coefficient Higher ODEs}
+
+The process for solving constant coefficient higher odes is the same. Just let $y = e^{rx}$, and substitute all of the derivatvies. An $n$th degree ODE will give you an $n$th degree characteristic equation. If you have repeated roots, the first root will be $e^{rx}$, the second root will be $xe^{rx}$, the third root will be $x^2e^{rx}$, and so on.
+
+\subsection{The Wronskian}
+
+\textbf{Def:} The \textbf{Wronskian} is a method of determining linear independence of a bunch of equations.
+
+Given equations $x_1,x_2,x_3,x_4,...,x_n$, the Wronskian is equal to $$det \begin{bmatrix}
+    x_1 & x_2 & x_3 & x_4 & ... & x_n \\
+    x_1^{(1)} & x_2^{(1)} & x_3 ^{(1)} & x_4^{(1)} & ... & x_n^{(1)} \\
+    ... & ... &...\\
+    x_1^{(n-1)} & x_2^{(n-1)} & x_3^{(n-1)} & x_4^{(n-1)} & ... & x_n^{(n-1)}
+\end{bmatrix}$$where each column is a function and $n-1$ of its derivatives. Since derivation is a linear function, if the Wronskian is nonzero, then the entire system is linearly independent. 
+
+\end{document}

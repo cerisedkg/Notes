@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{2.5: Nonhomogeneous Equations}
+
+\begin{document}
+\maketitle
+Suppose we have a linear, nonhomogeneous ODE. How do we solve it?
+
+\begin{example}
+$\frac{d^2y}{dx^2} + 5 \frac{dy}{dx} + 6y = 2x+1$
+
+First, we want to find the general solution to the homogeneous version of the above equation, called the \textbf{complimentary solution}, $y_c$. Then, we want to find a particular solution to the non-homogeneous equation, $y_p$. Then, $y_c + y_p = y$, the general solution to the equation. 
+
+$y_c$ is equal to $C_1e^{-2x} + C_2e^{-3x}$ from solving the characteristic equation.
+
+Note that the right hand side of our equation is a polynomial, and if we let $y_p$ be a polynomial with the same degree, the left will match the right. Lets first guess $y_p = Ax + B$. Then, plugging in, we get $6Ax + 5A + 6B = 2x+1$. Doing some algebra, we get that $A = \frac{1}{3}$ and $B = -\frac{1}{9}$, so $y_p = \frac{3x-1}{9}$, and $y = C_1e^{-2x} + C_2 e^{-3x} + \frac{3x-1}{9}$
+\end{example}
+
+Now, lets try one where the right hand side is a trig function:
+
+\begin{example}
+$\frac{d^2y}{dx^2} + 2 \frac{dy}{dx} + 2y = \cos(2x)$
+
+We should probably guess that $y_p$ contains cosines, but deriving cosines produces sines, which we want to neutralize, so we better put both cosines and sines in $y_p$.
+
+Suppose $y_p = A\cos(2x) + B\sin(2x)$. Plugging in, we get $-4A\cos(2x) - 4B\sin(2x) - 4A\sin(2x) + 4B\cos(2x) + 2A\cos(2x) + 2B\sin(2x) = \cos(2x)$. Grouping like terms, we get $(-2A + 4B)\cos(2x) + (-2B -4A)\sin(2x) = \cos(2x)$
+
+We find that $(-2A + 4B) = 1$ and $(-2B - 4A) = 0$. Solving, we get $A = -\frac{1}{10}$ and $B = \frac{1}{5}$, and $y_p = \frac{-2\cos(2x) + 2\sin(2x)}{10}$
+\end{example}
+
+The same is for exponentials. If $Ly = e^{3x}$ then guess $y_p = Ae^{3x}$ and solve for $A$. 
+
+If $Ly = (1+3x^2)e^{-x}\cos(\pi x)$, comprised of many different functions, then your particular solutions should reflect that. $y_p = (A+Bx+Cx^2)e^{-x}\cos(\pi x) + (D+Ex+Fx^2)e^{-x}\sin(\pi x)$, solving for $A,B,C,D,E,F$. 
+
+What if we get an equation like $\frac{d^2y}{dx^2}-9y = e^{3x}$? There is actually no way to choose $y_p = Ae^{3x}$ because $y_p$ is a solution to the associated homogeneous equation, $\frac{d^2y}{dx^2}-9y =0$. In this case, $y_p = Axe^{3x}$ to make it linearly independent. 
+
+\subsection{Variation of Parameters}
+
+We run into issues when derivatives of the right hand side look totally different from their original functions.
+
+Take: $\frac{d^2y}{dx^2} + y = \tan x$. 
+
+$y_c = C_1y_1 + C_2y_2$, where $y_1 = \sin x$ and $y_2 = \cos x$, but the derivatives of $\tan$ are secant, which is not great. 
+
+In this case, lets try $y_p = y = u_1y_1 + u_2 y_2$, where $u_1, u_2$ are functions. We have two degrees of freedom, so we impose two constraints. Our first constraint is that $Ly = \tan(x)$
+
+Then, compute $ \frac{dy}{dx}  = (u_1'y_1 + u_2'y_2) + (u_1y_1' + u_2y_2')$. Our second constraint will be that $ (u_1'y_1 + u_2'y_2) = 0$, so derivatives are easier. 
+
+Then, $\frac{dy}{dx} = u_1y_1' + u_2y_2'$ and $\frac{d^2y}{dx^2} = (u_1'y_1' + u_2'y_2') + (u_1y_1'' + u_2y_2'')$
+
+But now notice that $y'' + y = 0$, so $y'' = -y$, and $y_1$ and $y_2$ fulfill this equality, because they are solutions, so we get $\frac{d^2y}{dx^2} = (u_1'y_1' + u_2'y_2') - (u_1y_1 + u_2y_2)$. 
+
+Also, notice that $(u_1y_1 + u_2y_2) = y$, so we now have $\frac{d^2y}{dx^2} + y = (u_1'y_1' + u_2'y_2') = Ly$
+
+Okay, now we have two formulas, $u_1'y_1 + u_2'y_2 = 0$, and $u_1'y_1' + u_2'y_2' = Ly$, and plugging in, we get $u_1' \cos x + u_2' \sin x = 0$ and $-u_1'\sin x + u_2'\cos x = \tan x$. 
+
+Multiply the first equation by $\sin x$ and our second equation by $\cos x$ to get $u_1' \cos x \sin x + u_2'\sin^2 x = 0$ and $-u_1'\cos x \sin x + u_2'\cos^2x = \tan x \cos x = \sin x$
+
+And by adding our equation, we get $u_2' = \sin x$ and $u_1' = \cos x - \sec x$. Integrating, we get $y_p = -\cos x \ln\vert\sec x + \tan x \vert$. 
+
+THerefore, our general solution is $y = C_1\sin x + C_2 \cos x - \cos x \ln\vert\sec x + \tan x \vert$
+\end{document}

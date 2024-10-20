@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{2.4: Mechanical Vibrations}
+
+\begin{document}
+\maketitle
+
+\begin{proposition}[Damped Harmonic Oscillators]
+Consider a mass $m$ on a spring with spring constant $k$, and let the distance from equilibrium be $x$. Also, lets suppose there is some other force opposing the motion of the mass, $c \frac{dx}{dt}$, which we call the \textbf{damping force}. There also might be some external force $F_{ex}(t)$ on the spring as well. Lets sum all of the forces and get an equation. The sum of the forces, $F_{ex}(t) - c \frac{dx}{dt} - kx = m \frac{d^2x}{dt^2}$, is equal to mass times acceleration. Rearranging, we get $$m \frac{d^2x}{dt^2} - c \frac{dx}{dt} - kx = F(T)$$
+\end{proposition}
+\begin{definition}
+Some common terminology:
+    \begin{enumerate}
+        \item When $F(t) = 0$ for all $t$, the system is \textbf{free}
+        \item When $F(t) \neq 0$ for all $t$, the system is \textbf{forced}
+        \item When $c > 0$ , the system is \textbf{damped}
+        \item When $c = 0$, the system is \textbf{undamped}    
+    \end{enumerate} 
+\end{definition}
+
+\subsection{Free Undamped Motion}
+
+\begin{definition}[Undamped Harmonic Oscillation]
+The equation describing undamped harmonic oscillators is:$$m \frac{d^2x}{dt^2}  + kx = 0$$
+\end{definition}
+Lets divide through by $m$ to get $$\frac{d^2x}{dt^2} - \frac{k}{m} x = 0$$.
+
+By setting $\omega_0 = \sqrt{\frac{k}{m}}$ we get $$\frac{d^2x}{dt^2} - \omega_0^2x = 0$$
+
+The general solution to the above equation is $$x(t) = A\cos(\omega_0 t) + B\sin(\omega_0 t)$$which is equal to $$x(t) = C\cos(\omega_0 t - \gamma)$$for some constant $C$ and $\gamma$.
+
+Through some algebra, we arrive at $C = \sqrt{A^2 + B^2}$ and $\tan\gamma = \frac{B}{A}$
+
+\subsection{Free Damped Motion}
+
+\begin{definition}[Free Damped Harmonic Oscillation]
+The equation describing free damped harmonic oscillation is:
+$$m\frac{d^2x}{dt^2} + c\frac{dx}{dt} + kx = 0$$
+\end{definition}
+
+Now, lets divide through by $m$ to get $\frac{d^2x}{dt^2} + \frac{c}{m} \frac{dx}{dt} + \frac{k}{m} x = 0$Let set variables $\gamma = \frac{c}{2m}$ and $\omega_0 = \sqrt{\frac{k}{m}}$
+
+Substituting, we get $$\frac{d^2x}{dt^2} + 2\gamma \frac{dx}{dt} + \omega_0^2 = 0x = 0$$and since the mass, spring constant, and damping factor probably aren't changing, this is a linear homogeneous constant coefficients second order ODE.
+
+The characteristic equation is $$r^2 + 2\gamma r + \omega_0^2 = 0$$treating $\omega_0^2$ as a single variable.
+
+The roots of this equation are $r = -\gamma\pm\sqrt{\gamma^2-\omega_0^2}$. The sign of the determinant, $\gamma^2 - \omega_0^2$, is the same as $c^2 - 4km$, so we get real roots only if $c^2 \geq 4km$.
+
+\begin{definition}[Overdamping]
+If we have two real roots, the system is \textbf{overdamped}, and the solution becomes $$x(t) = C_1e^{r_1t} + C_2e^{r_2t}$$$r_1$ and $r_2$ are both negative because $\gamma$ is always greater than $\sqrt{\gamma^2 - \omega_0^2}$. Over time, the motion in the system will approach zero. 
+\end{definition}
+
+\begin{definition}[Critical Damping]
+If $c^2 = 4km$, the system is \textbf{critically damped}, and there is one root with multiplicity $2$. Solutions look like:$$x(t) = C_1e^{r_1t} + C_2te^{r_1t}$$
+\end{definition}
+
+\begin{definition}[Underdamped]
+If $c^2 < 4km$, the system is \textbf{underdamped}  , and we have two complex roots. The solution becomes $$x(t) = Ce^{-\gamma t}(A\cos(\omega_1 t) + B\sin(\omega_1 t))$$Our system develops limitng constraints specifying the maximum value $x(t)$ can take at any given time, and stays the same even under phase shifts. This constraint is called the \textbf{envelope curve}. 
+\end{definition}
+
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.7: Complex and Hermitian Conjugate}
+
+\begin{document}
+\maketitle
+\begin{definition}[Complex Conjugate of a Matrix]
+The \textbf{complex conjugate} of a matrix is found by taking the complex conjugate of each component. It is denoted $A^*$.
+
+If $A$ is real, then $A^* = A$
+\end{definition}
+
+\begin{definition}[Hermitian Conjugate of a Matrix]
+The \textbf{hermitian conjugate} of a matrix is found by taking the complex conjugate of the transpose of a matrix, and is denoted $A^\dagger$
+
+$A^\dagger = (A^*)^T = (A^T)^*$
+
+If $A$ is real, then $A^\dagger = A^T$
+\end{definition}
+
+The inner product of two vectors in an orthonormal basis, $\langle a\vert b\rangle = a^\dagger b$, or the matrix product of the hermitian conjugate of $a$ times $b$. 
+
+If the basis is not orthonormal, then $\langle a \vert b \rangle = a^\dagger Gb$, where $G$ is the matrix with components $G_{ij} = \langle \mathbf{e}_i \vert \mathbf{e}_j \rangle$
+\end{document}

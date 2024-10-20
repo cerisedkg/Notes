@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.1: Vector Spaces}
+
+
+\begin{document}
+\maketitle
+
+\subsection{Vector Spaces}
+\ 
+\begin{definition}[Vector Space]
+    A set of objects $a,b,c...$ forms a \textbf{linear vector space} if:
+    \begin{enumerate}   
+        \item The set is closed under addition, and is commutative and associative: $a+b = b+a$ and $a+(b+c) = (a+b)+c$
+        \item The set is closed under multiplication with a scalar, and the multiplication is distributive over addition: $\lambda(a+b) = \lambda a + \lambda b$, $(\lambda + \mu)a = \lambda a + \mu a$, and $\lambda (\mu a) = (\lambda\mu)a$
+        \item There exists a \textbf{null vector} $0$ such that $a+0 = a$ for all $a$
+        \item Multiplication by unity leaves a vector unchanged: $a \times 1 = a$
+        \item All vectors have a corresponding negative vector such that $-a + a = 0$
+    \end{enumerate}  
+\end{definition}
+
+If scalar multiplication only works with real numbers, we call it a \textbf{real vector space}. If it works with complex numbers, we call it a \textbf{complex vector space}.
+
+\begin{definition}[Span]
+The \textbf{span} of a set of vectors $v_0,v_1,v_2,...$ is all of the vectors $x$ that can be written as a linear combination of the set of vectors: $$x = a_0v_0 + a_1v_1 + a_2v_2 + a_3v_3 + ... $$
+\end{definition}
+
+\begin{definition}[Linear Independence]
+A set of vectors is \textbf{linearly independent} if there is only one way to make the zero vector in a linear combination: if all coefficients are zero, or the trivial way. If there is a nontrivial way to make the zero vector, then at least one of the vectors in the span is redundant - removing it won't affect the span at all. We call a set of vectors with redundancies \textbf{linearly dependent}.
+\end{definition}
+
+\begin{definition}[Dimensions in a Vector Space]
+If we can make a set of $N$ linearly independent vectors, but not a set of $N+1$ linearly independent vectors, the vector space has $N$ \textbf{dimensions}. 
+\end{definition}
+
+\begin{definition}[Basis of a Vector Space]
+If $V$ is an $n$ dimensional vector space, then any set of $n$ linearly independent vectors forms a \textbf{basis in $V$}. 
+\end{definition}
+
+\begin{theorem}
+Every vector in a vector space can be expressed as a linear combination of basis vectors. 
+\end{theorem}
+\begin{customproof}
+Suppose our basis is $\{v_0 , v_1 , v+2 , v_3 , ... ,v_n\}$. By definition, adding any other vector $v_x$ will make the set linearly dependent, so $a_0v_0 + a_1v_1 + a_2v+2 + a_3v_3 + ... + a_nv_n + xv_x = 0$ for some nontrivial coefficients. Then, by subtracting $xv_x$ to the other side, and dividing by $x$, we get $\frac{a_0}{x} v_0 + \frac{a_1}{x} v_1 + \frac{a_2}{x} v_2 + ... + \frac{a_n}{x}v_n = v_x$
+\end{customproof}
+
+\subsection{Inner Products}
+\
+\begin{definition}[Inner Product]
+The \textbf{inner product} is an operation that turns two vectors into a scalar. It is written as $\langle a\vert b\rangle$ It has the following properties:
+\begin{enumerate}
+    \item $\langle a\vert b \rangle = \langle b\vert a \rangle$
+    \item $\langle a + b \vert c \rangle = \langle a \vert c \rangle + \langle b \vert c \rangle$
+    \item $\langle \lambda a \vert b \rangle = \lambda \langle a \vert b \rangle$
+    \item   $\langle a\vert a \rangle \geq 0$, and $\langle a\vert a \rangle = 0$ only when $a = 0$.
+    
+    Note: Some authors define an inner product to be the first three conditions, and if it satisfies the fourth, it is called a positive-definite inner product. 
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Orthogonality]
+Two vectors $a,b$ are \textbf{orthogonal} if $\langle a \vert b \rangle = 0$. 
+\end{definition}
+
+\begin{definition}[Norm]
+The \textbf{norm} of a vector $a$ is given by $\vert \vert a \vert \vert = \sqrt{\langle a \vert a \rangle}$. The norm can be thought of as the length of a vector. 
+\end{definition}
+
+\begin{definition}[Kronecker Delta]
+The \textbf{Kronecker Delta} is a function that takes in two vectors $i,j$ and returns $\delta_{ij} = 1$ if $i=j$ and $\delta_{ij} = 0$ if $i \neq j$.
+\end{definition}
+\begin{definition}[Orthonomal Basis]
+A basis is \textbf{orthonormal} if all basis vectors have length one and each basis vector is orthogonal to each other basis vector. In other words, for any two basis vectors $i,j$, $\langle i \vert j \rangle = \delta_{i,j}$.
+\end{definition}
+
+If we have an $N$ dimensional orthonormal basis $\hat{e}_1, \hat{e}_2,\hat{e}_3 ...$, we may express any vector $a = \sum_{i=1}^{N} a_i \hat{e}_i$ as the sum of its component vectors. 
+
+Furthermore, the inner product $\langle \hat{e}_j \vert a \rangle = a_j$ of $a$ with a basis vector will give the corresponding component vector.
+
+We can also write an inner product in terms of the component vectors in an orthonormal basis: $\langle a \vert b \rangle = \langle \sum_{i=1}^{n} a_ib_i \langle \hat{e}_i \vert \hat{e}_i \rangle + \sum_{i=1}^{N}\sum_{j\neq i}^{N} a_i*b_j \langle \hat{e}_i \vert \hat{e}_j \rangle\rangle = \sum_{i=1}^{N} a_ib_i$
+
+When the basis is not orthonormal, we can't eliminate the scross terms like above, so instead we have $\sum_{i=1}^{N}\sum_{j=1}^{N} a_i\langle e_i \vert e_j \rangle b_j$
+
+\begin{proposition}[Inequalities]
+    Here are some useful inequalities:
+\begin{enumerate}
+    \item Schwarz's Inequality: $\vert \langle a\vert b\rangle
+    vert \leq \vert \vert a \vert \vert\times \vert \vert b\vert  \vert$
+    \item The Triangle Inequality: $\vert\vert a + b\vert\vert\leq \vert\vert a\vert\vert + \vert\vert b\vert\vert$
+    \item Bessel's Inequality: $\vert\vert a \vert\vert^2 \geq \sum_{i}\vert \langle \hat{e}_i\vert a \rangle \vert^2$ (The length of $a$ is always greater than any of its components).
+    \item The Parallelogram Inequality: $\vert \vert a+b\vert\vert^2 + \vert \vert a-b\vert\vert^2 = 2(\vert\vert a\vert\vert^2 + \vert\vert b\vert\vert^2)$
+\end{enumerate}
+\end{proposition}
+
+\end{document}

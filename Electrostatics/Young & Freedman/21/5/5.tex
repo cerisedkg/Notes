@@ -1,24 +1,42 @@
 \documentclass{article}
-\usepackage{tikz}
-\usepackage{parskip}
-\usepackage{xcolor}
-\usepackage{tkz-euclide}
-\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
+\usepackage{alexconfig}
 \title{21.5: Electric Field Calculations}
-\author{Alex L.}
-\date{\today}
-\pagecolor[rgb]{0,0,0} %black
-\color[rgb]{1,1,1} %white
 
 \begin{document}
 \maketitle
 
+\begin{theorem}[Superposition of Electric Fields]
+If a charge is distributed, we can imagine tiny points of charge that produce their own electric fields $E_1, E_2, E_3, ...$ and the total force felt by a test charge is equal to $\vec{F}_T = F_1 + F_2 + F_3 ... = qE_1 + qE_2 + qE_3 + ...$
+\end{theorem}
+
+\begin{definition}[Charge Density]
+When we distribute a charge, it is helpful to know the \textbf{charge density}. For charges distributed over a line, we use the linear chage density, $\lambda$. For charges distributed over a surface, we use surface charge density, $\sigma$, and for charges over a volume, we use volume charge density, $\rho$.   
+\end{definition}
+
 \textbf{Exercise:} Charge $Q$ is uniformly distributed around a ring of radius $a$. Find the electric field at a point $P$ on the ring axis at a distance $x$ from the center.
 
-\textbf{Solution:} We want to divide the ring into infintesimal segments $\delta S$. This segment only has contribution along the ring axis, as on the other side of the ring, there is an identical segment acting in the other direction transverse to the ring axis. The distance from the segment to the point charge is given by the equation $\sqrt{a^2 + x^2}$. As such, the contribution of $\delta S$ is  $\delta \vert \vec{E} \vert = \frac{\delta q}{4 \pi \varepsilon_0 (a^2 + x^2)}$. However, we have to take the only the component parallel to the axis, so we need to multiply the force vector by 
+\textbf{Solution:} We want to divide the ring into infintesimal segments $dS$. This segment only has contribution along the ring axis, as on the other side of the ring, there is an identical segment acting in the other direction. The distance from the segment to the point charge is given by the equation $\sqrt{a^2 + x^2}$. As such, the contribution of $\delta S$ is  $\delta \vert \vec{E} \vert = \frac{\delta q}{4 \pi \varepsilon_0 (a^2 + x^2)}$. However, we have to take the only the component parallel to the axis, so we need to multiply the force vector by $\cos$ of the angle of the force component to the axis. $\cos \theta = \frac{A}{H} = \frac{x}{\sqrt{x^2 + a^2}}$, so $dE_x = dE\cos \theta = \frac{dQ x}{4\pi\epsilon_0 (x^2 + a^2)^{\frac{3}{2}}}$, and since $dQ = \lambda dS$, the charge density times the ring segment, we get $dE_x = \frac{\lambda dSx}{4\pi\epsilon_0 (x^2 + a^2)^{\frac{3}{2}}}$. Now we integrate this expression over the circumference of the ring, $$E_x = \int_0^{2a\pi}\frac{\lambda x}{4\pi\epsilon_0(x^2+a^2)^{\frac{3}{2}}}dS = \frac{\lambda x 2a\pi}{4\pi\epsilon_0 (x^2+a^2)^\frac{3}{2}}$$And converting to a vector, we get $\vec{E} = E_x\hat{i} = \frac{Qx}{4\pi\epsilon_0(x^2+a^2)^\frac{3}{2}}\hat{i}$
+
+\begin{example}
+Positive charge $Q$ is distributed uniformly along the $y$-axis between $y = -a$ and $y = a$. Find the electric field at point $P$ on the $x$-axis at a distance $x$ from the origin. 
+\end{example}
+
+\begin{solution}
+Again, we notice that since the charges are symmetric around the point, there is only a contribution in the $x$-axis. Let's break up the line into segments $dS$ and only consider the top half for now. We'll double our number later to account for the bottom half. 
+
+Let $y$ be the distance of the segment from the origin. Then, $$dE = \frac{dQ}{4\pi\epsilon_0(y^2 + x^2)}$$We consider only the $x$ component of this force, so we multiply by $\cos$ of the angle the force makes with the $x$-axis. We get $\cos\theta = \frac{x}{\sqrt{x^2 + y^2}}$. Our linear charge density is $\lambda = \frac{Q}{2a}$ and substituting both, we get $$dE_x = \frac{xQ dy}{8a\pi\epsilon_0(y^2 + x^2)^\frac{3}{2}}$$We integrate: $$E_x = 2\int_{0}^{a} \frac{xQ}{8a\pi\epsilon_0(y^2 + x^2)^\frac{3}{2}} dy$$Evalutaing, we get $$E_x = \frac{Q}{4\pi\epsilon_0x\sqrt{x^2+a^2}}$$Or in vector form, $$\vec{E} = \frac{Q}{4\pi\epsilon_0x\sqrt{x^2+a^2}} \hat{i}$$
+\end{solution}
+
+\begin{example}
+A nonconducting disk of radius $R$ has a uniform positive surface charge density $\sigma$. Find the electric field at $x$ distance from the center. 
+\end{example}
+
+\begin{solution}
+Again, our field is symmetric about the axis of the disk, so we only consider fields in the $x$ direction. 
+
+For any given point on the disk radius $r$ away from the center, its field condtribution in the $x$ direction $$dE_x = \frac{x \sigma Q dr}{4\pi\epsilon_0(r^2 + x^2)^\frac{3}{2}}$$And the total contribution of a given radius line is $$dE_r = \int_{0}^{R} \frac{x \sigma Q}{4\pi\epsilon_0(r^2+x^2)^\frac{3}{2}} dr$$
+
+And now we just sweep around the disk, to get $$\vec{E} = \int_{0}^{2\pi} \int_{0}^{R}\frac{x\sigma Q}{4\pi\epsilon_0(r^2 + x^2)^\frac{3}{2}}drd\theta \hat{i}$$
+\end{solution}
 
 \end{document}

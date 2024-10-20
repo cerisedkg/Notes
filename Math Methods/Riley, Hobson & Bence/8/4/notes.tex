@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.4: Basic Matrix Algebra}
+
+\begin{document}
+\maketitle
+Since matrices and linear operators are two sides of the same coin, it makes sense that the algebra of matrices is similar to the algebra of linear operators. In this section, $A$ and $B$ are matrices, and $A_{ij}$ will specify the component in the 
+
+\begin{enumerate}
+    \item $\sum_{j}(A+B)_{ij}x_j = \sum_{j}A_{ij} x_j + \sum_{j} B_{ij}x_j$
+    \item $\sum_j(\lambda A)_{ij}x_j = \lambda\sum_j A_{ij}x_j$
+    \item $\sum_j(AB)_ij x_j = \sum_k A_{ik} (Bx)_k = \sum_j \sum_K A_{ik}B_{kj}x_j$
+\end{enumerate}
+
+In addition, since $x$ is arbitrary, these also imply how matrices can be added and multiplied:
+
+\begin{enumerate}
+    \item $(A+B)_{ij} = A_{ij} + B_{ij}$
+    \item $(\lambda A)_{ij} = \lambda A_{ij}$
+    \item $(AB)_{ij} = \sum_{k}A_{ik}B_{kj}$
+\end{enumerate}
+
+\begin{definition}[Addition of Matrices]
+The \textbf{sum of two matrices} $S = A + B$ is a matrix whose element are given by $S_{ij} = A_{ij} + B_{ij}$. $$S = A+B = \begin{bmatrix}
+    A_{11} + B_{11} & A_{12} + B_{12} & A_{13} + B_{13}\\
+    A_{21} + B_{21} & A{22} + B_{22} & A_{23} + B_{23}
+\end{bmatrix}$$This operation only makes sense if the two matrices have the same number of rows and columns.
+\end{definition}
+
+Matrix addition is commutative because the addition of individual components is commutative. 
+
+\begin{definition}[Scalar Product of Matrices]
+The \textbf{product of a matrix with a scalar} $S = \lambda A$ is a matrix with elements $S_{ij} = \lambda A_{ij}$.$$S = \lambda A = \begin{bmatrix} 
+    \lambda A_{11} & \lambda A_{12} & \lambda A_{13} \\
+    \lambda A_{21} & \lambda A_{22} & \lambda A_{23} \\
+\end{bmatrix}$$
+\end{definition}
+
+\begin{definition}[Product of Two Matrices]
+Let $S = AB$ be the \textbf{product of two matrices}. The component $S_{ij}$ is taken by selecting the $i$th row of the first matrix, and the $j$th column of the second, and then performing a pseudo-dot product on them. Multiply the first element of each, and the second, and the third, etc, and then, sum them all up. That is the process for matrix multiplication.
+\end{definition}
+
+Matrix multiplication only makes sense if the number of rows in the first matrix is equal to the number of colums in the second matrix. If $A$ is a $M$ by $N$ matrix and $B$ is a $K$ by $M$ matrix, then the result will be a $K$ by $N$ matrix.
+\begin{definition}[Null \& Identity Matrices]
+The null matrix $0$ is a matrix such that $A0 = 0A = 0$ and $A + 0 = 0 + A = A$
+
+The identity matrix $I$ is a matrix such that $AI = IA = A$
+
+For these two matrices to be well defined, they must be square. An $N$ by $N$ identity matrix has $1$s along the main diagonal. 
+\end{definition}
+
+\end{document}

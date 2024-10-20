@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.5: Conditional Probabilites are Probabilities}
+
+\begin{document}
+\maketitle
+\begin{proposition}
+We want to show that a conditional probability satisfies all three axioms of a probability:
+\begin{enumerate}
+    \item $0 \leq P(E\vert F) \leq 1$
+    \item $P(S\vert F) = 1$
+    \item If $E_i$, where $i = 1,2,3...$, are mutually exclusive events, then $P(\bigcup_1^\infty E_i \vert F) = \sum_{1}^{\infty}P(E_i \vert F)$
+\end{enumerate}
+\end{proposition}
+
+\begin{customproof}
+Let $E$ and $F$ be events in the probability space $S$. Then:
+\begin{enumerate}
+    \item $0 \leq P(E\vert F)$ is equal to $0 \leq \frac{P(E\cap F)}{P(F)}$, which is true because the smallest that $P(E\cap F)$ can be is zero. $P(E \vert F) \leq 1$ is true because $(E \cap F) \subset F$, so $P(E\cap F) \leq P(F)$, so $\frac{P(E\cap F)}{P(F)} \leq 1$.
+    \item $P(S\vert F) = 1$ because $P(S \cap F) = P(F)$ so $\frac{P(S\vert F)}{P(F)} = \frac{P(F)}{P(F)} = 1$
+    \item $P(\bigcup_1^\infty E_i \vert F) = \frac{P(\bigcup_1^\infty (E_i) \cap F)}{P(F)} = \frac{P(\bigcup_1^\infty (E_i \cap F))}{P(F)} = \frac{\sum_{1}^{\infty}P(E_i \cap F)}{P(F)} = \sum_{1}^{\infty}P(E_i \vert F)$
+\end{enumerate}
+\end{customproof}
+
+This means that if we define $Q(E) = P(E\vert F)$, then $Q(E)$ is a probability function on the sample space $S$.
+
+Now, lets see what happens when we have $Q(E_1 \vert E_2) = \frac{Q(E_1 \cap E_2)}{Q(E_2)} = \frac{P(E_1 \cap E_2 \vert F)}{P(E_2 \vert F)} = \frac{\frac{P(E_1 \cap E_2 \cap F)}{P(F)}}{\frac{P(E_2 \cap F)}{P(F)}} = P(E_1 \vert E_2 \cap F)$
+
+The above equation is equivalent to $P(E_1 \vert F) = P(E_1 \vert E_2\cap F)P(E_2 \vert F) + P(E_1 \vert E_2 ^C \cap F)P(E_2^C \vert F)$
+
+\begin{example}[5a]
+Consider Example 3a, which is concerned with an insurance company which believes that people can be divided into two distinct classes: those who are accident prone and those who are not. During any given year, an accident-prone person will have an accident with probability .4, whereas the corresponding figure for a person who is not prone to accidents is .2. What is the conditional probability that a new policyholder will have an accident in his or her second year of policy ownership, given that the policyholder has had an accident in the first year?
+\end{example}
+
+\begin{solution}
+Let $A$ be the chance someone is accident-prone, and $A_i$ be the probability that someone has an accident in their $i$th year. We want to know $P(A_2 \vert A_1)$, and we already know that $P(A_1) = .26$, $P(A)=.3$, $P(A_i \vert A) = .4$ and $P(A_i \vert A^C) = .2$. Our equation becomes $P(A_2 \vert A_1) = P(A_2 \vert A \cap A_1)P(A \vert A_1) + P(A_2 \vert A^C \cap A_1)P(A^C \vert A_1)$
+
+Now, lets find $P(A \vert A_1) = \frac{P(A_1 \vert A)P(A)}{P(A_1)} = \frac{.4*.3}{.26} = \frac{6}{13}$
+
+Likewise, $P(A^C \vert A_1) = \frac{7}{13}$
+
+$P(A_2 \vert A \cap A_1) = .4$, as this is equal to $P(A_2 \vert A)$, because $A_2$ and $A_1$ are independent events. This applies to $P(A_2 \vert A^C A_1) = .2$.
+
+Our entire equation becomes $P(A_2 \vert A_1) = .4*\frac{6}{13} + .2*\frac{7}{13} = .29$
+\end{solution}
+\end{document}

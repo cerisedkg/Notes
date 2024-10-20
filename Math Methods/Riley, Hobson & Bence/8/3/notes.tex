@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.3: Matrices}
+
+\begin{document}
+\maketitle
+A linear operator which transforms an $N$ dimensional vector space with basis $\mathbf{e}_j$ into an $M$ dimensional vector space with basis $\mathbf{f}_i$ can be represented by an $M$ by $N$ matrix ($M$ rows, $N$ columns).
+$$
+\mathcal{A}(\vec{r}) = \begin{bmatrix}
+    A_{11} & A_{12} & A_{13} & ... & A_{1N}\\
+    A_{21} & A_{22} & A_{23} & ... & A_{2N}\\
+    A_{31} & A_{32} & A_{33} & ... & A_{3N}\\
+    ... & ... & ...& ... & ...\\
+    A_{M1} & A_{M2} & A_{M3} & ... & A_{MN}
+\end{bmatrix}$$where $A_{ij}$ is the coefficient that transforms the $j$th basis vector in $\mathbf{e}_j$ into the $i$th basis vector component in $\mathbf{f}_i$.
+
+If the dimensions the linear operator is transforming are the same, then the matrix is a square matrix. 
+
+\begin{definition}[Vectors as Matrices]
+We can write $N$ dimension vectors as $N$ by $1$ matrices, in terms of their components $x_i$ with respect to a basis $\mathbf{e}_i$. $$\vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ ... \\ x_N\end{bmatrix}$$This type of matrix is called a \textbf{column matrix} or a \textbf{vector matrix}.
+
+Alternatively, the vector can be written as a $1$ by $N$ transposed matrix:$$ \vec{x} = \begin{bmatrix}
+    x_1 & x_2 & x_3 & x_4 & ... & x_N
+\end{bmatrix}^T$$
+\end{definition}
+\end{document}

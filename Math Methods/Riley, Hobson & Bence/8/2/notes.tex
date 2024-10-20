@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.2: Linear Operators}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Linear Operators]
+A \textbf{linear operator} $A$ is a mapping that associates one vector $x$ with another vector $y$ such that $A(\lambda x + \mu b) = A\lambda x + A\mu B$ for scalars $\lambda, \mu$
+\end{definition}
+
+Note: linear operators act independent of any basis. 
+
+We say that $A$ operates on $x$ to give $y$ if $Ax = y$.
+
+\subsection{Properties of Linear Operators}
+\
+\begin{proposition}
+Let $x$ be a vector and $\mathcal{A}$, $\mathcal{B}$ be linear operators. Then;
+\begin{enumerate}
+    \item $(\mathcal{A} + \mathcal{B})x = \mathcal{A}x + \mathcal{B}x$
+    \item $(\lambda \mathcal{A})x = \lambda (\mathcal{A} x)$
+    \item $(\mathcal{A} \mathcal{B})x = \mathcal{A}(\mathcal{B}x)$
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Identity and Zero Operators]
+Define the zero operator $\mathcal{O}$ as the linear operator such that$$\mathcal{O}x = 0$$for any vector $x$.
+
+Define the identity operator $\mathcal{I}$ as the linear operator such that $$\mathcal{I}x = x$$for any vector $x$. 
+\end{definition}
+
+\begin{definition}[Inverses]
+If there exists operators $\mathcal{A}$,$\mathcal{A ^{-1} }$ such that $$\mathcal{A} \mathcal{A}^{-1} = \mathcal{A}^{-1}\mathcal{A} = \mathcal{I}$$then $\mathcal{A}$ and $\mathcal{A ^{-1} }$ are called \textbf{inverses}. Any linear operator without an inverse is called \textbf{singular}, while those with inverses are called \textbf{non-singular}.       
+\end{definition}
+
+\subsection{Linear Operators on Basis Vectors}
+\
+\begin{proposition}
+Suppose we have a basis $\mathbf{e}_i$, where $i = \{1,2,3,4,...,N\}$. Then, the linear operator $\mathcal{A}$ acting on any basis vector $\mathbf{e}_j$ is described by:$$ \mathcal{A} \mathbf{e}_j = \sum_{i=1}^{N} \mathcal{A}_{ij}\mathbf{e}_i$$or basically, $\mathcal{A}$ transforms basis vectors into linear combinations of basis vectors. The coefficients of this linear combination, $A_{ij}$ are called the \textbf{components of $\mathcal{A}$ in the $e_i$ basis}. 
+\end{proposition}
+
+To accurately define a function, you have to describe what it does at every point on the real line, an infinite number of points. However, this is not true for linear operators. We can describe everything a linear operator does to every vector by just defining what it does to basis vectors.
+
+\begin{proposition}
+Lets try to describe the transformation $y = \mathcal{A}x$, where $y$ and $x$ are $N$-dimensional vectors. First, lets break $y$ into basis components: $$y = \sum_{i=1}^{N} y_i \mathbf{e}_i$$where $y_i$ is a scalar. Then, notice that $$\sum_{i=1}^{N} y_i \mathbf{e}_i = \mathcal{A}(\sum_{j=1}^{N}x_j\mathbf{e_j})$$because the transformation of the components of $x$ under $\mathcal{A}$ gives you $y$. By the distributive property of linear operators, $$\mathcal{A}(\sum_{i=1}^{N}x_i\mathbf{e_i}) =\sum_{j=1}^{N}x_j\sum_{i=1}^{N}\mathcal{A}\mathbf{e}_i$$Wse see that the action of $\mathcal{A}$ on $x$ is to transform the components of $x$ into linear combinations of the basis vectors. 
+\end{proposition}
+
+The expression inside the parentheses$$\sum_{j=1}^{N}x_j\mathbf{e}_j = y_i$$ is actually equivalent to the $i$th component of $y$, so we can describe a transformation purely in terms of components.
+
+As a matter of fact, linear operators can transform spaces into other spaces with different dimensions. Suppose we have linear operator transforming a basis $\mathbf{e}_i = \{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3 ... \mathbf{e}_N\}$ into $\mathbf{f}_j = \{mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3 ... \mathbf{f}_M\}$ and $M \neq N$. Then, $$\mathcal{A}(e_i) = \sum_{j=1}^{M} A_ij \mathbf{f}_j$$That is, for every basis vector in $\mathbf{e}_i$, there are $M$ coefficients $A_{ij}$ that each get multiplied with $\mathbf{f}_1, \mathbf{f}_2, ..., \mathbf{f}_M$ to create the transformed version of $\mathbf{e}_i$. 
+\end{document}

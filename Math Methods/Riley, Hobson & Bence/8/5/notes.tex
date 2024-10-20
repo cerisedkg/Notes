@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.5: Functions of Matrices}
+
+\begin{document}
+\maketitle
+\begin{definition}[Powers of a Matrix]
+The \textbf{powers} of a square matrix $A$ are:
+$$A^n = AAAAA...A$$or $A$ multiplied with itself $n$ times.
+\end{definition}
+Notice that this function is only well defined if $A$ is a square matrix.
+
+Now, lets construct functions of matrices of the form $S = \sum_{n}a_n A^n$.
+
+For example, we can define an exponential of a matrix $e^{A} = \sum_{n=0}^{\infty} \frac{A^n}{n!}$
+
+We can use this method to define other functions like $\sin{A}$ and $\cos{A}$ as well. 
+\end{document}

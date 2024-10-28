@@ -1,17 +1,5 @@
 \documentclass{article}
-\usepackage{tikz}
-\usepackage{parskip}
-\usepackage{xcolor}
-\usepackage{textcomp, gensymb}
-\usepackage{pgfplots}
-\usepackage{tkz-euclide}
-\usepackage[bottom=0.5in,top=0.5in,right=0.5in,left=0.5in]{geometry}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{amsthm}
-\pgfplotsset{compat=1.18}
+\usepackage{alexconfig}
 \title{3.5: Transpositions and Alternating Groups}
 \author{Alex L.}
 \date{\today}
@@ -51,6 +39,27 @@ For each $\sigma$ in $S_n$, lets define a function that tells us if $\sigma(\Del
 
 \textbf{Prop:} Transpositions are odd permutations and $\epsilon$ is a surjective homomorphism.
 
-\textbf{Proof:} A non-trivial group $S_n$ will have
+\begin{customproof}
+
+Let $n = 4$, $\sigma = (1234)$, $\tau = (432)$ and so $\tau\sigma = (1324)$. 
+
+Then, $(\tau\sigma)(\Delta) = (1324)\Delta = (x_3 - x_4)(x_3 - x_2)(x_3 - x_1)(x_4-x_2)(x_4-x_1)(x_2-x_1) = (-1)^5\Delta$
+
+On the other hand, $\tau(\sigma\Delta) = (x_{\tau(2)} - x_{\tau(3)})(x_{\tau(2)} - x_{\tau(4)})(x_{\tau(2)} - x_{\tau(1)})(x_{\tau(3)} - x_{\tau(4)})(x_{\tau(3)} - x_{\tau(1)})(x_{\tau(4)} - x_{\tau(1)}) = (x_3 - x_4)(x_3 - x_2)(x_3 - x_1)(x_4 - x_2)(x_4 - x_1)(x_2 - x_1) = (-1)^{5}(\Delta)$
+
+Now, lets take the case of the transpose $(1,2)$. $\epsilon (1,2) = -1$, because it flips only one factor, $(x_1 - x_2)$. Now note that $(i,j) = \lambda(1,2)\lambda$. Since we have two lambdas, their sign cancels, and we just have $\epsilon(i,j) = \epsilon (1,2) = -1$.
+\end{customproof}
+
+\begin{definition}[Alternating Groups]
+The alternating group $A_n$ is the kernel of the homomorphism $\epsilon$, or the set of all even permutations. The order of $A_n = \frac{1}{2} \vert S_n\vert = \frac{1}{2}n!$
+\end{definition}
+
+\begin{proposition}
+A permutation $\sigma$ is odd if and only if the number of cycles of even length in its decomposition is odd
+\end{proposition}
+
+\begin{customproof}
+An odd cycle times an odd cycle is an even cycle, and an even cycle times an odd cycle is odd. A cycle of size $m$ decomposes into $m-1$ transposes, which are odd, so an even length cycle has an odd parity. An even number of even cycles results in an even permutation, so the number of even cycles must be odd for the permutation to be odd. 
+\end{customproof}
 
 \end{document}

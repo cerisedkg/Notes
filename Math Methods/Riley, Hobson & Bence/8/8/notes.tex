@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.8: The Trace of a Matrix}
+
+\begin{document}
+\maketitle
+\begin{definition}[Trace]
+The \textbf{trace} of a square matrix is the sum of all of the diagonal elements:$$\text{Tr} A = A_{11} + A_{22} + A_{33} + ... + A_{nn}$$ 
+\end{definition}
+
+\begin{proposition}
+$$\text{Tr} (A+B) = \text{Tr}A + \text{Tr}B$$
+\end{proposition}
+
+\begin{customproof}
+$$\text{Tr} (A+B) = A_{11} + B{11} + A_{22} + B_{22} + ... + A_{nn} + B{nn} = A_{11} + A_{22} + ... + A_{nn} + B_{11} + B_{22} + ... + B_{nn} = \text{Tr} A + \text{Tr} B$$
+\end{customproof}
+
+\begin{proposition}
+$$\text{Tr} AB = \text{Tr} BA$$
+\end{proposition}
+
+\begin{customproof}
+$$\text{Tr} (AB) = \sum_{i=1}^{n} (AB)_{ii} = \sum_{I=i}^{n} \sum_{j=1}^{n}A_{ij}B_{ji} = \sum_{j=1}^{n}B_{ji}A_{ij} = \sum_{i=1}^{n}(BA)_{ii} = \text{Tr} (BA)$$
+\end{customproof}
+
+\begin{proposition}
+$$\text{Tr} A^T = \text{Tr} A$$
+\end{proposition}
+
+\begin{customproof}
+The main diagonal of a matrix is unchanged under a transpose.
+\end{customproof}
+
+\begin{proposition}
+$$\text{Tr} A^\dagger = (\text{Tr} A)^*$$
+\end{proposition}
+
+\begin{customproof}
+$$\text{Tr} A^\dagger = \text{Tr}((A^T)^*) =\sum_{i=1}^{n}(A_{ii})^* = (\text{Tr}A)^*$$
+\end{customproof}
+\end{document}

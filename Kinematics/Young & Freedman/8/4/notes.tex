@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.4: Elastic Collisions}
+
+\begin{document}
+\maketitle
+Elastic collisions conserve both momentum and kinetic energy.
+
+\begin{proposition}
+There are two equations governing elastic collisions: The conservation of kinetic energy: $$\frac{1}{2}m_Av_{A0}^2 + \frac{1}{2}m_Bv_{B0}^2 = \frac{1}{2}m_Av_{A1}^2 + \frac{1}{2}m_Bv_{B1}^2$$And the conservation of momentum:$$m_Av_{A0} + m_Bv_{B0} = m_Av_{A1} + m_Bv_{B1}$$
+\end{proposition}
+
+\begin{example}
+A neutron with mass $1.0$ atomic mass units and velocity $2.7 \times 10^7$ collides with a carbon nucleus with mass $12.0$ units at rest. Find the velocities after the collision. ($1$ amu = $1.66 \times 10^{-27}$kg).
+\end{example}
+
+\begin{solution}
+Let $m_N$ be the mass of the neutron and $m_C$ be the mass of the carbon nucleus. Then, $$m_Nv_{N0} + m_Cv_{C0} = m_Nv_{N1} + m_Cv_{C1}$$and substituting for the inital velocities, we get that $$m_Nv_{N0} = m_Nv_{N1} + m_Cv_{C1}$$Doing the same for kinetic energy, we get that $$m_Nv_{N0}^2 = (m_Nv_{N1}^2 + m_Cv_{C1}^2)$$
+
+Lets now put all the like terms for our energy equation on one side, getting $$m_N(v_{N0}^2 - v_{N1}^2) = m_Cv_{C1}^2$$And applying difference of two squares, we get$$m_N(v_{N0}-v_{N1})(v_{N0}+v_{N1}) = m_Cv_{C1}^2$$
+
+Lets rearrange the momentum equation in the same way:$$m_N(v_{N0}-v{N1}) = m_Cv_{C1}$$
+
+Dividing the two prior equations, we get $$v_{N0} + v_{N1} = v_{C1}$$
+
+Now we substitute this into our momentum equation to get $$m_N(v_{N0}- v_{N1}) = m_C(v_{N0} + v_{N1})$$And solving for $v_{N1}$, we get $$v_{N1} = \frac{v_{N0}(m_N - m_C)}{m_N+m_C}$$
+\end{solution}
+\end{document}

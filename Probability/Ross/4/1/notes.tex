@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.1: Random Variables}
+
+\begin{document}
+\maketitle
+\begin{definition}[Random Variables]
+A \textbf{random variable} is a function describing the outcome of an experiment, like the sum of two dice rolls, or the number of heads that come up when flipping $n$ coins. 
+\end{definition}
+\begin{example}
+Suppose our experiment consists of tossing $3$ fair coins, and let $Y$ be the random variable that determines how many coins come up heads. The values of $Y$ can be $\{0,1,2,3\}$, and we can compute their probabilities: $$P(\{Y = 0\}) = \frac{1}{8}$$$$P(\{Y = 1\}) = \frac{3}{8}$$$$P(\{Y=2\}) = \frac{3}{8}$$$$P(\{Y=3\}) = \frac{1}{8}$$
+\end{example}
+The sum of all probabilities of a random variable must equal $1$. 
+
+\begin{example}
+Three balls are selected randomly without replacement from an urn of 20 balls. If we bet that at least one of the balls drawn is larger than 17, what is the probability that we win the bet?
+\end{example}
+
+\begin{solution}
+Let $Y$ be the random variable of the highest ball that we draw. $$P(\{Y = 20\}) = \frac{\binom{19}{2}}{\binom{20}{3}} = .15$$$$P(\{Y = 19 \}) = \frac{\binom{18}{2}}{\binom{20}{3}} \approx .134$$ $$P(\{Y = 18\}) = \frac{\binom{17}{2}}{\binom{20}{3}} \approx .119$$ $$P(\{X=17\}) = \frac{\binom{16}{2}}{\binom{20}{3}}\approx .105$$
+
+These events are disjoint, so adding them up, we get around $.508$.
+\end{solution}
+\end{document}

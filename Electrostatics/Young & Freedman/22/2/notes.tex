@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{22.2: Calculating Electric Flux}
+
+\begin{document}
+\maketitle
+\begin{definition}[Forumla for Electric Flux]
+The formula for uniform electric flux flowing through a flat surface is $$\Phi_E = \vec{E} \cdot \vec{A}$$where $\vec{A} = a\hat{n}$, or the area of the s8rface times a unit vector normal to the area. A surface has two sides, and by convention, we define outward flux to be positive, and inward flux to be negative.
+\end{definition}
+
+\begin{proposition}
+The flux of a nonuniform electric field is given by $$\Phi_e = \int \vec{E}\cdot d\vec{A}$$We call this integral the surface integral over $\vec{A}$.
+\end{proposition}
+
+\begin{example}
+A disk of radius $.10$m is oriented with unit vector $\hat{n}$ $30^\circ$ to a uniform electric field with magnitude $2000$N/C.
+\begin{enumerate}
+    \item What is the flux through the disk?
+    \item What is the flux through the disk if $\hat{n}$ is perpendicular to the field?
+    \item What is the flux through the disk if $\hat{n}$ is parallel to the field?
+\end{enumerate}
+\end{example}
+
+\begin{solution}
+\begin{enumerate}
+    \item Lets figure out the area vector first: the area of the disk is $.01\pi $, and that is the magnitude of the area vector. Then, $$\vec{E} \cdot \vec{A} = \vert \vec{E}\vert \vert \vec{A}\vert \cos{30^\circ} = .01\pi * 2000 * \frac{\sqrt{2}}{2} = 44.42 \ N m^2 C^{-1}$$
+    \item If a surface is parallel to the field, or in other words, the normal vector is perpendicular to the field, then flux will be $0$
+    \item This is equal to the previous scenario, but now $\cos\theta = 1$, so we have $.01\pi * 2000 = 62.83 \ Nm^2C ^{-1} $ 
+\end{enumerate}
+\end{solution}
+\end{document}

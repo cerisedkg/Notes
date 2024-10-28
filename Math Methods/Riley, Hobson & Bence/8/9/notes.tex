@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.9: Determinant of a Matrix}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Minors]
+The \textbf{minor} of an element $A_{ij}$ in a matrix is the determinant of the matrix if you removed the $i$th row and the $j$th column from the matrix. It is denoted $M_{ij}$
+\end{definition}
+
+\begin{definition}[Cofactor]
+The \textbf{cofactor} of an element $A_{ij}$ in a matrix is found by multiplying the minor of $A_{ij}$ by $(-1)^{i+j}$. It is denoted $C_{ij}$
+\end{definition}
+
+\begin{definition}[Determinant]
+The \textbf{determinant} of a matrix is found by multiplying all cofactors of a single row or column in a matrix by their corresponding elements, then adding them all up. The determinant of a matrix $A$ is denoted $\text{det} A = \vert A \vert = \begin{vmatrix}
+    A_{11} & A_{12} & A_{13} \\ 
+    A_{21} & A_{22} & A_{23} \\
+    A_{31} & A_{32} & A_{33}\\
+\end{vmatrix}$ but this can be extended to any $n$ by $n$ square matrix.
+\end{definition}
+For example, for an $m$ by $m$ matrix, the determinant could be found by taking row 1, and doing the operation above to get $$A_{11}C_{11} + A_{21}C_{21} + A_{31}C_{31} + ... + A_{m1}C_{m1}$$ 
+
+\begin{proposition}
+If the rows of a $3$ by $3$ matrix are the vectors $a$, $b$, and $c$, then the determinant of the matrix is $a \cdot (b\times c)$.
+\end{proposition}
+
+\subsection{Properties of Determinants}
+\ 
+\begin{proposition}
+    \ 
+    \begin{enumerate}
+        \item $\vert A^T\vert = \vert A\vert$  
+        \item $\vert A^\dagger\vert = \vert (A^*)^T\vert = \vert A^* \vert = \vert A\vert^*$
+        \item If we swap two rows or columns in a matrix, the determinant doesn't change in magnitude, but changes in sign.
+        \item If all elemenst in a row or column in matrix $A$ have a common factor $\lambda$, and that factor is removed, then the corresponding determinant is $\frac{\vert A \vert}{\lambda}$ 
+        \item If two rows or columns are identical, then $\vert A\vert = 0$
+        \item The determinant of a matrix is unchanged if we add a multiple of one row or column to another row or column.
+        \item If $A$ and $B$ are square matrices, then $\vert AB \vert = \vert A\vert \vert B\vert = \vert BA\vert$
+    \end{enumerate}
+\end{proposition}
+\end{document}

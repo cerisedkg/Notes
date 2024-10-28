@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.21)  19 OCT 2024 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.21)  19 OCT 2024 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -659,8 +659,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip122
 \thm@headsep=\skip123
 \dth@everypar=\toks50
-))
-No file notes.aux.
+)) (./notes.aux)
 \openout1 = `notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -677,7 +676,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count319
 \scratchdimen=\dimen298
@@ -763,10 +762,10 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 30134 strings out of 474116
- 767710 string characters out of 5743682
+ 30137 strings out of 474116
+ 767752 string characters out of 5743682
  1928187 words of memory out of 5000000
- 51877 multiletter control sequences out of 15000+600000
+ 51878 multiletter control sequences out of 15000+600000
  564335 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,6n,121p,1318b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s

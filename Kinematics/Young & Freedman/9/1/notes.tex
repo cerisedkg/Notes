@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{9.1: Angular Velocity and Acceleration}
+
+\begin{document}
+\maketitle
+The value of a point's position in radians is equal to:$$\theta = \frac{s}{r}$$Where $s$ is the arc length from the positive $x$ axis, and $r$ is the radius from the center of the angle to the point.
+
+\begin{definition}[Angular Velocity]
+Angular velocity is the derivative of angular position with respect to time:$$\omega = \frac{d\theta}{dt}$$We say that a point has angular velocity $\omega_z$ if it is rotating around the $z$-axis. 
+
+We measure angular velocity in revolutions per minute, radians per second, and revolutions per second. Know how to convert these.
+\end{definition}
+
+\begin{example}
+The angular position $\theta$ of a particle on a $.36$m diameter is given by $$\theta(t) = 2.0t^3$$
+\begin{enumerate}
+    \item What is the position of the particle at $t=2$ and $t=5$.
+    \item What is the distance that the particle moves between $t=2$ and $t=5$
+    \item Find the average angular velocity, in rad/min, of the particle over that interval
+    \item Find the instantaneous velocities at $t=2$ and $t=5$
+\end{enumerate}
+\end{example}
+
+\begin{solution}
+    \
+\begin{enumerate}
+    \item Plugging in, we get $\theta_2 = 16$ rad and $\theta_5 = 250$ rad.
+    \item Subtracting the two, we get that the particle traveled $234$ radians. Multiplying by radius, we get that the paticle will travel an arc length of $42.12$ meters in that time.
+    \item The average angular velocity is given by $\omega_{avg} = \frac{\Delta}{\theta}{\Delta t} = \frac{234}{3} = 78$ radians per second.
+    \item The instantaneous angular velocity is given by the derivative. $\frac{d}{dt} 2t^3 = 6t^2$. Plugging in, we get that $\omega_2 = 24$ and $\omega_5 = 150$ radians per second.
+\end{enumerate}
+\end{solution}
+
+Angular velocity is a vector pointing parallel to the axis of rotation. The direction is points is given by the right hand rule, by alinging your fingers in the direction of rotation, your thumb will point in the direction the velocity vector points.
+
+\begin{definition}[Angular Acceleration]
+Angular acceleration is the change in angular velocity, and is found by taking the derivative with respect to time of angular velocity: $$\alpha = \frac{d\omega}{dt}$$
+\end{definition}
+\end{document}

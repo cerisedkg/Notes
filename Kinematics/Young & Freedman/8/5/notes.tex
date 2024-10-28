@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.5: Center of Mass}
+
+\begin{document}
+\maketitle
+\begin{definition}[Center of Mass]
+The \textbf{center of mass} of a system of particles is the average position of the particles weighted by mass:
+
+$$\vec{r}_{cm} = \frac{m_1 \vec{r}_1 + m_2 \vec{r}_2 + m_3\vec{r}_3 + ...}{m_1 + m_2 + m_3 + ,,,}$$
+\end{definition}
+
+Taking the time derivative with respect position, we get $$\vec{v}_{cm} = \frac{m_1 \vec{v}_1 + m_2\vec{v}_2 + m_3\vec{v_3} + ...}{m_1 + m_2 + m_3 + ...}$$
+
+Multiplying the denominator to the other side, we get $$(m_1 + m_2 + m_3 + ...)\vec{v}_{cm} = m_1\vec{v}_1 + m_2\vec{v_2} + m_3\vec{v_3} + ...$$And rewriting, we get $$\vec{p}_{cm} = \vec{p}_1 + \vec{p}_2 + \vec{p}_3 + ...$$Or the momentum of the center of mass is equal to the sum of the momentum of each particle in the system.
+
+If we take the time derivative of our velocity equation again, we see that $$(m_1 + m_2 + m_3 + ...)\vec{a}_{cm} = m_1\vec{a}_1 + m_2\vec{a_2} + m_3\vec{a_3} + ...$$Or the net force acting on the center of mass is equal to the sum total of all forces acting on all particles.
+
+However, the internal forces of the system cancel each other, so actually, $$\vec{F}_{ext} = (m_1 + m_2 + m_3 + ...)\vec{a}_{cm}$$Or the force acting on the center of mass is the sum of all external forces acting on the system.
+\end{document}

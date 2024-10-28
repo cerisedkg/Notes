@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.3: Collisions}
+
+\begin{document}
+\maketitle
+\begin{definition}[Elastic Collision]
+An \textbf{elastic collision} is a collision where total kinetic energy is conserved. An example might be two pool balls striking each other. 
+\end{definition}
+
+\begin{definition}[Inelastic Collision]
+An \textbf{inelastic collision} is a collision where total kinetic energy is not conserved. An example might be shooting a bullet into a block of wood.
+\end{definition}
+
+In both situations, if there are no external forces, then momentum is conserved.
+
+\begin{proposition}[Completely Inelastic Collisions]
+In a \textbf{completely inelastic collision}, the velocity of the two bodies after the collision is exactly the same: $$v_{A1} = v_{B1} = v_1$$Additionally, conservation of momentum states that $$m_Av_{A0} + m_Bv_{B0} = m_Av_{A1} + m_Bv_{B1}$$And substituting in the prior equation, we get$$m_Av_{A0} + m_bv_{B0} = (m_A + m_B)(v_1)$$
+
+
+%Lets verify that we lose kinetic energy after the collision: $$K_{A0} + K_{B0} = \frac{1}{2}(m_A v_{A0}^2 + m_B v_{B0}^2)$$And after the collision:$$K_{1} = \frac{1}{2}(m_A + m_B)v_1^2$$%
+\end{proposition}
+
+\begin{example}[Ballistic Pendulum]
+A bullet of mass $m_B$ makes a completely inelastic collision with a suspended block of wood with mass $m_W$. After the impact, the block swings to a height of $h$. What is the velocity of the bullet $v_0$ in terms of $h$, $m_B$, and $m_W$?
+\end{example}
+
+\begin{solution}
+Because this is an inelastic collision, lets define $v_1$ to be the velocity of the bullet and block right after collision. Then, $$m_Bv_0 = (m_B + m_W)v_1$$And solving for $v_0$, we get $$v_0 = \frac{(m_B + m_W)v_1}{m_B}$$The kinetic energy of the system right after collision is $$K_1 = \frac{1}{2}(m_B + M_W)v_1^2 = (m_B + m_W)gh$$since all the energy will be transformed into potential energy. Then, solving, we get $$v_1 = \sqrt{2gh}$$and substituting into our original equation, we get $$v_0 = \frac{(m_B + m_W)\sqrt{2gh}}{m_B}$$
+\end{solution}
+\end{document}

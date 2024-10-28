@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.4: Eigenvalue Method}
+
+\begin{document}
+\maketitle
+Suppose we have a system of linear equations $$\vec{x'} = P\vec{x}$$where $P$ is a square matrix with constant values. Then, like with the method for single linear equations, we try $\vec{x} = \vec{v}e^{\lambda t}$, where $\vec{v}$ is some vector of constants.
+
+Plugging in, we get $$\lambda \vec{v}e^{\lambda t} = P\vec{v}e^{\lambda t}$$Dividing by $e^{\lambda t}$, we get $$\lambda\vec{v} = P \vec{v}$$which is the formula for eignenvalues and eigenvectors.
+
+\subsection{Finding Eigenvalues and Eigenvectors}
+Eigenvalues are values of $\lambda$ that satisfy $\text{det}(P - \lambda I) = 0$, and the corresponding eigenvector $\vec{v}$ for an eigenvalue is found by $(P - \lambda I)\vec{v} = \vec{0}$, which can be solved by row reduction with an augmented matrix.
+\subsection{Distinct Real Eigenvalues}
+If we have a system $\vec{x'} = P\vec{x}$, with $P$ being a constant coefficient matrix, and eigenvalues $\lambda_1,\lambda_2,...\lambda_n$, with eigenvectors $\vec{v}_1, \vec{v}_2,...,\vec{v}_n$, then $\vec{v}_1e^{\lambda_1 t}, \vec{v}_2e^{\lambda_2t}, ... ,\vec{v}_n e^{\lambda_n t}$ are solutions to the system of equations, and the general solution is $\vec{x} = C_1\vec{v}_1 e^{\lambda_1 t} + C_2 \vec{v}_2 e^{\lambda_2t} + ... + C_n\vec{v}_ne^{\lambda_n t}$ and the fundamental matrix solution is $X(t) = \begin{bmatrix}
+    \vec{v}_1e^{\lambda_1t} & \vec{v}_2e^{\lambda_2t} & ... & \vec{v}_n e^{\lambda_nt}\\
+\end{bmatrix}$
+
+\subsection{Complex Eigenvalues}
+
+If $P$ is a real-valued matrix, then complex eigenvalues come in conjugate pairs. We can expand these and take the real and imaginary components, to get $\vec{x}_1 = C_1\text{Re}\ \vec{v}e^{(a+ib)t} $ and $ x_2 = C_2\text{Im}\ \vec{v}e^{(a+ib)t}$, and plugging into Euler's formula, we get $x_1 = C_1e^{at}\vec{v}\cos(bt)$ and $x_2 = C_2 e^{at}\vec{v}\sin(bt)$.   
+\end{document}

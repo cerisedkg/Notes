@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.1: Introduction to Systems of ODEs}
+
+\begin{document}
+\maketitle
+\begin{definition}[Systems of ODEs]
+A \textbf{system of differential equations} is when one or more differential equations are simultaneously true. There may be multiple dependent variables and independent variables as well. 
+\end{definition}
+\begin{example}
+$$y'_1 = y_1$$$$y_2'= y_1 - y_2$$
+\end{example}
+
+\begin{solution}
+The general solution for the first equation is $$y_1 = C_1e^x$$We then substitute into the second equation to get $$y'_2 = C_1e^x - y_2$$Then, rearranging, we get $$y'_2 + y_2 = C_1e^x$$This is a first order linear ODE, which we can use the integrating factor of $e^x$ to solve. We get $$e^x y_2 = \frac{C_1}{2}e^{2x} + C_2$$
+\end{solution}
+
+\subsection{Changing to first order}
+If we have a higher order differential equation like $$y^{(n)} = F(y^{(n-1)}, ... , y,x)$$we can define new variables such that $$u_1' = u_2$$ $$u_2' = u_3$$$$u_3' = u_4$$ $$u_{n-1}' = u_n$$ $$...$$ $$u_n' = F(u_n,u_{n-1},...,u,x)$$Then, we solve the system, and once we're done, discard $u_2$ through $u_n$ and set $y = u_1$. Then $y$ is our solution to the equation.
+
+\begin{example}
+$$x''' = 2x'' + 8x' + x + t$$
+\end{example}
+
+\begin{solution}
+Let $u_1 = x$, $u_2 = x'$, $u_3 = x''$, and solving, we get $u_1' = u_2$, $u_2' = u_3$, and $u_3' = 2u_3 + 8u_2 + u_1 + t$.
+\end{solution}
+
+
+\subsection{Existence and Uniqueness}
+\begin{theorem}[Picard's Theorem]
+Let a system of first order equations be $$x_1' = F_1(x_1, x_2,x_3,...,x_n,t)$$ $$ x_2' = F_2(x_1,x_2,x_3,...,x_n,t)$$$$...$$$$x_n' = F_n(x_1,x_2,x_3,...,x_n,t)$$
+If for everg $j = 1,2,...,n$ and every $k = 1,2,...,n$, $F_j$ is continuous and each $\frac{\partial F_j}{\partial i}$ exists and is continuous in a neighborhood, then a solution to the system exists in that neighborhood.
+\end{theorem}
+\end{document}

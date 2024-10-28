@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.3: Linear Systems of ODEs}
+
+\begin{document}
+\maketitle
+\begin{definition}[Matrix and Vector Valued Functions]
+A \textbf{vector valued function} is a function in the form $$\vec{x}(t) = \begin{bmatrix}
+    x_1(t)\\x_2(t)\\x_3(t)\\\vdots \\x_n(t)
+\end{bmatrix}$$
+A \textbf{matrix valued function} is a function in the form $$A(x) = \begin{bmatrix}
+    a_{11}(t) & a_{12}(t) & a_{13}(t) & ... & a_{1n}(t)\\
+    a_{21}(t) & a_{22}(t) & a_{23}(t) & ... & a_{2n}(t)\\
+    a_{31}(t) & a_{32}(t) & a_{33}(t) & ... & a_{3n}(t)\\
+    \vdots & \vdots & \vdots & \ddots & \vdots\\
+    a_{n1}(t) & a_{n2}(t) & a_{n3}(t) & ... & a_{nn}(t)
+\end{bmatrix} $$
+
+\end{definition}
+
+\begin{definition}[Systems of First Order Linear ODEs]
+A \textbf{first order linear system of ODEs} is a system that can be represented by $$\vec{x'}(t) = P(t)\vec{x}(t) + \vec{f}(t)$$Where $P(T)$ is a matrix valued function and $\vec{x'}(t)$, $\vec{x}(t)$, and $\vec{f}(t)$ are vector-valued functions. 
+\end{definition}
+
+If $P(t)$ is a matrix of constants, with no values depending on $t$, we say the system has \textbf{constant coefficients}.
+
+If $\vec{f}(t) = \vec{0}$, the zero vector, then we say that the system is homogeneous.
+
+\begin{theorem}[Superposition]
+If $\vec{x'}(t) = P(t)\vec{x}(t)$ is a homogeneous linear system of ODEs, and $\vec{x_1}, \vec{x_2}, ... , \vec{x_n}$ are solutions and linearly independent, then $\vec{x} = C_1\vec{x_1} + C_2\vec{x_2} + ... + C_n\vec{x_n}$ is a general solution to the system.
+
+The general solution to a homogeneous differential equation can be written as $X(t)\vec{c}$, where $X$ is a matrix with columns of $\vec{x_1}, \vec{x_2},...,\vec{x_n}$, and $\vec{c}$ is a column vector with entries $c_1,c_2,...,c_n$. In this form, $X(t)$ is called the fundamental matrix.
+\end{theorem}
+\end{document}

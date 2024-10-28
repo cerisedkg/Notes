@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.2: Matrices and Linear Systems}
+
+\begin{document}
+\maketitle
+\begin{definition}[Matrices]
+A \textbf{matrix} $A$ is an $m$ by $n$ array of numbers ($m$ rows and $n$ columns). The numbers $A_{ij}$ refer to the entry in the $i$th row and $j$th column of a matrix. 
+\end{definition}
+
+\begin{definition}[Multiplication of Matrices]
+The component $(AB)_{ij}$ is found by taking the dot product of the $i$th row of matrix $A$ with the $j$th column of matrix $B$. 
+\end{definition}
+
+\begin{definition}[Determinant]
+The \textbf{determinant} of a 2x2 square matrix $\text{det} A$ is calculated by $a_{11}a_{22} - a_{21}a_{12}$. The determinant of an $n$ by $n$ square matrix represents that if a space were to be transformed by that matrix (basis vectors get mutliplied by matrix entries), then the area/volume of shapes would be scaled by the determinant. Negative determinant values means that the shapes get flipped/mirrored. 
+\end{definition}
+
+$$\text{det}(AB) = \text{det}(A) \text{det}(B)$$
+
+\subsection{Solving Linear Systems}
+
+Suppose we have a system of linear equations $$2x_1 + 2x_2 + 2x_3 - 2$$$$x_1 + x_2 + 3x_3 = 5$$$$x_1+4x_2+x_3 = 10$$We can represent this system as an augmented matrix: $$\left[\begin{array}{@{}ccc|c@{}}
+    2 & 2 & 2 & 3 \\
+    1 & 1 & 3 & 5 \\
+    1 & 4 & 1 & 10 \\
+    \end{array}\right]$$
+
+We can use some rules to put this in reduced row echelon form:
+\begin{enumerate}
+    \item 1. You can multiply any row by a scalar
+    \item 2. You can add a multiple of one row to another row
+    \item 3. You can swap two rows
+\end{enumerate}
+
+\begin{definition}[Row Reduced Echelon Form]
+A matrix is in \textbf{row reduced echelon form} if it satisfies some criteria:
+
+\begin{enumerate}
+    \item The \textbf{leading entry}, or the first entry in any row, is strictly to the right of the leading entry of the row above
+    \item Any zero rows are below all nonzero rows
+    \item All leading entries are 1
+    \item All entries above and below any leading entry are zero.  
+\end{enumerate}
+
+If every column has a leading entry in RREF, then the matrix is \textbf{invertible}, or an inverse matrix exists. If there are any free variables, or columns without leading entries, then the matrix is not invertible.  
+\end{definition}
+
+\subsection{Computing the Inverse}
+
+If we want to find the inverse of a matrix $A$, simply construct an augmented matrix $[A\vert I]$, and then put the left hand side of the matrix into RREF, so we get $[I\vert A^{-1}]$, and the right hand side will be the inverse.
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{21.7: Electric Dipoles}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Electric Dipoles]
+    \textbf{Electric dipoles} are pairs of opposite point charges separated by a distance $d$.
+\end{definition}
+
+When placed in an electric field, dipoles will not move, but experience a torque as they try to align with the field. 
+
+The torque is calculated with respect to the center of the dipole. If $\phi$ is the angle between the electric field and the dipole's axis, then the force acting on one charge is $\frac{qEd\sin\phi}{2}$, but since there are two charges, with torques acting in the same direction, the total torque on the dipole is $$qEd\sin\phi$$
+
+\begin{definition}[Dipole Moment]
+We define the \textbf{electric dipole moment}, $\vec{p}$, as $p = q\vec{d}$, or the magnitude of the charges times the displacement between them. The unit for the dipole moment is Coulomb-meters.  
+\end{definition}
+
+We can now define $\tau = \vert \vec{p}\vert E\sin\phi$, or alternatively, $$\tau = \vec{p}\times \vec{E}$$
+
+\subsection{Potential Energy of a Dipole}
+The work done by torque is negative, because the angle $\phi$ is decreasing.
+$$dW = \tau d\phi = -pE\sin\phi d\phi$$and as such, $$W = pE\cos (\Delta\phi) = -U$$
+
+We can rewrite this as a dot product: $$U = -\vec{p} \cdot \vec{E}$$
+
+If a dipole isn't uniform, the net force on the dipole in a field may be nonzero. 
+\end{document}

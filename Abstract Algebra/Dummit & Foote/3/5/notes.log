@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.21)  14 OCT 2024 14:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.21)  20 OCT 2024 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,7 +23,9 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+) (/Users/cerise/Library/texmf/tex/latex/alexconfig/alexconfig.sty
+Package: alexconfig 2024/10/16 Styling Commands LaTeX Package
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks17
 \pgfutil@tempdima=\dimen141
 \pgfutil@tempdimb=\dimen142
@@ -520,16 +522,132 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count310
+Package zref Info: New property: abspage on input line 67.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip53
+\c@mdf@globalstyle@cnt=\count311
+\mdf@skipabove@length=\skip54
+\mdf@skipbelow@length=\skip55
+\mdf@leftmargin@length=\skip56
+\mdf@rightmargin@length=\skip57
+\mdf@innerleftmargin@length=\skip58
+\mdf@innerrightmargin@length=\skip59
+\mdf@innertopmargin@length=\skip60
+\mdf@innerbottommargin@length=\skip61
+\mdf@splittopskip@length=\skip62
+\mdf@splitbottomskip@length=\skip63
+\mdf@outermargin@length=\skip64
+\mdf@innermargin@length=\skip65
+\mdf@linewidth@length=\skip66
+\mdf@innerlinewidth@length=\skip67
+\mdf@middlelinewidth@length=\skip68
+\mdf@outerlinewidth@length=\skip69
+\mdf@roundcorner@length=\skip70
+\mdf@footenotedistance@length=\skip71
+\mdf@userdefinedwidth@length=\skip72
+\mdf@needspace@length=\skip73
+\mdf@frametitleaboveskip@length=\skip74
+\mdf@frametitlebelowskip@length=\skip75
+\mdf@frametitlerulewidth@length=\skip76
+\mdf@frametitleleftmargin@length=\skip77
+\mdf@frametitlerightmargin@length=\skip78
+\mdf@shadowsize@length=\skip79
+\mdf@extratopheight@length=\skip80
+\mdf@subtitleabovelinewidth@length=\skip81
+\mdf@subtitlebelowlinewidth@length=\skip82
+\mdf@subtitleaboveskip@length=\skip83
+\mdf@subtitlebelowskip@length=\skip84
+\mdf@subtitleinneraboveskip@length=\skip85
+\mdf@subtitleinnerbelowskip@length=\skip86
+\mdf@subsubtitleabovelinewidth@length=\skip87
+\mdf@subsubtitlebelowlinewidth@length=\skip88
+\mdf@subsubtitleaboveskip@length=\skip89
+\mdf@subsubtitlebelowskip@length=\skip90
+\mdf@subsubtitleinneraboveskip@length=\skip91
+\mdf@subsubtitleinnerbelowskip@length=\skip92
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box70
+\mdf@footnotebox=\box71
+\mdf@splitbox@one=\box72
+\mdf@splitbox@two=\box73
+\mdf@splitbox@save=\box74
+\mdfsplitboxwidth=\skip93
+\mdfsplitboxtotalwidth=\skip94
+\mdfsplitboxheight=\skip95
+\mdfsplitboxdepth=\skip96
+\mdfsplitboxtotalheight=\skip97
+\mdfframetitleboxwidth=\skip98
+\mdfframetitleboxtotalwidth=\skip99
+\mdfframetitleboxheight=\skip100
+\mdfframetitleboxdepth=\skip101
+\mdfframetitleboxtotalheight=\skip102
+\mdffootnoteboxwidth=\skip103
+\mdffootnoteboxtotalwidth=\skip104
+\mdffootnoteboxheight=\skip105
+\mdffootnoteboxdepth=\skip106
+\mdffootnoteboxtotalheight=\skip107
+\mdftotallinewidth=\skip108
+\mdfboundingboxwidth=\skip109
+\mdfboundingboxtotalwidth=\skip110
+\mdfboundingboxheight=\skip111
+\mdfboundingboxdepth=\skip112
+\mdfboundingboxtotalheight=\skip113
+\mdf@freevspace@length=\skip114
+\mdf@horizontalwidthofbox@length=\skip115
+\mdf@verticalmarginwhole@length=\skip116
+\mdf@horizontalspaceofbox=\skip117
+\mdfsubtitleheight=\skip118
+\mdfsubsubtitleheight=\skip119
+\c@mdfcountframes=\count312
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count313
+\c@mdf@env@i=\count314
+\c@mdf@env@ii=\count315
+\c@mdf@zref@counter=\count316
+Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip53
+\labelindent=\skip120
 \enit@outerparindent=\dimen297
 \enit@toks=\toks44
-\enit@inbox=\box70
-\enit@count@id=\count310
-\enitdp@description=\count311
+\enit@inbox=\box75
+\enit@count@id=\count317
+\enitdp@description=\count318
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks45
@@ -537,39 +655,39 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks47
 \thm@notefont=\toks48
 \thm@headpunct=\toks49
-\thm@preskip=\skip54
-\thm@postskip=\skip55
-\thm@headsep=\skip56
+\thm@preskip=\skip121
+\thm@postskip=\skip122
+\thm@headsep=\skip123
 \dth@everypar=\toks50
-) (./notes.aux)
+)) (./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count312
+\scratchcounter=\count319
 \scratchdimen=\dimen298
-\scratchbox=\box71
-\nofMPsegments=\count313
-\nofMParguments=\count314
+\scratchbox=\box76
+\nofMPsegments=\count320
+\nofMParguments=\count321
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count315
+\MPscratchCnt=\count322
 \MPscratchDim=\dimen299
-\MPnumerator=\count316
-\makeMPintoPDFobject=\count317
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
 \everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -579,14 +697,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 21.
-Package gensymb Info: Math companion symbols declared on input line 21.
-LaTeX Info: Redefining \degree on input line 21.
-LaTeX Info: Redefining \celsius on input line 21.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 21.
-LaTeX Info: Redefining \ohm on input line 21.
-Package gensymb Info: Using \textohm for \ohm on input line 21.
-Package gensymb Info: Using \textmu for \micro on input line 21.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 9.
+Package gensymb Info: Math companion symbols declared on input line 9.
+LaTeX Info: Redefining \degree on input line 9.
+LaTeX Info: Redefining \celsius on input line 9.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 9.
+LaTeX Info: Redefining \ohm on input line 9.
+Package gensymb Info: Using \textohm for \ohm on input line 9.
+Package gensymb Info: Using \textmu for \micro on input line 9.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -624,34 +742,49 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 42.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 53.
+ [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./notes.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package mdframed Info: Not enough space on this page on input line 55.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 57.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 61.
+ [2] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29111 strings out of 474116
- 746037 string characters out of 5743682
- 1938187 words of memory out of 5000000
- 50889 multiletter control sequences out of 15000+600000
+ 30171 strings out of 474116
+ 768408 string characters out of 5743682
+ 1943187 words of memory out of 5000000
+ 51906 multiletter control sequences out of 15000+600000
  567354 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,6n,107p,1284b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,6n,121p,1339b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on notes.pdf (1 page, 124301 bytes).
+Output written on notes.pdf (2 pages, 128615 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

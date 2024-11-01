@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.5: Two Dimensional Systems and their Vector Fields}
+
+\begin{document}
+\maketitle
+\section{Motivation}
+We want to explore how vector fields of autonomous systems look.
+
+\section{Content}
+Suppose we have a constant coefficients autonomous system $$\begin{bmatrix}
+    \frac{dx}{dt} \\[3pt] \frac{dy}{dt}
+\end{bmatrix}= \begin{bmatrix}
+    a &\: b \\[3pt] c &\: d
+\end{bmatrix}\begin{bmatrix}
+    x \\[3pt] y\\
+\end{bmatrix}$$
+
+Solutions to this system look like $$\begin{bmatrix}
+    x \\y
+\end{bmatrix} = c_1\vec{v_1}e^{\lambda_1 t} + c_2\vec{v_2}e^{\lambda_2 t}$$where $\vec{v}$ and $\lambda$ are eigenvectors and eigenvalues respectively.
+
+Eigenvalues will determine how a phase diagram looks. Lets start by plugging in an eigenvector $\alpha \vec{v}$. We get $$\begin{bmatrix}
+    x' \\ y'
+\end{bmatrix} = \alpha\lambda \vec{v}$$because $P\vec{v} = \lambda\vec{v}$. 
+
+\begin{proposition}
+    \begin{enumerate}
+        \item If both of our eigenvalues are real and positive, we can see that the derivative of an eigenvector always points away from the origin. There is a critical point called a source at the origin.
+
+\item If both of our eigenvalues are real and negative, the derivative at an eigenvector points toward the origin. This is because, whatever the sign of $\alpha \vec{v}$ is, the sign of $\alpha\lambda\vec{v}$ is the opposite, which takes you closer to the origin. There is a critical point called a sink at the origin
+
+\item If one eigenvalue is positive and one eigenvalue is negative, then the directionality of the derivative depends on where you start, and we say there is a saddle critical point at the origin.
+
+\item If both eigenvalues are purely imaginary, with no real component, then the vector field forms an ellipse, and you orbit the origin, which is a center critical point.
+\item If the eigenvalues are complex with a positive real part, then the derivative spirals away from the origin, and we get a spiral source critical point
+\item If both eigenvalues are complex with an imaginary real part, then the derivative spirals towards the origin, and we get a spiral sink critical point.
+    \end{enumerate}
+
+\end{proposition}
+
+\begin{customproof}
+\begin{enumerate}
+    \item Since $\lambda$ is positive, the sign of $\alpha\vec{v}$ is equal to the sign of $\lambda\alpha\vec{v}$, so they point in the same direction. Since the eigenvector always points away from the origin, so will the derivative.
+    \item Since $\lambda$ is negative, the sign of $\alpha\vec{v}$ is opposite the sign of $\lambda\alpha\vec{v}$, so they point in opposite directions. Since the eigenvector always points away from the origin, the derivative always points towards the origin.
+    \item This is a mixture of the previous two, so depending on which angle you approach the origin from, the derivative will point in a different direction.
+    \item With only imaginary components, our solution looks something like $$y=\begin{bmatrix}
+        c_1\cos(bx) \\ c_2\sin(bx)
+    \end{bmatrix} + \begin{bmatrix}
+        c_1\sin{bx} \\ -c_2\cos{bx}
+    \end{bmatrix}$$which is the parametric equation for an ellipse, so our solution is elliptical.
+    \item If we have a positive real part, then our solutions look like $$y=e^t\begin{bmatrix}
+        c_1\cos(bx) \\ c_2\sin(bx)
+    \end{bmatrix} + e^t\begin{bmatrix}
+        c_1\sin{bx} \\ -c_2\cos{bx}
+    \end{bmatrix}$$and since $e^t$ is constantly growing, our solutions grow in magnitude as well.
+    \item If we have a negative real part, then our solutions look like $$y=e^{-t}\begin{bmatrix}
+        c_1\cos(bx) \\ c_2\sin(bx)
+    \end{bmatrix} + e^{-t}\begin{bmatrix}
+        c_1\sin{bx} \\ -c_2\cos{bx}
+    \end{bmatrix}$$and since $e^{-t}$ is constantly shrinking, our solutions shrink in magnitude as well.
+\end{enumerate}
+\end{customproof}
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.11: Rank of a Matrix}
+
+\begin{document}
+\maketitle
+\begin{definition}[Rank]
+The \textbf{rank} of a matrix is the number of linearly independent rows or colums a matrix has.
+\end{definition}
+
+\begin{definition}[Submatrices]
+A submatrix is a matrix obtained by removing one or more columns or rows from a matrix
+\end{definition}
+
+\begin{proposition}
+The rank of a matrix is also equivalent to the size of the largest square submatrix with nonzero determinant.
+\end{proposition}
+
+\begin{customproof}
+A determinant of a matrix is nonzero if and only if the rows and columns are linearly independent. As such, the largest square submatrix with nonzero determinant is found by removing all linearly dependent rows or columns, and all that is left behind is the linearly dependent ones, giving the rank.
+\end{customproof}
+
+\end{document}

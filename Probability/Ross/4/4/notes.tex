@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.4: Expected Values of Functions of Random Variables}
+
+\begin{document}
+\maketitle
+\section{Motivation \& Goals:}
+Suppose I have a discrete random variable $X$, and a function $g(X) = Y$ transforming that random variable into another random variable $Y$? What is the expected value of $Y$?
+
+\section{Content}
+\ 
+\begin{proposition}
+If $X$ is a discrete random variable with values $x_i$, and with respective probabilities $p(x_i)$, then $E(g(X))$, the expected value of the transformed variable, can be calculated by $\sum_{i} g(x_i)p(x_i)$.
+\end{proposition}
+\begin{customproof}
+The events in the original variable still occur in the same proportions, so $g(x_i)$ occurs just as frequently as $x_i$, as such, to get the expected value for $g_{X}$, we just take the expected value of $X = \sum_{i}x_ip(x_i)$ and swap $x_i$ for $g_(x_i)$ to get $E(g(X)) = \sum_{i}g(x_i)p(x_i)$
+\end{customproof}
+
+\begin{example}[4a]
+Let $X$ denote a random variable with $P(\{X = -1\}) = .2 \ P(\{X=0\}) = .5 \ P(\{X = 1 \}) = 1$. What is $E(X^2)$?
+\end{example}
+
+\begin{solution}
+$$E(X^2) = -1^2P(\{X=-1\}) + 0^2P(\{X=0\}) + 1^2P(\{X=1\}) = 1*.2 + .5+0 + 1*.3 = .5$$
+\end{solution}
+
+\end{document}

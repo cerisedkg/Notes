@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.6: Second Order Systems and Applications}
+
+\begin{document}
+\maketitle
+\section{Motivation:}
+In this section, we want to learn how to solve more complex systems of springs and masses.
+
+\section{Content}
+\begin{example}
+Suppose we have a system of three masses, $m_1$, $m_2$, and $m_3$, and a spring with constant $k_1$ connects $m_1$ to the wall, $k_2$ connects $m_1$ and $m_2$, $k_3$ connects $m_2$ and $m_3$, and $k_4$ connects $m_3$ to the other wall. Assume there are no forces other than the spring forces on the masses. Can you find equations governing the motion of the three masses?
+\end{example}
+
+\begin{solution}
+Let $x_1$, $x_2$, $x_3$ be the displacement from the rest positions of each mass, with right being positive. Now we write the force equations for each mass:
+
+For $m_1$, only $k_1$ and $k_2$ are acting on it, so the equation is $$m_1 x''_1 = -k_1x_1 + k_2(x_2-x_1)$$Since the force of a spring acts in the opposite direction of displacement, $k_1x_1$ is negative and $k_2(x_2-x_1)$ is positive. 
+
+For $m_2$, $k_2$ and $k_3$ act on it, so $$m_2 x''_2 = -k_2(x_2-x_1) + k_3(x_3-x_2)$$
+
+For $m_3$, $k_3$ and $k_4$ act on it, so $$m_3x''_3 = -k_3(x_3-x_2) - k_4x_3$$
+
+Rearranging all three equations, we get:
+
+$$m_1x''_1 = -(k_1+k_2)x_1 + k_2x_2$$$$m_2x''_2 = k_2x_1 -(k_2 + k_3)x_2 + k_3x_3$$$$m_3x''_3 = k_3x_2 - (k_3 + k_4)x_3$$
+
+Putting these in matrix form, we get $$M\vec{x}'' = K\vec{x}$$where $$M = \begin{bmatrix}
+    m_1 & 0 & 0\\
+    0 & m_2 & 0\\
+    0 & 0 & m_3\\
+\end{bmatrix}$$$$K = \begin{bmatrix}
+    -(k_1+k_2) & k_2 & 0\\
+    k_2 & -(k_2+k_3) & k_3\\
+    0 & k_3 & -(k_3+k_4)\\
+\end{bmatrix}$$Now, we want to isolate $\vec{x}''$, so we left multiply by $$M ^{-1} = \begin{bmatrix}
+    \frac{1}{m_1} & 0 & 0\\
+    0 & \frac{1}{m_2} & 0\\
+    0 & 0 & \frac{1}{m_3}\\
+\end{bmatrix}$$ to get $$\vec{x}'' = M ^{-1} K \vec{x}$$Multiplying out the matrices, we get $$A = \begin{bmatrix}
+    \frac{-(k_1+k_2)}{m_1} & \frac{k_2}{m_1} & 0\\
+    \frac{k_2}{m_2} & \frac{-(k_2 + k_3)}{m_2} & \frac{k_3}{m_2}\\
+    0 & \frac{k_3}{m_3} & \frac{-(k_3+k_4)}{m_3}
+\end{bmatrix}$$The actual contents of the matrix are unimportant, but now our equation looks like $$\vec{x}'' = A\vec{x}$$Notice how all of the values in the coefficient matrix are constants, so we can solve this using the constant coefficients eigenvalue method.
+
+Lets guess that the vector of our solutions looks like $\vec{x} = \vec{v}e^{\alpha t}$ where $\vec{v}$ is an eigenvector. Then, $\vec{x}'' = \alpha^2e^{\alpha t}$. Plugging into our differential equation, we get that$$\alpha^2e^{\alpha t} = A\vec{v}e^{\alpha t}$$We then divide by $e^{\alpha t}$ to get$$\alpha^2\vec{v} = A\vec{v}$$Therefore, $\alpha^2$ must be an eigenvalue of $A$ and $\vec{v}$ must be an eigenvector of $A$. 
+
+Now, usually, $\alpha^2$ will be negative, so $\alpha = \pm i\omega$, a complex number. Then, plugging back into our guess, we get that $$\vec{x} = \vec{v}e^{\alpha t} = \vec{v}(\cos(\omega t) + i\sin(\omega t))$$By taking the real and imaginary components, we get two solutions: $\vec{v}\cos(\omega t)$ and $\vec{v}\sin(\omega t)$
+\end{solution}
+
+This solution works for any system of $n$ masses and $n+1$ springs! You just make an $n$-dimensional matrix, and everything works!
+
+\begin{example}
+Suppose we have two masses, $m_1$ and $m_2$, with a spring connecting $m_1$ to the left wall, and a spring connecting $m_2$ to $m_1$. Given that $m_1 = 2, m_2 = 1, k_1 = 4, k_2 = 2$, wherehat are the equations of motion for this system?
+\end{example}
+
+\begin{solution}
+Lets begin by defining $x_1$ to be the displacement from when $m_1$ is at rest (right is positive), and $x_2$ to be the displamenent from when $m_2$ is at rest.
+
+Lets start by writing our force equations: $$m_1x''_1 = -k_1x_1 + k_2(x_2-x_1)$$$$m_2x''_2 = -k_2(x_2-x_1)$$Rearranging, we get $$m_1x''_1 = -(k_1+k_2)x_1 + k_2x_2$$ $$m_2x''_2 = k_2x_1-k_2x_2$$Putting it in matrix form, we get $$M\vec{x}'' = K\vec{x}$$where$$M = \begin{bmatrix}
+    m_1 & 0 \\ 0 & m_2
+\end{bmatrix}$$$$K = \begin{bmatrix}
+    -(k_1+k_2) & k_2\\k_2 & -k_2
+\end{bmatrix}$$Now, we left-multiply by $M ^{-1}$ to get $$\vec{x}'' = A\vec{x}$$where$$A = \begin{bmatrix}
+    \frac{-(k_1+k_2)}{m_1} & \frac{k_2}{m_1} \\ \frac{k_2}{m_2} & \frac{-k_2}{m_2}
+\end{bmatrix}$$Plugging in, we get $$A = \begin{bmatrix}
+    -3 & 1 \\ 2 & -2
+\end{bmatrix}$$The eigenvalues of this matrix are $\lambda = -1, -4$, and the corresponding eigenvectors are $\begin{bmatrix}
+    1\\2
+\end{bmatrix}, \begin{bmatrix}
+    1 \\ -1
+\end{bmatrix}$. We can calculate that $\omega = 1, 2$, and our solutions are $$\vec{x} = \begin{bmatrix}
+    1\\2
+\end{bmatrix}(a_1\cos(t) + b_1\sin(t)) + \begin{bmatrix}
+    1\\-1
+\end{bmatrix}(a_2\cos(2t) + b_2\sin(2t))$$Our two natural frequencies of oscillation are $1$ and $2$, and the two terms in the solution are called normal modes. 
+\end{solution}
+
+%Add a section about forced oscillations.
+\subsection{Forced Oscillation}
+
+Suppose our system has a driving displacement, so that our equation is $$\vec{x}'' = A\vec{x} + \vec{F}\cos(\omega t)$$
+
+Remember that to form a solution to a non-homogeneous constant coefficient equation, we need a complementary solution and a particular solution. We'll just solve the particular solution right now.
+
+Lets guess that our particular solution $\vec{x}_p = \vec{c}\cos(\omega t)$. We don't include a $\sin$ term because we only have a second derivative.
+
+We calculate that $\vec{x}''_p = -\omega^2\vec{c}\cos(\omega t)$, and plugging in, we get $$-\omega^2\vec{c}\cos(\omega t) =A\vec{c}\cos(\omega t) + \vec{F}\cos(\omega t)$$Rearranging, we get $$(A + \omega^2I)\vec{c} = - \vec{F}$$therefore$$\vec{c} = (A+\omega I) ^{-1} (-\vec{F})$$
+\end{document}

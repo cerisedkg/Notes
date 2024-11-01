@@ -1,4 +1,4 @@
-Hello! This is a repository for self-study notes from Alexander Liang, a college student in UCI's Class of 2028.
+Hello! This is a repository for self-study notes from Alexander Liang, an undergrad majoring in Math and Physics in UCI's Class of 2028.
 
 # **Purpose:**
 

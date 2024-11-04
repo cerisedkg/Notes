@@ -17,12 +17,12 @@ Alexconfig can be accessed in the Alexconfig repo on my profile.
 I edit the document in VSCode using LaTeX Workshop, with custom macros to help facilitate live typing in lecture.
 
 # **Schedule:**
-I split subjects into two categories: Permanent and Pleasure.
+I split subjects into two categories: Permanent and Leisure.
 Subjects in the permanent category are for classes that I am currently taking or subjects that I need to study urgently.
-Subjects in the pleasure category are topics I find personally interesting and are learned via self-study. 
+Subjects in the leisure category are topics I find personally interesting and are learned via self-study. 
 
 I will try to complete a chapter for every subject in the permanent category at least once per business day, with exceptions in case of illness and injury, holidays, or other extenuating circumstances.
-I will try to complete one chapter from one subject in the pleasure category every day, though this is conditional on whether I have the time and willpower to continue studying at the end of the day.
+I will try to complete one chapter from one subject in the leisure category every day, though this is conditional on whether I have the time and willpower to continue studying at the end of the day.
 
 Subjects in the Permament category:
 - Abstract Algebra
@@ -31,7 +31,7 @@ Subjects in the Permament category:
 - Math Methods
 - Kinematics
 
-All other subjects are in the Pleasure category.
+All other subjects are in the Leisure category.
 
 # **TODO:**
 - Create a style guide outlining the philosophy and formatting of the project

@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.5: Variance}
+
+\begin{document}
+\maketitle
+\section{Motivation:}
+We want to know about the spread of a random variable, or how much the outputs can differ from one another.
+
+\section{Content:}
+
+\begin{definition}[Variance]
+If $X$ is a random variable with expected value (mean) $E[X]$, then the \textbf{variance} of $X$, $\text{Var}(X)$, is defined as: $$\text{Var}(X) = E[(X-E[X])^2]$$ 
+\end{definition}
+
+\begin{proposition}
+Another formula for $\text{Var}(X)$ is $$\text{Var}(X) = E[X^2]-E[X]^2$$
+\end{proposition}
+
+\begin{customproof}
+$$\text{Var}(X) = E[(X-E[X])^2]$$By definintion of the expected value of a random variable, we get $$\sum_{x}(x-E[X])^2p(x)$$or the average distance of all values of $X$ from the mean of $X$, weighted by the probability of getting those variables. Expanding, we get $$\sum_{x}(x^2-2E[X]x+E[X]^2)p(x)$$and by spliting the summation, we get$$\sum_x x^2p(x) - 2E[X]\sum_x xp(x) + E[X]^2\sum_xp(x)$$For the first term, this is the definition of the expected value of $X^2$. For the second term, $E[X] = \sum_{x} xp(x)$, so this entire term evaluates to $-2E[X]^2$, and for the third term, the sum of the mass density function $p(x)$ is equal to $1$ by definition, so the entire term evaluates to $E[X]^2$.
+
+This means the entire expression becomes $$\text{Var}(X) = E[X^2] - E[X]^2$$
+\end{customproof}
+
+\begin{example}
+Find $\text{Var}(X)$ if $X$ represents the outcome of a fair dice.
+\end{example}
+
+\begin{solution}
+We will use the formula $\text{Var}(X) = E[X^2]-E[X]^2$. $E[X] = 1\cdot\frac{1}{6} + 2\cdot\frac{1}{6} + 3\cdot\frac{1}{6} + 4\cdot\frac{1}{6} + 5\cdot\frac{1}{6} + 6\cdot\frac{1}{6} = \frac{21}{6} = \frac{7}{2}$
+
+$E[X^2] = 1^2\cdot \frac{1}{6} + 2^2\cdot \frac{1}{6} + 3^2\cdot \frac{1}{6} + 4^2\cdot \frac{1}{6} + 5^2\cdot \frac{1}{6} + 6^2\cdot \frac{1}{6} = \frac{91}{6}$
+
+$$\text{Var}(X) = \frac{91}{6} - \frac{49}{4} = \frac{35}{12}$$
+\end{solution}
+
+\begin{proposition}
+$$\text{Var}(aX + b) = a^2\text{Var}(X)$$
+\end{proposition}
+
+\begin{customproof}
+Let $\mu = E[X]$ and remember that $E[aX+b] = a\mu + b$. Then, $$\text{Var}(aX+b) = E[(aX+b-a\mu - b)^2]$$Then, cancelling $b$ on the inside, we get$$E[(aX-a\mu)^2]$$and we can factor out an $a$ to get$$E[a^2(X-\mu)^2]$$and this is equal to $$a^2E[(X-\mu)^2]$$which is equal to$$a^2\text{Var}(x)$$.
+\end{customproof}
+
+\begin{definition}[Standard Deviation]
+The \textbf{standard devation} of a random variable $X$ is given by $$\text{SD}(X) = \sqrt{\text{Var}(X)}$$ 
+\end{definition}
+\end{document}

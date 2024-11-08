@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.12: Special Types of Square Matrices}
+
+\begin{document}
+\maketitle
+\section{Motivation:}
+We want to explore some special square matrices which have unique properties.
+
+\section{Content:}
+\subsection{Diagonal Matrices}
+
+\begin{definition}[Diagonal Matrices]
+    \ 
+A \textbf{diagonal matrix} is a square matrix with all of its nonzero terms in the main/leading diagonal. For example, $$\begin{bmatrix}
+    1&0&0\\0&0&0\\0&0&2
+\end{bmatrix}$$is a diagonal matrix. Additionally, diagonal matrices can be denoted with $$\text{diag}(A_{11}, A_{22}, A_{33}, ... A_{nn}) = \begin{bmatrix}
+    A_{11}& 0 & 0 & ... & 0\\
+    0 & A_{22} & 0 & ... & 0\\
+    0 & 0 & A_{33} & ... & 0\\
+    \vdots & \vdots & \vdots & \ddots & \vdots\\
+    0 & 0 & 0 & ... & A_{nn}
+\end{bmatrix}$$
+\end{definition}
+
+\begin{proposition}
+If $A$ and $B$ are $n$ by $n$ diagonal matrices, then:
+\begin{enumerate}
+    \item $\vert A\vert = A_{11}A_{22}A_{33}...A_{nn}$
+    \item $A ^{-1} = \text{diag}(\frac{1}{A_{11}}, \frac{1}{A_{22}}, \frac{1}{A_{33}},...,\frac{1}{A_{nn}})$
+    \item $AB = BA$
+\end{enumerate}
+\end{proposition}
+
+\subsection{Upper and Lower Triangular Matrices}
+\ 
+\begin{definition}[Upper and Lower Triangular Matrices]
+An \textbf{upper triangular matrix} is a matrix with nonzero terms only on or above the leading diagonal. Likewise, a \textbf{lower diagonal matrix} is a matrix with nonzero terms only on or below the leading diagonal.  
+\end{definition}
+
+\begin{proposition}
+If $A$ is an $n$ by $n$ upper or lower triangular matrix, then $$\vert A\vert = A_{11}A_{22}A_{33}...A_{nn}$$  
+\end{proposition}
+
+\subsection{Symmetric Matrices}
+\ 
+\begin{definition}[Symmetric Matrices]
+A \textbf{symmetric matrix} is a matrix such that $A = A^T$ and an \textbf{antisymmetric matrix} is a matrix where $A^T = -A$   
+\end{definition}
+
+\begin{proposition}
+\ 
+\begin{enumerate}
+    \item We can write any square matrix as the sum of one symmetric and one antisymmetric matrix.  
+    \item If a matrix is symmetric, then so is its transpose. 
+\end{enumerate}
+\end{proposition}
+
+\begin{customproof}
+    \   
+\begin{enumerate}
+    \item Given a square matrix $A$, we can write $$A = \frac{1}{2}(2A) + \frac{1}{2}A^T - \frac{1}[2]A^T$$then, by grouping terms, we get$$A = \frac{1}{2}(A+A^T) + \frac{1}{2}(A - A^T)$$The first term is symmetric, and the second term is anti-symmetric.
+    \item Let $A$ be a symmetric or antisymmetric matrix. Then: $$(A ^{-1})^T = (A^T) ^{-1} = \pm A ^{-1} $$
+\end{enumerate}
+\end{customproof}
+
+\subsection{Orthogonal Matrices}
+\ 
+\begin{definition}[Orthogonal Matrices]
+\textbf{Orthogonal matrices} are matrices with the property that $$A^T = A ^{-1}$$ 
+\end{definition}
+
+\begin{proposition}
+    \ 
+\begin{enumerate}
+    \item The inverse of an orthogonal matrix is orthogonal.
+    \item The determinant of an orthogonal matrix is always $\pm 1$.
+\end{enumerate}
+\end{proposition}
+
+\begin{customproof}
+Suppose that $A$ is an orthogonal matrix.
+\begin{enumerate}
+    \item $(A ^{-1})^T =(A^T)^{-1} = (A ^{-1} )^{-1}$
+    \item $\vert A^T A \vert = \vert A^T\vert \vert A\vert = \vert A\vert^2 = \vert I\vert = 1$   
+\end{enumerate}
+\end{customproof}
+Since the determinant of an orthognal matrix is always either $1$ or $-1$. 
+the linear transformation associated with an orthogonal matrix is always one that keeps vectors at the same length, and just rotates them, as the determinant of a matrix is the scale factor of the associated transformation.
+
+\subsection{Hermitian and Anti-Hermitian Matrices}
+\ 
+\begin{definition}[Hermitian Matrices]
+A \textbf{hermitian matrix} is a matrix where $A = A^\dagger$ and likewise, an \textbf{anti-hermitian} matrix is one where $A^\dagger = -A$.   
+\end{definition}
+
+\begin{proposition}
+Any matrix can be written as the sum of a hermitian and an anti-hermitian matrix.
+\end{proposition}
+
+\begin{customproof}
+Suppose $A$ is a matrix. Then, $A = \frac{1}{2}A + \frac{1}{2}A + \frac{1}{2}A^\dagger - \frac{1}{2}A^\dagger = \frac{1}{2}(A+A^\dagger) + \frac{1}{2}(A-A^\dagger)$. Notice that since $(A^\dagger)^\dagger = A$, $(A+A^\dagger)^\dagger = (A^\dagger + A)$, so $(A + A^\dagger)$ is a hermitian matrix, and likewise, $(A - A^\dagger)^\dagger = (A^\dagger - A) = -(A-A^\dagger)$, so $(A-A^\dagger)$ is an anti-hermitian matrix. 
+\end{customproof}
+
+\subsection{Unitary Matrices}
+\ 
+
+\begin{definition}[Unitary Matrices]
+A \textbf{unitary matrix} is a matrix such that $A ^\dagger = A ^{-1}$. 
+\end{definition}
+
+If a matrix is real, then $A ^\dagger = A^T$, so if $A^T = A ^{-1}$, like in an orthognal matrix, then it is also unitary. 
+
+\begin{proposition}
+Suppose $A$ is a unitary matrix.
+\begin{enumerate}
+    \item The inverse of a unitary matrix is also unitary.
+    \item The determinant of a unitary matrix is always $\pm 1$.  
+\end{enumerate}
+\end{proposition}
+
+\subsection{Normal Matrices}
+\ 
+\begin{definition}[Normal Matrices]
+A matrix $A$ is a \textbf{normal matrix} if $AA ^\dagger = A ^\dagger A$.
+\end{definition}
+
+\begin{proposition}
+    \
+\item Hermitian, unitary, symmetric, and orthogonal matrices are normal.
+\item If $A$ is normal then so is $A ^{-1}$
+\end{proposition}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.7: Multiple Eigenvalues}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+What do we do when we encounter repeated eigenvalues and defective eigenvalues?
+
+\section{Content}
+
+\subsection{Repeated Eigenvalues}
+
+\begin{definition}[Repeated Eigenvalues]
+Whenever there is a repeated root of the characteristic equation $$\text{det}(A-\lambda I) = 0$$with multiplicity $m$, then we have a repeated eigenvalue. $m$ is called the \textbf{algebraic multiplicity}. The number of linearly independent eigenvectors corresponding to this eigenvalue is a distinct number, called the \textbf{geometric multiplicity}. The geometric multiplicity is also the dimension of the corresponding \textbf{eigenspace} (the span of all eigenvectors associated with a corresponding eigenvalue).  
+\end{definition}
+The above definition makes sense if you think about it. If we have an eigenvalue with two associated eigenvectors, $\vec{v}_1$ and $\vec{v}_2$, then linear combinations of them also result in eigenvectors, because $$A(\vec{v}_1 + \vec{v}_2) = A\vec{v}_1 + A\vec{v}_2 \text{ (by properties of matrix multiplication)} = \lambda\vec{v}_1 + \lambda\vec{v}_2 = \lambda(\vec{v}_1 + \vec{v}_2)$$And so having multiple linearly independent eigenvectors means you get an eigenspace of that many dimensions.
+
+If we get a matrix with repeated eigenvalues, just assign a unique eigenvector to each term, so for a matrix $$A = \begin{bmatrix}
+    3 & 0\\ 0 & 3
+\end{bmatrix}$$which has eigenvalues $\lambda = 3$ and eigenvectors $\begin{bmatrix}
+    1\\0
+\end{bmatrix}$,$\begin{bmatrix}
+    0\\1
+\end{bmatrix}$ our result looks like $$\vec{x} = c_1\begin{bmatrix}
+    1\\0
+\end{bmatrix}e^{3t} + c_2 \begin{bmatrix}
+    0\\1
+\end{bmatrix}e^{3t}$$
+
+\subsection{Defective Eigenvalues}
+\ 
+\begin{definition}
+Sometimes, the eigenvectors for our repeated eigenvalue are not linearly independent. In this case, our geometric multiplicity is less than our algebraic multiplicity, and we call the eigenvalue \textbf{defective}. The difference between the two is called the \textbf{defect}.   
+\end{definition}
+
+Suppose we have two linearly dependent eigenvalues $\vec{v}_1$ and $\vec{v}_2$. We can't form a general solution out of these, so lets just slap an $x$ on one of them (in this case, its a $t$ as our independent variable but I digress). 
+
+We get $$\vec{x} = \vec{v}_1 e^{\lambda_1t} + t\vec{v}_2 e^{\lambda_1t}$$Lets see if this is actually a solution. Differentiating, we get $$\vec{x}' = (\lambda_1\vec{v}_1 + \vec{v}_2)e^{\lambda_1 t} + \lambda_1t\vec{v}_2e^{\lambda_1 t}$$Our solution must satisfy $A\vec{x} = \vec{x}'$ so plugging in our original equation, we get $$\vec{x}' = A\vec{v}_1e^{\lambda_1t} + At\vec{v}_2e^{\lambda_1t}$$Matching terms and then rearranging, we get that $$(A-\lambda I)\vec{v}_1 = \vec{v}_2$$and$$(A-3I)\vec{v}_2 = 0$$and so our new vector has to satisfy these two equations. 
+\end{document}

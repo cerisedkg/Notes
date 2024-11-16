@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.6: Bernoulli Trials and Binomial Random Variables}
+
+\begin{document}
+\maketitle
+\section{Motivation}
+
+We want to study a specific kind of random variable, the binomial random variable, and its applications.
+
+\section{Content}
+\ 
+\begin{definition}[Bernoulli Trials]
+A \textbf{Bernoulli trial} is a random variable with chance $p$ to take on a value of $1$ (representing success), and a chance $1-p$ to take on a value of $0$ (representing failure). Successive Bernoulli trials must be independent. 
+\end{definition}
+
+Bernoulli trials usually represent independent events, like a coin flip. 
+
+The expected value of a Bernoulli trial $X$ is $$E[X] = 1*p + 0*(1-p) = p$$And the variance is $$\text{Var}(X) = E[X^2] - E[X]^2 = 1^2*p + 0^2*(1-p) - (1*p + 0*(1-p))^2 = p - p^2 = p(1-p)$$
+
+\subsection{Binomial Random Variables}
+
+What if we wanted to find the outcome of $n$ successive Bernoulli trials, like the likelihood of getting exactly three heads from flipping a coin $5$ times? 
+
+\begin{definition}[Binomial Random Variable]
+A \textbf{binomial random variable} $X$ is the sum of $n$ identical and independent Bernoulli trials, each with a success chance of $p$. 
+\end{definition}
+
+Therefore, the binomial random variable can take on values of $X = \{0,1,2,3,4,...,n\}$
+
+The probability mass function of a binomial random variable is given by $$P\{X = x\} = \binom{n}{x}p^x (1-p)^{n-x}$$Given any number of successes $x$, there are $\binom{n}{x}$ ways of making that happen; we could win the first trial, lose the second, etc etc, and each way requires $x$ successes and $n-x$ failures, and the chance of that happening is $p^x(1-p)^{n-x}$, hence the probability mass function.
+
+What about the expected value? We could plug everything in and solve the hard algebra, but if we notice that each individual trial is independent from all others, and also know that the expected value of the sum of individual trials is the sum of the individual expected values, we get that the overall expected value is $$E[X] = np$$
+
+The same goes for variance, giving us $$\text{Var}(X) = np(1-p)$$  
+\end{document}

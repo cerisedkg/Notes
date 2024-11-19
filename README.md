@@ -7,9 +7,7 @@ I believe that teaching is the best way to learn a topic yourself, so I create s
 
 Most of the topics in this repository are taught through self-study, although I may take classes on them at UCI afterwards.
 
-This repo is a living document, and you can see my style shift over time. 
-In the beginning, I copied chapters in the textbooks word for word, but now, I prioritize clarity, originality, and conceptual understanding over rigor.
-The current philosophy will be in the style guide.
+This repo is a living document, and you can see my style shift over time as I develop new tools and techniques for creating better documents.
 
 # **Setup:**
 Most of the writing is done in LaTex using MacTex/TexLive, with a custom package called alexconfig, which provides the block highlighting and formatting for the document.

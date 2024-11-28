@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{8.13: Eigenvectors and Eigenvalues}
+
+\begin{document}
+\maketitle
+\section{Motivation}
+We want to define eigenvectors and eigenvalues, and their properties and uses
+
+\section{Content}
+\begin{definition}[Eigenvectors and Eigenvalues]
+    \textbf{Eigenvectors} of a particular linear transformation $A$ are vectors $x$ that satisfy the equation $$Ax = \lambda x$$Instead of being rotated by $A$, they are scaled by an \textbf{eigenvalue} $\lambda$. 
+\end{definition}
+\begin{proposition}
+If $x_i$ and $\lambda_i$ are the eigenvalues and eigenvectors of some matrix $A$,then the eigenvectors and values of $A ^{-1}$ are $x_i$ and $\frac{1}{\lambda_i}$. 
+\end{proposition}
+
+\begin{proposition}
+If $A$ is a normal matrix ($AA ^\dagger = A ^\dagger A$), then the eigenvalues of $A ^\dagger $ are the complex conjugates of the eigenvalues of $A$. 
+\end{proposition}
+
+\begin{customproof}
+We start with $$(A-\lambda I)x = 0$$If we take the hermitian conjugate of both sides, we get $$((A - \lambda I)x)^\dagger = 0$$And by the properties of hermitian conjugates, this turns into $$x ^\dagger (A-\lambda I) ^\dagger =0$$Then, multiplying both sides by $(A-\lambda I)x$, we have$$x ^\dagger (A-\lambda I) ^\dagger (A-\lambda I)x = 0$$When expand $(A-\lambda I)^\dagger (A-\lambda I)$ we get $AA ^\dagger + -\lambda^* A - \lambda A ^\dagger  + \lambda\lambda^*$. Each of these elements commute (since $A$ is normal), so we get that $(A-\lambda I) ^\dagger (A-\lambda I) = (A-\lambda I)(A-\lambda I) ^\dagger$, and the entire equivalence becomes $$x ^\dagger (A-\lambda I)(A-\lambda I) ^\dagger x = 0$$Then, factoring out hermitian conjugates, we get $$((A-\lambda I) ^\dagger x)^\dagger (A-\lambda I) ^\dagger x = 0$$This gives us that $$(A-\lambda I) ^\dagger x = 0$$And distributing the conjugate, we get $$(A^\dagger-\lambda^*I)x = 0$$ Therefore, the eigenvalues of $A ^\dagger $ are $\lambda^*$. 
+\end{customproof}
+\end{document}

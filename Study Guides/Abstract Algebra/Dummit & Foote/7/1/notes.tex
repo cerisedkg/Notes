@@ -48,6 +48,8 @@ If a ring $R$ has a (multiplicative) identity $1$, which is not equal to its add
     \item The integers $\mathbb{Z}$ under normal addition and multiplication is a ring, as the integers are a group under addition, and normal multiplication is associative and distributive. It is also (multiplicatively) commutative and has a (multiplicative) identity, $1$.
     \item The rational numbers, real numbers, and complex numbers under normal addition and multiplication are all rings. They are also commutative, have identities, and multiplicative inverses, so they are all fields as well.
     \item The quotient group $\mathbb{Z}/n\mathbb{Z}$ under modular addition and multiplication is a ring with additive identity $\bar{0}$ (the equivalence class of $0$), and multiplicative identity $\bar{1}$. 
+    \item We can even have a ring of functions! Let $X$ be a nonempty set and $A$ be a ring, and let $R$ be the set of all functions mapping $X$ to $A$. Then, let $f, g$ be members of $R$, and let $x$ be a member of $X$. We can define addition of elements of $R$ to be $(f+g)(x) = f(x) + g(x)$, and since $f(x)$ and $g(x)$ are members of $A$, they will commute under addition. Also, there will be an element $x_I$ where $f(x_I) = 0_A$, the identity in $A$, by the definition of a mapping, there will be inverses, because there are additive inverses in $A$, and it is closed because $(A,+)$ is closed. If we also define multiplication by $(f\cdot g)(x) = f(x)g(x)$, then we also have multiplication which is associative and distributes over addition, as $f(x)$ and $g(x)$ are members of the ring $A$. 
+    \item We can construct rings without multiplicative identities as well. Suppose we create a ring out of the even integers, $2\mathbb{Z}$, under addition and multiplication of integers. The identity for multiplication of integers, $1$, is not in $2\mathbb{Z}$. 
 \end{enumerate}
 \end{example}
 
@@ -88,7 +90,82 @@ And the right side becomes: $(h_1\times h_3) + (h_2\times h_3) = a_1a_3+a_1b_3i+
 
 They also have the same terms, so the equality holds.
 
-Since we proved that $(\mathbb{H},+)$ is an abelian group, and that multiplication is associative and distributive, we show that $\mathbb{H}$ is a ring.`x`''
+Since we proved that $(\mathbb{H},+)$ is an abelian group, and that multiplication is associative and distributive, we show that $\mathbb{H}$ is a ring.
 
 \end{customproof}
+
+\begin{proposition}
+Let $R$ be a ring and let $a$ and $b$ be in $R$. Then:
+\begin{enumerate}
+    \item $0a = a0 = 0$
+    \item $(-a)b = a(-b) = -(ab)$
+    \item $(-a)(-b) = ab$
+    \item If $R$ has a multiplicative identity $1$, then it is unique and $-a = (-1)a$. 
+\end{enumerate}
+\end{proposition}
+
+\begin{customproof}
+    \ 
+
+\begin{enumerate}
+    \item If we expand zero to form $0a = (0+0)a$ and then distribute, we get $0a = 0a + 0a$. Then, if we subtract by $0a$ on both sides, we get that $0 = 0a$
+    \item If we have $(-a)b = -ab$, we can add $ab$ on both sides to get $ab + (-a)b = 0$. Then, we can un-distribute to get $(a-a)b = 0$, so $0b = 0$, showing that the equality holds. 
+    \item Likewise, if we have $(-a)(-b) = ab$, we can add $-ab$ to both sides to get $(-a)(-b) + (-ab) = 0$. Then, by un-distributing the $b$, we get that $(-a)(-b+b) = 0$, so $(-a)0 = 0$, so the equality holds. 
+    \item Suppose $R$ had two multiplicative identities, $i$ and $j$. Then, $ia = a = ja$ so $ia - ja = 0$, so $(i-j)a = 0$, and this can only happen if $i-j = 0$, meaning $i = j$. For the second part, we have $-a = (-1)a$, and by adding $a$ to both sides, we get $0 = (-1)a + a$. We know that $a = 1a$ by definition of multiplicative identity, so we substitute to get $0 = (-1)a + 1a$, then, by un-distributing, we get $0 = (-1+1)a$, so $0 = 0a$, which is a true statement, meaning our prior statement is true. 
+\end{enumerate}
+\end{customproof}
+
+\begin{definition}[Zero Divisors]
+Let $R$ be a ring. If there exists a pair of nonzero elements $a,b$ in $R$ such that $ab = 0$, then $a$ and $b$ are \textbf{zero divisors}.
+
+In particular, $a$ is called a left zero divisor and $b$ is called a right zero divisor. 
+\end{definition}
+
+\begin{definition}[Units]
+Assume that $R$ has an identity $1\neq 0$. If there exists a pair of (not nessecarily unique) elements $u$ and $v$ in $R$ such that $uv = vu = 1$, then these elements are called \textbf{units}. In other words, if an element has a multiplicative inverse, it is a unit. 
+
+The set of all units forms a group under multiplication, which we will call $R^\times$. 
+\end{definition}
+
+\begin{theorem}
+A zero divisor can never be a unit and fields contain no zero divisors.
+\end{theorem}
+
+\begin{customproof}
+Suppose we have zero divisors $ab = 0$ and we say that $a$ is actually also a unit to some element $v$ such that $va = 1$. Then, $b = 1b = (va)b = v(ab) = v0 = 0$, but zero divisors must be nonzero elements, which gets us to a contradiction. Therefore, zero divisors can never be units.
+
+Since every element in a field has a multiplicative inverse, that means that every element in a field is a unit, so fields can't have any zero divisors. 
+\end{customproof}
+
+\begin{definition}[Integral Domains]
+A commutative ring with $1\neq 0$ is an integral domain if it has no zero divisors.
+\end{definition}
+
+\begin{proposition}
+If $R$ is a ring and $a, b, c$ are in $R$ and $a$ is not a zero divisors. Then, if $ab = ac$ then $a = 0$ or $b=c$. 
+\end{proposition}
+
+\begin{customproof}
+Subtract $ac$ from both sides to get $ab-ac = 0$. Then, un-distribute the $a$ to get $a(b-c) = 0$. The only way this is true is if $a = 0$ or $b-c = 0$, and we can rearrange the latter to get $b=c$. 
+\end{customproof}
+
+\begin{corollary}
+    Any finite integral domain is a field.
+\end{corollary}
+
+\begin{customproof}
+Suppose we have an integral domain $R$ and a element $a$ in $R$, and a map $x \rightarrow ax$. This mapping is injective because if two elements in the image, $ar_1 = ar_2$, then by the cancellation property, $r_1 = r_2$. It is also surjective since if you pick an element in the image, like $ar_k$, I can show you that the mapping takes $r_k$ to $ar_k$. As such, this map is a bijection. Since the ring is closed, the image must be a copy of the original ring. As such, there will be a multiplicative identity $1$ in the image, and therefore, $ab = 1$, so $a$ is a unit. The catch is, $a$ is arbitrary, so every element of $R$ is a unit, so $R$ is a field. 
+\end{customproof}
+
+\begin{definition}[Subrings]
+A subring $S$ of $R$ is a ring that is a subset of the elements in $R$. 
+\end{definition}
+
+\section{Exercises}
+
+\begin{enumerate}
+    \item Show that $(-1)^2 = 1$. \textbf{Proof:} $(-1)^2 = (-1)(-1) = (1)(1) \text{by the proposition that (-a)(-b) = ab} = 1$.
+    \item Prove that if $u$ is a unit in $R$ then so is $-u$. \textbf{Proof:} $ua = 1$ for some $a$ in $R$. $(-u)(-a) = ua$ and $-a$ is in $R$ because additive inverses are in $R$, so $(-u)(-a) = 1$ so $-u$ is a unit. 
+    \item Let $R$ be a ring with a (multiplicative) identity and let $S$ be a subring of $R$ containing the identity as well. Prove that if $u$ is a unit in $S$ then $u$ is a unit in $R$. Show by example that the converse is false. \textbf{Proof:} If $u$ is a unit in $S$, then there is some element $a$ such that $ua = 1$. Since $S$ is a subring of $R$, then $a$ is also in $R$, so $ua = 1$ in $R$ as well. The opposite isn't nessecarily true because $a$ might be in the ring but not in the subring. 
+\end{enumerate}
 \end{document}

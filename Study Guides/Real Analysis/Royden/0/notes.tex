@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{0: Preliminaries on Sets, Mappings, and Relations}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Families of Sets]
+
+We will call a set of sets a \textbf{family} to avoid confusion. We will denote it $\mathcal{F}$. 
+
+The union of a family $\mathcal{F}$, $\bigcup_{F\in\mathcal{F}}F$ is the set of points that are in at least one of the sets in $\mathcal{F}$. 
+
+The intersection of a family, $\bigcap_{F\in\mathcal{F}}F$ is the set of all points that are in all of the sets in $\mathcal{F}$. 
+\end{definition}
+
+\begin{definition}[Choice Function]
+A \textbf{choice function} is a function $f$ that maps a family $\mathcal{F}$ to $\bigcup_{F\in\mathcal{F}}F$, and with the criteria that for every $F$ in $\mathcal{F}$, $f(F)$ maps to an element that is in $F$.  
+\end{definition}
+
+\begin{definition}[Zermelo's Axiom of Choice]
+Let $\mathcal{F}$ be a nonempty collection of nonempty sets. Then there is a chocie function on $\mathcal{F}$. 
+\end{definition}
+
+\begin{definition}[Relation]
+A \textbf{relation} between members of a set $X$ is a subset $R$ of $X\times X$. If $(a,b)$ is in $R$, then we write $aRb$. 
+
+The relation is \textbf{reflexive} if $aRa$ for all $a$ in $X$. 
+
+The relation is \textbf{transitive} if $aRb$ and $bRc$ implies $aRc$. 
+
+The relation is \textbf{symmetric} if $aRb$ implies $bRa$.
+\end{definition}
+
+\begin{definition}[Equivalence Relation]
+A relation which is symmetric, transitive, and reflexive is an \textbf{equivalence relation}.  
+\end{definition}
+
+\begin{definition}[Partial Ordering]
+A relation $R$ on a set $X$ is called a \textbf{partial ordering} if it is reflexive, transitive, and for $a,b$ in $X$, if $aRb$ and $bRa$ then $a=b$. 
+\end{definition}
+
+\begin{definition}[Ordering of a Set]
+A subset $E$ of $X$ is said to be \textbf{totally ordered} if for any $a,b$ in $E$, either $aRb$ or $bRa$. 
+
+If this is the case, then the \textbf{upper bound} of $E$ is an element $x$ such that $aRx$ for all $a$ in $E$, and it is \textbf{maximal} if it is the only element with this property. 
+\end{definition}
+
+\begin{definition}[Ordering of Families]
+Let $\mathcal{F}$ be a family of sets and let $A,B$ be in $F$. Then, $ARB$ is true if $A\subseteq B$. This is a partial ordering of $\mathcal{F}$. $F$ is an upper bound if it contains every other set in $F$ and it is maximal if it isn't a proper subset of any set in $F$. 
+\end{definition}
+
+\begin{lemma}
+Let $X$ be a partially ordered set for which every totally ordered subset has a maximal member. Then, $X$ has a maximal member. 
+\end{lemma}
+
+\end{document}

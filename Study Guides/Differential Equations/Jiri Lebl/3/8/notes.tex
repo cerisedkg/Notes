@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{3.8: Matrix Exponentials}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Matrix Exponential]
+We define a matrix exponential using a Taylor series: $$e^A = 1 + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + ... = \sum_{n=0}^{\infty} \frac{1}{n!}A^n$$
+\end{definition}
+
+\begin{proposition}
+The solution to a differential equation of the form $$\vec{x}' = P\vec{x}$$where $P$ is a constant coefficient square matrix is $$\vec{x} = e^{Pt}$$
+\end{proposition}
+
+However, calculating the matrix exponential can be very hard, because we have to take infinite powers of matrices. There is an easier way. If we have a matrix $A$, we can put it in the form $A = EDE ^{-1}$, where $D$ is a diagonal matrix, then $$A^n = ED^nE ^{-1}$$Since $D$ is a diagonal matrix, raising $D$ to a power is equivalent to raising each element on the diagonal to that power. 
+
+\end{document}

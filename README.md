@@ -23,11 +23,7 @@ I will try to complete a chapter for every subject in the permanent category at 
 I will try to complete one chapter from one subject in the leisure category every day, though this is conditional on whether I have the time and willpower to continue studying at the end of the day.
 
 Subjects in the Permament category:
-- Abstract Algebra
-- Probablity
-- Differential Equations
-- Math Methods
-- Kinematics
+- Partial Differential Equations
 
 All other subjects are in the Leisure category.
 

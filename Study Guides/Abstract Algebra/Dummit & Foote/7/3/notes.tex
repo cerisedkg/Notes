@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{7.3: Ring Homomorphisms}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Ring Homomorphism]
+Let $R$ and $S$ be rings. Then, a mapping $\varphi: R \to S$ is a \textbf{ring homomorphism} if:
+
+\begin{enumerate}
+    \item $\varphi(a+b) = \varphi(a) + \varphi(b)$
+    \item $\varphi(ab) = \varphi(a)\varphi(b)$
+\end{enumerate}
+
+The kernel $\text{ker } \varphi$ is the set of all elements in $R$ which map to $0$ in $S$. 
+
+A bijective ring homomorphism is called a ring isomorphism.
+\end{definition}
+
+\begin{proposition}
+Let $R$ and $S$ be rings and let $\varphi: R \to S$ be a ring homomorphism. Then:
+\begin{enumerate}
+    \item The image of $R$ is a subring of $S$
+    \item The kernel of $\varphi$ is a subring of $R$
+\end{enumerate}
+\end{proposition}
+
+\begin{customproof}
+\begin{enumerate}
+    \item Elements of the image of $R$ take the form $\varphi(a)$, where $a$ is in $R$. The image of $R$ is commutative because $\varphi(a) + \varphi(b) = \varphi(a+b) = \varphi (b+a) = \varphi(b)+\varphi(a)$. 
+\end{enumerate}
+\end{customproof}
+
+\end{document}

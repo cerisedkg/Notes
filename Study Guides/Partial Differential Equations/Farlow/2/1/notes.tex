@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{2.1: Diffusion Type Problems}
+
+\begin{document}
+\maketitle
+\section{Motivation}
+
+We want to see how parabolic type PDEs model diffusion and heat flow, and also develop intuitions on what terms like $u_{xx}$. In addition, we also introduce IVPs for PDEs
+
+\section{Content}
+
+Let's work through the steps to develop a PDE model for a physical phenomenon:
+
+\begin{example}
+Suppose we had a rod with insulation around it, and at the ends, two different heating/cooling elements, one at $T_1$, and the other at $T_2$. Can we make a model to explain how the temperature of points along the rod evolves?
+\end{example}
+
+A mathematical model has three components: 
+\begin{enumerate}
+    \item the PDE equation which describes our model
+    \item the \textit{boundary conditions} describing the physical limitations of the model (like how we're only measuring temperature along the length of the rod, and not off the ends)
+    \item the \textit{initial conditions} describing the start of the experiment
+\end{enumerate}
+
+Our first component is the heat equation. Lets try an intuitive derivation of the heat equation: if we have two equally spaced points around a point $A$, the temperature at $A$ will move towards the average of those points over time.
+
+If we graph temperature on the y-axis and position on the x-axis, we can think of the average of two points as the midpoint of a secant line between those points. 
+
+\begin{tikzpicture}[scale=1.5]
+    % Draw axes
+    \draw[->] (0,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,0) -- (0,3) node[above] {$u(x,t)$};
+  
+    % Draw curve
+    \draw[thick, domain=0:4.5, smooth] plot (\x, {0.2*(\x)^3 - 1.2*(\x)^2 + 1.5*(\x) + 1});
+  
+    % Points on the curve
+    \filldraw[white] (1, 1.5) circle (1.5pt) node[above] {$P_1$};
+    \filldraw[white] (4, .6) circle (1.5pt);
+    \node[anchor=north west] at (4, 0.6) {$P_2$};
+  
+    % Secant line
+    \draw[red,thick, dashed] (1, 1.5) -- (4, .6);
+  
+    % Midpoint on the secant line
+    \coordinate (M) at ($ (1, 1.5)!0.5!(4, .6) $);
+    \filldraw[green] (M) circle (1.5pt) node[above] {$M$};
+    
+    \filldraw[white] (2.5,.375) circle (1.5pt) node[below] {$A$};
+
+    \draw[cyan,thick,-Stealth] (2.5,.375) -- (M);
+  \end{tikzpicture}
+  As we move $P_1$ and $P_2$ arbitrarily close to $A$, the secant line now becomes a measure of the curvature around $A$, which is the second derivative. Therefore, $$u_t = \alpha^2 u_{xx}$$
+
+We also need to define some boundary conditions. One would be that the temperature of the two ends of the rod are fixed, so $$\left\{\begin{array}{@{}l@{}} u(0,t) = T_1 \\ u(L,t) = T_2\end{array}\right.\,{\ 0<t<\infty}$$
+
+We also need initial conditions, so we will impose $u(x,0) = T_0$, the starting ambient temperature of the rod for $0\leq x \leq L$.
+
+We now have an initial-boundary value problem (IBVP), and there is only one solution to these constraints.
+
+\subsection{More Diffusion-Type Equations}
+
+The equation $$u_t = \alpha^2u_{xx} - \beta(u-u_0)$$where $\beta >0$ models heat lost to the environment out of the surface of the rod, where $u_0$ is the ambient temperature.
+
+The nonhomogeneous equation $$u_t = \alpha^2 u_{xx} + f(x,t)$$models a scenario where a rod is being supplied with an internal heat source (like a resistive wire).
+
+What if there is some convection, like the concentration of a substance flowing downstream. If we let $x$ be the distance downstream, the flow of the river pushes the stuff downstream, so our equation becomes $$u_t = \alpha^2u_{xx} - vu_x$$
+
+If we have a nonhomogeneous material (like a pan and oven mitt) we could have a function as a coefficient, giving $$u_t = a(x) u_{xx}$$
+
+\section{Exercises}
+\ 
+\begin{exercise}
+If the initial temperature of the rod was $u(x,0) = sin(\pi x)$ for $0\leq x \leq L$ and if the boundary conditions are $u(0,t) = 0$ and $u(1,t) = 0$, what would the boundary conditions look like for later values?
+\end{exercise}
+
+\begin{solution}
+Since both ends are always $0$ degrees at any point in time, eventually, the entire rod will become zero degrees. 
+\end{solution}
+
+\begin{exercise}
+Suppose our rod has an internal heat source, so the equation becomes $$u_t = \alpha^2 u_{xx} + 1$$for $0<x<1$. Suppose we have boundary conditions $u(0,t) = 0$ and $u(1,t) = 1$. Is there a steady state temperature for this rod? What does it look like?
+\end{exercise}
+
+\begin{solution}
+A steady state temperature is one where the temperature doesn't change over time, or in other words, when $u_t = 0$. If we set $u_t = 0$, we can see what the steady state temperature curve will look like. We get $$0 = \alpha^2u_{xx} + 1$$and rearranging, we get $$-\frac{1}{\alpha^2} = u_{xx}$$Integrating with respect to $x$ twice on both sides yields $$u(x) = -\frac{x^2}{\alpha^2} + Cx + D$$We know that $u(0,t) = 0$, so plugging in, the $D$ will become $0$. We also know that $u(1,t) = 1$, so plugging that in, we get that $C = \frac{1}{\alpha^2} +1$ and our steady-state solution becomes $$u(x) = (1+\frac{1}{\alpha^2})x-\frac{1}{\alpha^2}x^2$$
+\end{solution}
+
+
+\begin{exercise}
+Suppose a metal rod loses heat across its lateral surface (not the ends) via the equation $$u_t = \alpha^2u_{xx} - \beta u$$and $u(0,t) = 1$ and $u(1,t) = 1$. What is the steady state temperature of the rod. Where is the heat flowing?
+\end{exercise}
+
+\begin{solution}
+We set $u_t = 0$ to find the steady state temperature. We get $$0= \alpha^2u_{xx} - \beta u$$This is a second order linear equation with constant coefficients. We try $u = e^{rx}$, and our characteristic equation is $$0 = \alpha^2r^2 - \beta$$ and our roots are $$r = \pm \frac{\sqrt{\beta}}{\alpha}$$Plugging back in, our solutions become $$u(x) = C_1e^{\frac{\sqrt{\beta}}{\alpha}x} + C_2e^{-\frac{\sqrt{\beta}}{\alpha}x}$$Plugging in the boundary conditions, we get that $C_1 + C_2 = 1$ and $C_1e^{\frac{\sqrt{\beta}}{\alpha}} + C_2e^{-\frac{\sqrt{\beta}}{\alpha}} = 1$. We get that $C_1 = \frac{1}{1+ e^{\frac{\sqrt{\beta}}{\alpha}}}$ and $C_2 = \frac{e^{\frac{\sqrt{\beta}}{\alpha}}}{1+e^\frac{\sqrt{\beta}}{\alpha}}$. In total, we get $$u(x) = \frac{1}{1+ e^{\frac{\sqrt{\beta}}{\alpha}}}e^{\frac{\sqrt{\beta}}{\alpha}x} + \frac{e^{\frac{\sqrt{\beta}}{\alpha}}}{1+e^\frac{\sqrt{\beta}}{\alpha}}e^{-\frac{\sqrt{\beta}}{\alpha}x}$$
+\end{solution}
+
+\begin{exercise}
+Suppose a laterally insulated rod of length $L = 1$ has temperatures fixed at the left and right ends at $0$ and $10$ degrees Celsius respectively. It also has an initial temperature of $\sin(3\pi x)$. What are the IBVP values for this problem?
+\end{exercise}
+
+\begin{solution}
+$u(0,t) = 0$ and $u(1,t)$ for all $0 \leq t < \infty$ and $u(x,0) = \sin(3\pi x)$ for all $0 < x < 1$
+\end{solution}
+\end{document}

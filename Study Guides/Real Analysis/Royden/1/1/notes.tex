@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{1.1: The Field, Positivity, and Completeness Axioms}
+
+\begin{document}
+\maketitle
+\begin{definition}[Field Axioms: Addition and Multiplication]
+
+\textbf{Addition} and \textbf{multiplication} are defined as mappings from $\mathbb{R} \times \mathbb{R} \to \mathbb{R}$ with the following axioms/properties:  
+
+\begin{enumerate}
+    \item Commutativity of Addition: $a+b = b+a$
+    \item Associativity of Addition: $(a+b) + c = a + (b+c)$
+    \item The Additive Identity: There is a number called $0$ such that $a + 0 = a$
+    \item The Additive Inverse: For each real number $a$, there is another number $b$ such that $a + b = 0$
+    \item Commutativity of Multiplication: $ab = ba$
+    \item Associativity of Multiplication: $a(bc) = (ab)c$
+    \item The Multiplicative Identity: There is a number called $1$ such that $1a = a$
+    \item The Multiplicative Inverse: For each real number $a$ except for $0$, there exists a number $b$ such that $ab = 1$
+    \item The Distributive Property: $a(b+c) = ab + ac$
+    \item The Normativity Assumption: $1\neq 0$
+\end{enumerate}
+
+If you recall from abstract algebra, the above properties define a field of addition and multiplication on the real numbers, hence why these assumptions are called the \textbf{field axioms}.
+
+\end{definition}
+
+
+\begin{definition}[The Positivity Axioms]
+We will now define what a \textbf{positive number} is using \textbf{positivity axioms}:
+
+\begin{enumerate}
+    \item If $a$ and $b$ are positive, then $a+b$ and $ab$ are positive
+    \item For a real number $a$, exactly one of three statements is true: $$\text{a is positive}$$ $$-a \text{ (the additive inverse of $a$) is positive}$$ $$a = 0$$
+\end{enumerate}
+\end{definition}
+
+We will now construct an ordering of real numbers. If $a-b$ is positive, then $a > b$. If $a-b$ is positive or zero, then $a\geq b$. If $a>b$ then $b<a$. If $a\geq b$, then $b\geq a$.
+
+Now we will define what an interval means. An interval $(a,b)$ is the set of all numbers $x$ that simultaneously fulfill $a < x$ and $x < b$. Likewise, for $[a,b]$, this is the set of real numbers $x$ that fulfill $a \leq x \leq b$.
+
+\begin{definition}[Boundedness]
+A sset of real numbers $X$ has an \textbf{upper bound} if there exists $b$ such that $x \leq b$ for all $x$ in $X$. Likewise, a set has a lower bound if there exists an $a$ such that $x \geq a$ for all $x$ in $X$.
+
+The smallest number that is an upper bound for a set $X$ is called the \textbf{supremum} of $X$. Likewise, the largest number that is a lower bound for $X$ is called the \textbf{infimum}.
+\end{definition}
+
+\begin{definition}[The Completeness Axiom]
+Let $E$ be a nonempty set which is bounded above. Then, $E$ has a supremum.
+\end{definition}
+
+\begin{theorem}
+Suppose that $A$ is a nonempty set which is bounded below. Then, given the completeness axiom holds, $A$ has an infimum.
+\end{theorem}
+
+\begin{customproof}
+Let $L$ be the set of all numbers which bound $A$ below (the numbers which are less than all elements of $A$). Then, we know that $L$ has a supremum, which we will call $b$. Now, to show that $b$ is an infimum of $A$ we need to show that it is a lower bound of $A$ and that all other lower bounds are smaller than it. 
+
+Firstly, $b$ is a lower bound on $A$. Suppose we have an element $a$ in $A$ and that $a < b$. Then, all elements of $L$ must be less than $a$, so $a$ is now an upper bound of $L$ and less than $b$. However, $b$ is the least upper bound, so this can't happen, therefore, $b \leq a$. 
+
+Now, suppose that there was a lower bound of $A$, called $l$. Then, $l$ would be in $L$, the set of lower bounds of $A$. Since $b$ is the supremum of $L$, by definition, $l \leq b$. 
+
+We have proved our criteria, therefore there exists an infimum of $A$, $b$ if $A$ is lower bounded. 
+\end{customproof}
+
+\begin{definition}[The Triangle Inequality]
+We define the \textbf{absoute value} of a number $x$, $\vert x\vert$ to be $x$ if $x \geq 0$ and $-x$ if $x < 0$. 
+
+The following axiom is called the \textbf{triangle inequality}:
+
+$$\vert a+b\vert \leq \vert a\vert + \vert b\vert$$   
+\end{definition}
+
+\begin{definition}[The Extended Real Numbers]
+
+We define the set of \textbf{extended real numbers} to be $\mathbb{R} + \{\infty, -\infty\}$. If an interval is not upper bounded, then we say its supremum is $\infty$ and if it isn't lower bounded, we say its infimum is $-\infty$. 
+
+\end{definition}
+
+\begin{exercise}[1]
+For $a,b \neq 0$, show that $(ab) ^{-1} = a ^{-1} b ^{-1}$
+\end{exercise}
+
+\begin{solution}
+If we left multiply by $ab$ on both sides, we get $$(ab)(ab) ^{-1} = ab a ^{-1} b ^{-1} $$Cancelling, we get $$1 = ab a ^{-1} b ^{-1} $$We can use the commutative property to get $$1 = a a ^{-1} b b ^{-1} $$And cancelling, we get $$1 = 1$$Which is true, and since we did stuff to both sides, we maintain equality, so $$(ab) ^{-1} = a ^{-1} b ^{-1} $$
+\end{solution}
+
+\begin{exercise}[2]
+Verify the following:
+\begin{enumerate}
+    \item For each real number $a\neq0$, $a^2>0$. In particular, $1>0$ since $1\neq0$ and $1=1^2$.
+    \item For each positive number $a$ its multiplicative inverse, $a ^{-1}$ also is positive.
+    \item If $a>b$, then $ac>bc$ if $c>0$ and $ac<bc$ if $c<0$
+    
+
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{enumerate}
+    \item Since $a$ is nonzero, either $a$ can be positive or $-a$ can be positive. If $a$ is positive, then $a^2 = a*a$ and by the first positivity axiom, $a*a$ is positive, therefore $a^2$ is positive. For the negative case, notice that by the inverse distributive law, $$ab + (-a)b = (a-a)b = 0$$ $$ab + a(-b) = a(b-b) = 0$$Therefore, $$ab + (-a)b = ab + a(-b)$$And left subtracting by $ab$ gets us that $$(-a)b + a(-b)$$Since for each real number $r$ there is a $-r$ such that $r + -r = 0$, for the real number $-a$, there is a $--a$ such that $-a + --a = 0$. Then, adding $a$ to both sides, we get $a + -a + --a = a$. Cancelling, we get $--a = a$. Therefore, $$(-a)(-a) = --aa = aa = a^2$$. In particular, since $1 = 1^2$, and squares are always positive, $1$ must be positive.
+    \item A number $a$ times its multiplicative inverse $a ^{-1}$ always make a positive number, $1$. Therefore, if $a$ is positive, by the first positivity axiom, so must $a ^{-1}$. 
+    \item For the $c>0$ case, $ac > bc$ indicates that $ac - bc$ is positive. Then, distributing, we get $(a-b)c$. Since $c$ is positive and $a-b$ is positive (since $a>b$), by the first positivity axiom, $(a-b)c$ must be positive, so $ac-bc$ must be positive, and therefore, $ac > bc$. 
+    
+    For the $c<0$ case, we want to show that $ac - bc$ is negative. Distributing, we get that we want to show that $(a-b)c$ is negative. 
+\end{enumerate}
+\end{solution}
+
+\end{document}

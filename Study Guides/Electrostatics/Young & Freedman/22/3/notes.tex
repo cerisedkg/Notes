@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{22.3: Gauss's Law}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Gauss's Law]
+\textbf{Gauss's Law} states that the total electric flux through any closed surface is equal to the sum of the charges inside.  
+\end{definition}
+
+\begin{example}
+Suppose we have a single point charge $q$ inside the center of a sphere of radius $R$. The field strength at any point of the sphere is given by $$E = \frac{q}{4\pi\epsilon_0R^2}$$Since the field is always normal to the sphere surface, the flux is given by $$\Phi_E = EA = \frac{q}{4\pi\epsilon_0R^2} \cdot 4\pi R^2 =  \frac{q}{\epsilon_0}$$We see that the flux is not dependent on the sphere's radius, only on the charge enclosed.
+\end{example}
+
+\begin{example}
+Now, let's apply this reasoning to irregular surfaces. Given an irregular closed surface around a point charge, we want to transform it into a sphere. Suppose now that we take an area $dA$ of the irregular surface. This area will have a normal vector that is offset from the radial electric field vector by an angle we call $\phi$. If we bend it into a sphere, it turns out that two sides of the area are shortened by a factor of $\cos(\phi)$. As such, the projected area becomes $dA\cos(\phi)$. This is because as $dA \to 0$, the sphere becomes locally flat, so modifying $dA$ is equivalent to projecting onto a flat surface. Now, lets integrate all the $dA$s using the equation $$\Phi_E = \oint E\cos(\phi) dA$$However, now notice that this integral is the exact same as the total flux of an uneven electric field through a sphere! Therefore, $$\Phi_E = \oint E\cos(\phi)dA = \frac{q}{\epsilon_0}$$
+\end{example}
+
+The general form of Gauss's Law is given by $$\Phi_E = \oint E\cos(\phi)dA = \oint E_\perp dA = \oint \vec{E} \cdot d\vec{A} = \frac{Q_{enclosed}}{\epsilon_0}$$
+\end{document}

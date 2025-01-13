@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{2.3: Derivation of the Heat Equation}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+We want to derive the heat equation $u_t = \alpha^2u_{xx} + f(x,t)$ from first principles, mainly the assumption that energy is conserved.
+
+\section{Content}
+
+We will make the fundamental assumption that energy is conserved, and impose additional restrictions on our rod:
+
+\begin{enumerate}
+    \item The rod is made of a single homogeneous conducting material
+    \item The rod is laterally insulated
+    \item The rod is thin (cross sectional temperature is uniform)
+\end{enumerate}
+
+If we take a segment $[x,x+\Delta x]$ and apply the above principles, we can see that the only two places energy can come from are if it is flowing in across the boundary and if heat is generated inside the area. Therefore, the total heat can be expressed as $$\text{total heat inside $[x,x + \Delta x]$} = \int_{x}^{x + \delta x} c\rho A u(s,t) ds$$where $\rho$ is the density, $A$ is the cross-sectional area, and $c$ is the thermal heat capacity. 
+
+Now, lets derivate both sides to get the change in heat (which is what we are looking for). $$\frac{d}{dt} c\rho A \int_x^{x+\Delta x} u(s,t) ds$$and moving the derivation under the integral, we get $$c\rho A \int_{x}^{x+\Delta x}u_t(s,t)ds$$
+
+\end{document}

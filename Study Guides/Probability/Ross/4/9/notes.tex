@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.9: Expected Value of Sums of Random Variables}
+
+\begin{document}
+\maketitle
+
+
+\section{Motivation}
+
+We will try to give a rigorous proof as to why the expected value of the sums of random variables is equal to the sum of the expectations of individual variables.
+
+\section{Content}
+
+\begin{proposition}
+
+Given a sample space $S$ with elements $s$, the expected value a random variable $X$ on the sample space is given by $$E[X] = \sum_{s \in S} X(s)p(s)$$
+\end{proposition}
+
+\begin{customproof}
+Suppose $X$ takes on the values $x_i$. For each $x_i$, let $S_i$ be the set of all elements of $s$ that make $X = x_i$. Then, $$E[X] = \sum_i x_iP\{X = x_i\}$$$$E[X] = \sum_i x_ip(S_i)$$And since the probability of a subset of $S$ is the union of the individual probabilities, $$E[X] = \sum_i x_i\sum_{s\in S_i}p(s)$$Since $x_i$ gives the same value regardless of which $s \in S_i$ we pick, we can put it inside the summation, getting$$E[X] = \sum_i\sum_{s\in S_i} x_ip(s)$$Rewriting, we get $$E[X] = \sum_i\sum_{s \in S_i} X(s)p(s)$$And all $i$s will partition the entire sample space, so this becomes $$\sum_{s\in S}X(s)p(s)$$
+\end{customproof}
+
+\begin{proposition}
+$$E[\sum_{i=1}^{n} X_i] = \sum_{i=1}^n E[X_i]$$
+\end{proposition}
+
+\begin{customproof}
+Let $Z$ be the random variable that is the sum of all $X_i$, that is, $Z = \sum_{i=1}^n$. Then, $$E[Z] = \sum_{s\in S}Z(s)p(s)$$By the definition of $Z(s)$, we substitute to get $$E[Z] = \sum_{s\in S}(X_1(s) + X_2(s) + X_3(s) + ... + X_n(S))p(s)$$We distribute $p(s)$ to get $$E[Z] = \sum_{s\in S} X_1(s)p(s) + \sum_{s\in S} X_2(s)p(s) + \sum_{s\in S} X_3(s) + ... + \sum_{s\in S} X_n(s)$$And this gives $$E[Z] = E[X_1] + E[X_2] + E[X_3] + ... + E[X_n]$$
+\end{customproof}
+\end{document}

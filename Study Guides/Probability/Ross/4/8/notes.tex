@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.8: Other Discrete Probability Distributions}
+
+\begin{document}
+\maketitle
+
+\section{Geometric Random Variables}
+\ 
+\begin{definition}[Geometric Random Variable]
+Given independent bernoulli trials with probability $p$, a \textbf{geometric random variable} $X$ is the number of trials until a single success, and is given by $$P\{X = n\} = (1-p)^{n-1}p$$as there need to be $n-1$ failures and $1$ success to get a first success at the $n$th trial. 
+\end{definition}
+
+\begin{proposition}
+
+If $X$ is a geometric random variable then $$E[X] = \frac{1}{p}$$ $$\text{Var}[X] = \frac{1-p}{p^2}$$
+
+\end{proposition}
+
+\begin{customproof}
+
+
+The expected value of a geometric random variable is $$E[X] = \sum_{i=i}^{\infty} i(1-p)^{i-1}p$$We can split $i$ to get $$E[X] = \sum_{i=1}^{\infty}(i+1-1)(1-p)^{i-1}p$$And we can distribute and split the sum to get $$E[X]=\sum_{i=1}^{\infty}(i-1)(1-p)^{i-1}p + \sum_{i=1}^{\infty}(1-p)^{i-1}p$$The second term equals one. After infinite trials, we are bound to get a success, no moatter how small $p$ is. Therefore, our equation becomes $$E[X] = \sum_{i=1}^{\infty}(i-1)(1-p)^{i-1}p +1$$We can now use a change of index to get $$E[X] = \sum_{i=0}^\infty i(1-p^i)p + 1$$Taking out a $(1-p)$, and discarding the first term of our sum, we get $$E[X] = (1-p)\sum_{i=1}^\infty i(1-p)^{i-1}p + 1$$Notice now, that our sum is now an exact replica of $E[X]$. Substituting, we get that $$E[X] = (1-p)E[X] + 1$$Doing some algebra, we get that $$pE[X] = 1$$ so $$E[X] = \frac{1}{p}$$
+
+%insert variance proof here
+\end{customproof}
+
+\section{Negative Binomial Random Variable}
+
+\ 
+
+\begin{definition}[Negative Binomial Random Variables]
+
+Suppose that bernoulli trials are conducted with probability $p$. Let $X$ be a random variable that $r$ successes are obtained in $X$ trials and when the last trial is a success. Then, $X$ is a \textbf{negative binomial random variable}, and is given by $$P\{X = n\} = \binom{n-1}{r-1}p^{r-1}(1-p)^{n-r}$$
+
+\end{definition}
+
+\begin{proposition}
+
+$$E[X] = \frac{r}{p}$$
+$$\text{Var}(X) = \frac{r(1-p)}{p^2}$$
+
+\end{proposition}
+
+\section{Hypergeometric Random Variable}
+
+\ 
+
+\begin{definition}[Hypergeometric Random Variable]
+
+Suppose we have an urn of $N$ balls with $m$ white and $N-m$ black balls, and we select a sample of $n$ balls. Let a random variable $X$ denote the number of white balls selected. Then, the density of $X$ is given by $$P\{X = i\} = \frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{m}}$$
+
+\end{definition}
+
+\begin{proposition}
+$$E[X] = \frac{nm}{N}$$
+$$\text{Var}(X) = \frac{nm}{N}(\frac{(n-1)(m-1)}{N-1}+1-\frac{nm}{N})$$
+\end{proposition}
+
+\section{Zipf (Zeta) Distribution}
+
+\begin{definition}[]
+A random variable has a \textbf{zipf distribution} if $$P\{X = k\} = \frac{C}{k^{\alpha + 1}}$$for some value $\alpha > 0$.  
+\end{definition}
+
+\end{document}

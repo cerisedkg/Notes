@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{4.10: Properties of the Cumulative Distribution Function}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+We want to define and explore the properties of the cumulative distribution function.
+
+\section{Content}
+
+\begin{definition}[CDF]
+\ 
+The \textbf{cumulative distribution function} of a random variable $X$, $F(b)$ is the probability that $X$ takes on a value less than or equal to $b$. 
+\end{definition}
+
+\begin{proposition}
+Some properties of the CDF are:
+\begin{enumerate}
+    \item $F$ is non-decreasing
+    \item $\lim_{b\to \infty} F(b) = 1$
+    \item $\lim_{b\to -\infty} F(b) = 0$
+    \item $F$ is right continuous. For any $b$ and any decreasing sequence $b_n$ that converges to $b$, $lim_{n\to \infty} F(b_n) = F(b)$
+\end{enumerate}
+\end{proposition}
+
+\end{document}

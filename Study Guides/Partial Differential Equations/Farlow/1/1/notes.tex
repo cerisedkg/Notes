@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{1.1: Introduction to Partial Differential Equations}
+
+\begin{document}
+\maketitle
+\ 
+\begin{definition}[Partial Differential Equations]
+\textbf{Partial differential equations}, also known as PDEs, are differential equations with partial derivatives. The solutions to these equations will contain more than one independent variable.
+
+We denote $\frac{\partial u}{\partial t}$ as $u_t$, and $\frac{\partial^2 u}{\partial t^2}$ as $u_{tt}$ and such for other variables    
+\end{definition}
+
+\begin{example}[Common PDEs]
+    \ 
+\begin{enumerate}
+    \item Heat Equation (1D): $u_t = u_{xx}$
+    \item Heat Equation (2D): $u_t = u_{xx} + u_{yy}$
+    \item General Heat Equation: $u_t = \nabla^2 u$
+    \item General Wave Equation: $u_{tt} = \nabla^2 u$
+    \item Telegraph Equation: $u_{tt} = u_{xx} + \alpha u_t + \beta u$
+    \item Laplace's Equation in Polar Coordinates: $u_rr + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0$
+\end{enumerate}
+\end{example}
+
+There are generally ten methods we use to solve PDEs:
+
+\begin{enumerate}
+    \item Separation of Variables: We reduce a PDE in $n$ variables to a system of $n$ ODEs
+    \item Integral Transforms: We can reduce a PDE in $n$ variables to a PDE in $n-1$ variables
+    \item Change of Coordinates: Can simplify a PDE or potentially turn it into an ODE
+    \item Transformation of the Dependent Variable: We substitute the dependent variable with one that is easier to find.
+    \item Numerical Methods: Changes a PDE into a system of \textbf{difference equations} which can be brute forced by a computer
+    \item Perturbation Methods: This methods changes a nonlinear PDE into a system of linear PDEs which \textit{approximate} the original PDE
+    \item Impulse Response: Changes the boundary conditions (initial values) of a PDE into impulses (dirac delta function), and measures the responses to these impulses. These impulses can be reconstructed into the solution.
+    \item Integral Equations: Changes a PDE to an integral equation (where the unknown is inside the integral), and then solves the integral with various techniques
+    \item Calculus of Variations: Reframes a solution to a PDE as a minimization problem (think the action in Lagrangian mechanics or the total energy in Hamiltonian mechanics). The solution that minimizes the action/total energy is ususally the solution to the problem.
+    \item Eigenfunction Expansion: We attemt to find the solution to a PDE as an infinte sum of eigenfunctions (functions that become scalar multiples of themselves when put in the PDE)
+\end{enumerate}
+
+\begin{definition}[Classifications of PDEs]
+\ 
+\begin{enumerate}
+    \item Order: Order is the highest derivative that appears in the PDE
+    \item Number of Variables: THe number of independent variables
+    \item Linearity: If the dependent variable and its derivatives are linear (not multiplied by each other)
+    \item Homogeneity: A PDE is homogeneous if there is no coefficient that is not multiplied by a derivative. (Only really matters for second order linear)
+    \item Constant Coefficients: If all coefficients of derivatives are constant, the equation is a constant coefficients PDE
+\end{enumerate}
+
+In addition, second order linear PDEs in two variables of the form $$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu + G = 0$$have special properties:
+
+\begin{enumerate}
+    \item If $B^2 - 4AC > 0$, the equation is \textbf{hyperbolic} and represents vibrating systems and wave motion.
+    \item If $B^2 -4AC = 0$, the equation is \textbf{parabolic} and describes heat and diffusion.
+    \item If $B^2 - 4AC < 0$, the equation is \textbf{elliptic} and describes steady state systems.
+\end{enumerate}
+Notice: $A,B,C$ can be functions, and so these equations can switch types.
+\end{definition}
+
+\begin{exercise}
+Classify the following PDES:
+\begin{enumerate}
+    \item $u_t = u_{xx} + 2u_x + u$
+    \item $u_t = u_{xx} + e^{-t}$
+    \item $u_{xx} + 3u_{xy} + u_{yy} = \sin(x)$
+    \item $u_{tt} = uu_{xxxx} + e^{-t}$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\ 
+\begin{enumerate}
+    \item Constant coefficient second order linear homogeneous parabolic PDE in two variables
+    \item Constant coefficients second order linear parabolic PDE in two variables
+    \item Constant coeffcients second order linear hyperbolic PDE in two variables
+    \item Fourth order PDE in two variables
+\end{enumerate}
+\end{solution}
+
+\begin{exercise}
+How many solutions to the PDE $u_t = u_{xx}$ can you find? Try solutions of the form $u(x,t) = e^{ax + bt}$
+\end{exercise}
+
+\begin{solution}
+If $$u(x,t) = e^{ax + bt}$$ then $$u_t = be^{ax+bt}$$and $$u_{xx} = a^2e^{ax+bt}$$Setting these equal to each other, we get that all solutions of the form $u(x,t) = e^{ax + bt}$ where $$b = a^2$$ are valid. 
+\end{solution}
+
+\begin{exercise}
+If $u_1(x,y)$ and $u_2(x,y)$ are both solutions to $$Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$then is $u_1 + u_2$ a solution?
+\end{exercise}
+
+\begin{solution}
+When we say that $u_1$ and $u_2$ are solutions to the above equations, it means that when we plug them into the differential equation, we get back $G$. If we plug in $u_1 + u_2$, however, we get $$A(u_1+u_2)_{xx} + B(u_1 + u_2)_{xy} + C(u_1+u_2)_{yy} + D(u_1+u_2)_x + E(u_1+u_2)_y + F(u_1+u_2)$$Since $(u_1+u_2)_{xx} = (u_1)_{xx} + (u_2)_{xx}$ and so on for the other variables, we can separate the $u_1$ and $u_2$ to get $$A(u_1)_{xx} + B(u_1)_{xy} + C(u_1)_{yy} + D(u_1)_x + E(u_1)_y + F(u_1) + A(u_2)_{xx} + B(u_2)_{xy} + C(u_2)_{yy} + D(u_2)_x + E(u_2)_y + F(u_2)$$ We know that individually, each segment is equal to $G$, so the entire thing is equal to $2G$, therefore, $u_1 + u_2$ is not a solution.
+\end{solution}
+
+\begin{exercise}
+Find a solution to $\frac{\partial u(x,y)}{\partial x} = 0$
+\end{exercise}
+
+\begin{solution}
+The solution is $u(x,y) = f(y) +C$
+\end{solution}
+
+\begin{exercise}
+Find a solution to $\frac{\partial^2 u(x,y)}{\partial x\partial y} = 0$  
+\end{exercise}
+
+\begin{solution}
+The solution is of the form $u(x,y) = f(x) + f(y) + C$ 
+\end{solution}
+
+\end{document}

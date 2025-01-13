@@ -9,19 +9,24 @@ Introduce the concept of rings and fields, and provide definitions for terminolo
 \section{Content}
 \ 
 \begin{definition}[Rings]
-A \textbf{ring} $R$ is a set with two binary operations, which we call: $+$ and $\times$ (additon and multiplication). The identity of $+$ will be $0$, and the additive inverse of $a$ will be $-a$. It also satisfies the following axioms:
+A \textbf{ring} $R$ is a set with two binary operations, called "addition" and "multiplication", along with eight criteria:
 
 \begin{enumerate}
-    \item Addition is commutative.
-    \item Multiplication is associative: $(a\times b)\times c = a\times(b\times c)$.
-    \item Forward and backward distribution holds: $a\times(b+c) = (a\times b) + (a\times c)$, and $(b+c)\times a = (b\times a) + (c\times a)$
+    \item $(R,+)$, the group formed by $R$ under addition, is closed
+    \item $(R,+)$ has an identity called $0$
+    \item $(R,+)$ is associative
+    \item All elements of $(R,+)$ have inverses
+    \item $(R,+)$ is commutative
+    \item $(R,\cdot)$, the ring under multiplication, is closed
+    \item $(R,\cdot)$ is associative
+    \item The distributive property holds: $a \cdot (b + c) = (a\cdot b) + (a\cdot c)$ and $(a+b)\cdot c = (a\cdot c) + (b\cdot c)$
 \end{enumerate}
 \end{definition}
 
 Note that there doesn't need to be a multiplicative identity or multiplicative inverses for $R$ to be a ring.
 
 \begin{proposition}
-If multiplication distributes over addition, then addition must be abelian. 
+If multiplication distributes over addition, then addition must be abelian. (criterion 8 implies criterion 5)
 \end{proposition}
 
 \begin{customproof}

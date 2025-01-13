@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{2.2: Boundary Conditions for Diffusion-Type Problems}
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+\begin{document}
+\maketitle
+\section{Motivation}
+
+We want to explain three forms of boundary conditions and explain flux.
+
+\section{Content}
+
+\subsection{Type 1: Temperature Specified on Boundary}
+
+We have a rod insulated along its length, with two heating elements at either end. These heating elements will have a variable temperature over time, with $u(0,t) = g_1(t)$ and $u(L,t) = g_2(t)$.
+
+We may want to find how the rod changes with variable heating, or even how we should control the heating elements to achieve a certain condition inside the rod. 
+
+These can be more complex as well. Suppose we have a steel sheet, with a circular heating element whose temperature is given by $$u(R,\theta, t) = \sin\theta \cos t$$We may be asked to find an equation $u(R,\theta,t)$describing the temperature inside the circle. 
+
+\subsection{Type 2: Temperature of a Surrounding Medium}
+
+We have a rod with each end submerged in a vat of water. These vats have changing temperatures $g_1(t)$ and $g_2(t)$. 
+
+How will the temperature of the water change? We have to examine how heat flows from the water into the rod, which is called flux. Newton's law of cooling states that heat flux is proportional to the temperature difference, so we have a system like $$\left\{\begin{array}{@{}l@{}} \text{Outward flux at x=0} = h(u(0,t) - u_1(t)) \\ \text{Outward flux at x=L} = h(u(L,t) - u_2(t))\end{array}\right.$$where $h$ is the heat-flux coefficient.
+
+\begin{proposition}[Fourier's Law]
+Outward heat flux is proportional to the inward derivative of heat across the normal of the boundary.
+\end{proposition}
+
+What this is saying is that the amount of heat leaving across a boundary is proportional to the derivative of heat (wrt distance) across the boundary in the other direction. 
+
+In the 1D problem, this will look like $$\left\{\begin{array}{@{}l@{}} \text{Outward flux at x=0} = k \frac{\partial u(0,t)}{\partial x} \\ \text{Outward flux at x=L} = -k \frac{\partial u(0,t)}{\partial x}\end{array}\right.$$where $k$ is the thermal conductivity of the metal. 
+
+If we now set our two equations for flux equal to each other, we get $$\left\{\begin{array}{@{}l@{}} \frac{h}{k}(u(0,t) - u_1(t)) =  \frac{\partial u(0,t)}{\partial x} \\ -\frac{h}{k}(u(L,t) - u_2(t)) = \frac{\partial u(0,t)}{\partial x}\end{array}\right.$$
+
+\subsection{Type 3: Flux Specified}
+
+Insulated boundaries are one example of when we specify flux. In this case, there is zero flux, so the normal derivative on the boundary must be zero. In the case of a 1D rod with insulated ends, this gives us $$u_x(0,t) = 0$$$$u_X(L,t) = 0$$
+
+\begin{example}
+\begin{enumerate}
+    \item Suppose we have a copper rod $200$cm long which is laterally insulated with an inital temperature of $0^\circ$C. Suppose the top of the rod is inuslated, and the bottom is immersed in a vat of water with a constant temperature of $20^\circ$C. 
+    
+    The IBVP would be $$\left\{\begin{array}{@{}l@{}}u_t = \alpha^2u_{xx} \\ u_x(0,t) = 0 \\ u_x(200,t) = -\frac{h}{k}(u(200,t)-20) \\ u(x,0) = 0\end{array}\right.$$
+\end{enumerate}
+\end{example}
+
+\section{Exercises}
+
+\begin{exercise}
+What is your interpretation of the IBVP
+
+$$\left\{\begin{array}{@{}l@{}} u_t = \alpha^2u_{xx} \ \ \ 0<x<1 \ \ 0<t<\infty \\u(0,t) = 0 \ \ \ 0<t<\infty \\ u_x(1,t) = 1 \ \ \ 0<t<\infty \\ u(x,0) = \sin (\pi x ) \ \ \ 0\leq x \leq 1 \end{array}\right.$$Does it have a steady-state solution?
+\end{exercise}
+
+\begin{solution}
+A $1$ meter long rod has an initial temperature given by $u(x) = \sin(\pi x)$ with a heating element on the left end set at $0$ degrees, and the right is submerged in water that is kept warmer than the right end of the rod. The starting temperature of the rod is given by $u(x,0) = \sin(\pi x)$.
+
+This will have a steady state. If we plug in $0 = u_t$, we get $$0 = \alpha^2 u_{xx}$$Since $\alpha$ is always positive, we know that in the steady state, $$u_{xx} = 0$$If we integrate, we get $$u_x = C$$and plugging in our border value, we get $$u_x = 1$$and integrating again, we get $$u(x,t) = x + D$$plugging in our border value, we get that $$u(x,t) = x$$so there is a steady state.
+\end{solution}
+\begin{exercise}
+What is your interpretation of the IBVP$$\left\{\begin{array}{@{}l@{}} u_t = \alpha^2u_{xx} \ \ \ 0<x<1 \ \ 0<t<\infty \\u_x(0,t) = 0 \ \ \ 0<t<\infty \\ u_x(1,t) = 0 \ \ \ 0<t<\infty \\ u(x,0) = \sin (\pi x ) \ \ \ 0\leq x \leq 1 \end{array}\right.$$Does it have a steady-state solution?
+\end{exercise}
+
+\begin{solution}
+This is a 1 meter long rod with both ends insulated and starting temperature of $u(x,0) = \sin(\pi x)$. Since no heat can escape the rod, the steady state will just be a constant temperature of $\frac{1}{2\pi}$ over the whole rod. 
+\end{solution}
+
+\begin{exercise}
+Suppose a laterally insulated rod has initial temperature of $20$ but immediately thereafter has one end fixed at $50$ and another immersed in a liquid solution at $30$. What is the IBVP?
+\end{exercise}
+
+\begin{solution}
+$$\left\{\begin{array}{@{}l@{}} u_t = \alpha^2u_{xx} \ \ \ 0<x<1 \ \ 0<t<\infty \\u(0,t) = 5 0 \ \ \ 0<t<\infty \\ u_x(1,t) = -\frac{h}{k}(u(1,t) - 30) \ \ \ 0<t<\infty \\ u(x,0) = 20 \ \ \ 0\leq x \leq 1 \end{array}\right.$$
+\end{solution}
+\end{document}

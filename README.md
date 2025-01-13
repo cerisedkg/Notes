@@ -24,6 +24,7 @@ I will try to complete one chapter from one subject in the leisure category ever
 
 Subjects in the Permament category:
 - Partial Differential Equations
+- Waves
 
 All other subjects are in the Leisure category.
 

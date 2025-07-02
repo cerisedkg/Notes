@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chatper 1: The Complex Numbers}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Complex Numbers]
+\
+
+\textbf{Complex numbers} are ordered pairs $(a,b)$ (ordered meaning $(a,b) \neq (b,a)$) where $a,b$ are real numbers. 
+
+We say that complex numbers $x = (a,b)$ and $y = (c,d)$ are equal, $x=y$ if $a=c$ and $b=d$. 
+
+We define addition of complex numbers and multiplication of complex numbers as follows:
+
+\begin{enumerate}
+    \item $x+y = (a+c, b+d)$
+    \item $x\cdot y = (ac-bd, ad+bc)$
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+\
+
+The operations defined above turn the complex numbers into a field with $(0,0)$ as the additive identity and $(1,0)$ as the multiplicative identity.
+\end{theorem}
+
+\begin{customproof}
+\
+
+% closure under addition and multiplication, commutativity under addition and multiplication, associativity, distributive law, additive identity and inverses, and multiplicative identity and inverses.
+
+Closure under addition is pretty obvious, if we have complex numbers $x = (a,b)$ and $y = (c,d)$ then $x+y = (a+c,b+d)$. Since $a+c$ and $b+d$ are both reals (due to closure under the reals), the sum will also be a complex number. 
+
+Addition is commutative because $x+y = (a+c, b+d) = (c+a, d+b) = y+x$.
+
+Addition is associative because $x+(y+z) = (a+b)+(c+e, d+f) = (a+c+e, b+d+f) = (a+c, b+d) + (e,f) = (x+y) + z$
+
+$(0,0)$ is the additive identity since $x + (0,0) = (a+0, b+0) = (a,b) = x$ for all $x$ in the complex numbers.
+
+For any complex number $x = (a,b)$, we let $-x$, the additive inverse of $x$, be $(-a,-b)$. Then, $x+ (-x) = (a + (-a), b + (-b)) = (0,0)$ and $(0,0)$ is the additive identity.
+
+There is closure under multiplication because $x\cdot y = (ac-bd, ad+bc)$ and since both $ac-bd$ and $ad+bc$ are real numbers, the resulting product is a complex number.
+
+Multiplication is commutative beacuse $x \cdot y = (ac-bd, ad+bc) = (ca-db, da+cb) = y \cdot x$
+
+Multiplication is associative beacuse $x \cdot (y \cdot z) = (a,b) \cdot (ce-df, cf+de) = (ace-adf - bcf - bde, acf + ade + bce - bdf) = (ac-bd, ad+bc) \cdot (e,f) = (x \cdot y) \cdot z$
+
+$(1,0)$ is the multiplicative identity since $x * (1,0) = (a,b) * (1,0) = (a*1-b*0, b*1 + a* 0 ) = (a,b)$
+
+For any complex number $x=(a,b)$, we choose $x ^{-1}  = (\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2})$, and this is an inverse since $x \cdot x ^{-1} = (\frac{a^2}{a^2+b^2} + \frac{b^2}{a^2+b^2}, \frac{ab}{a^2+b^2}-\frac{ab}{a^2+b^2})  =(1,0)$
+
+Distributive law holds because $x*(y+z) = (a,b) * (c+e, d+f) = (ac+ae-bd-bf, ad+af + bc+be) = x*y + x*z$
+\end{customproof}
+
+\begin{theorem}
+\
+
+For any real numbers $a,b$ we have $(a,0)+ (b,0) = (a+b,0)$ and $(a,0) \cdot (b,0) = (a*b,0)$
+\end{theorem}
+
+\begin{customproof}
+\
+
+$$(a,0) + (b,0) = (a+b, 0+0) = (a+b,0)$$
+
+$$(a,0) \cdot (b,0) = (ab - 0*0, a*0+b*0) = (ab, 0)$$
+\end{customproof}
+
+\begin{definition}[i]
+\
+
+$$i = (0,1)$$
+\end{definition}
+
+Note: $(a,0) = a$
+
+
+\begin{theorem}
+\
+
+$$i^2 = -1$$
+\end{theorem}
+
+\begin{customproof}
+\
+
+$$i^2 = i\cdot i = (0,1) \cdot (0,1) = (0*0 - 1*1, 0*1 + 0*1) = (-1,0) = -1$$
+\end{customproof}
+
+\begin{theorem}
+\
+
+If $a$ and $b$ are real, then $(a, b) = a+bi$.
+\end{theorem}
+
+
+\begin{customproof}
+\
+
+$$a+bi = (a,0) + (b,0) \cdot (0,1) = (a,0) + (b*0 - 0*1, b*1 + 0*0) = (a,0) + (0,b) = (a,b)$$
+\end{customproof}
+
+\begin{definition}[Conjugate]
+\
+
+If $z = a+bi$ then the \textbf{complex conjugate} of $z$, $\bar{z} = a-bi$. 
+
+Also, $\text{Re}(z) = a$ and $\text{Im}(z) = b$
+\end{definition}
+
+\begin{theorem}
+\
+
+Let $z$ and $w$ be complex numbers. Then,
+
+\begin{enumerate}
+    \item $\bar{z+w} = \bar{z} + \bar{w}$
+    \item $\bar{z \cdot w} = \bar{z} \cdot \bar{w}$
+    \item $z + \bar{z} = 2\text{Re}(z)$ and $z - \bar{z} = 2i\text{Im}(z)$
+    \item $z\cdot \bar{z}$ is real and positive, except when $z = 0$
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let $z = a+bi$ and $w = c+di$.
+
+\begin{enumerate}
+    \item $\bar{z} + \bar{w} = a-bi + c - di = (a+c) - (bd)i = \bar{z+w}$
+    \item $\bar{z} \cdot \bar{w} = (a-bi) * (c-di) = ac-bd - (ad+bc)i = \bar{z \cdot w}$
+    \item $z + \bar{z} = a+bi + a - bi = 2a = 2\text{Re}(z)$ and $z - \bar{z} = a+bi - a + bi = 2bi = 2i \text{Im}(z)$
+    \item $z \cdot \bar{z} = (a+bi) * (a-bi) = a*a - b^2i^2 + abi - abi = a^2 + b^2$
+\end{enumerate}
+\end{customproof}
+
+\begin{definition}[Absolute Value of a Complex Number]
+\
+
+The \textbf{absolute value} of a complex number $\vert z \vert = (z \cdot \bar{z})^{\frac{1}{2}}$ 
+\end{definition}
+
+\begin{theorem}
+\
+
+\begin{enumerate}
+    \item $\vert z\vert > 0$ unless $z = 0$, then $\vert z\vert =0$
+    \item $\vert \bar{z}\vert  = \vert z\vert$
+    \item $\vert z \cdot w\vert = \vert z\vert \vert w\vert$
+    \item $\vert \text{Re}(z)\vert \leq \vert z\vert$
+    \item $\vert z+w\vert \leq \vert z\vert + \vert w\vert$             
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item Since $z \cdot \bar{z}$ is always non-negative, the square root of it will also be non-negative.
+    \item $ \vert \bar{z} \vert = (\bar{z} \cdot \bar{\bar{z}})^{\frac{1}{2}}  =  (\bar{z} \cdot z)^{\frac{1}{2}}  = (z \cdot \bar{z})^{\frac{1}{2}} = \vert z\vert$
+    \item $\vert z \cdot w\vert = ((z\cdot w) \cdot (\bar{z\cdot w}))^\frac{1}{2} = (z \cdot \bar{z})^\frac{1}{2} * (w \cdot \bar{w})^\frac{1}{2} = \vert z\vert \vert w\vert$   
+    \item $\vert z\vert = (a^2 + b^2)^\frac{1}{2}$, and this is always larger than $\vert \text{Re}(z) \vert = (a^2)^\frac{1}{2} = a$
+    \item $\vert z+w \vert  = ((a+c)^2 + (b+d)^2)^\frac{1}{2}$, and this is always smaller than $\vert z \vert + \vert w \vert = (a^2 + b^2)^\frac{1}{2} + (c^2 + d^2)^\frac{1}{2}$
+\end{enumerate}
+\end{customproof}
+
+\begin{theorem}
+\
+
+If we have complex numbers $a_1, ... a_n$ and $b_1, ... b_n$, then $\vert \sum_{j=1}^n a_jb_j \vert^2 \leq \vert  \sum_{j=1}^n \vert a_j\vert^2 \sum_{j=1}^n \vert b_j\vert^2$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let $A = \sum \vert a_j \vert^2$, $B = \sum \vert b_j \vert^2$ and $C = \sum a_jb)j$
+
+Then, start with $$\sum \vert Ba_J - Cb_j \vert^2 = \sum (Ba_j - Cb_j)(B\bar{a}_j - \bar{Cb_j})$$by the property that $z \cdot \bar{z} = \vert z \vert^2$
+
+Then, we can multiply to get $$B^2 \sum \vert a_j \vert ^2 - B\bar{C} \sum a_j \bar{b}_j - BC\sum \bar{a}_j b_j + \vert C \vert^2 \sum \vert b_j \vert^2$$
+
+We cancel the two $BC$ terms (we can for some reason), to get $$B^2A - B \vert C \vert^2$$
+
+$$B(AB- \vert C\vert^2)$$Since we know all the terms in the initial sum are nonnegative, our result can't be negative either. Since $B$ is postitive, this implies that $AB \geq \vert C \vert^2$ which is what we want.
+\end{customproof}
+
+\end{document}

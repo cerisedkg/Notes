@@ -1,0 +1,226 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 2: Metric Spaces}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Metric]
+\
+
+A set $X$ is a \textbf{metric space} if there exists some function $d: X \times X \to \mathbb{R}^+$, that obeys the following properties:
+
+\begin{enumerate}
+    \item $d(p,q) > 0$ for all $p,q$ in $X$ and $p \neq q$
+    \item $d(p,q) = d(q,p)$ for all $p,q$ in $X$
+    \item $d(p,q) \leq d(p,r) = d(r,q)$ for any $p,q,r$ in $X$
+\end{enumerate}
+
+Then, the function $d$ is called a \textbf{metric}. 
+\end{definition}
+
+
+\begin{example}
+\
+
+In $\mathbb{R}^k$, the Euclidean spaces of dimension $k$, we can define a distance function $d(x,y) = \vert x - y \vert$. Note that for dimensions of $2$ and greater, the vertical lines give the length of the vector.
+\end{example}
+
+\begin{proposition}
+\
+
+Every subset of a metric space is also a metric space.
+\end{proposition}
+
+\begin{customproof}
+\
+
+Suppose we have $Y \subset X$ where $X$ is a metric space with metric $d$ defined on it. For any $p,q,r$ in $Y$, \begin{enumerate}
+    \item $d(p,q) > 0$ since $p,q$ are in $X$ and it is true for all $p,q$ in $X$
+    \item $d(p,q) = d(q,p)$ for the same reason,
+    \item $d(p,q) \leq d(p,r) + d(r,q)$ for the same reason
+\end{enumerate}
+so the set $Y$ has metric $d$ valid on it, so it is a metric space.
+\end{customproof}
+
+\begin{definition}[Segments and Intervals]
+\
+
+A \textbf{segment} $(a,b)$ is the set of all numbers such that $a < x < b$.
+
+An \textbf{interval} $[a,b]$ is the set of all numbers such that $a \leq x \leq b$ 
+
+And a \textbf{half open interval} $(a,b]$ or $[a,b)$ is the set of all numbers such that $a < x \leq b$ or $a \leq x < b$ respectively 
+\end{definition}
+
+\begin{definition}[k-cell]
+\
+
+If $a_i < b_i$ for $i = 1, 2, ..., k$, then the set of all points $x$ which have coordinates $(x_1, x_2, ..., x_k)$ and which satisfy $a_i \leq x_i \leq b_i$ for every $i = 1,2, ... , k$, form a $k$-cell. 
+
+For example, when $k=1$, the $k$-cell is a line, when $k=2$, it is a rectangle, when $k=3$, it is a rectangular prism, etc. 
+\end{definition}
+
+\begin{definition}[Different Types of Subsets of a Metric Space]
+\
+
+Suppose $X$ is a metric space. Then:
+
+\begin{enumerate}
+    \item A \textbf{neighborhood} of some $p$ in $X$, $N_r(p)$ is a set of all points $q$ in $X$ where $d(p,q) < r$, so the set of all points closer than distance $r$ from point $p$. The number $r$ is called the \textbf{radius} of the neighborhood.
+    \item A point $p$ is considered the \textbf{limit point} of some set $E$ if every neighborhood of $p$ has a point $q$ where $p \neq q$ and $q \in E$. For example, neighborhoods on $\mathbb{R}^2$ look like disks (which don't include their edges), and the limit points of these neighborhoods are the disks with their edges.
+    \item If $p$ is in $E$ and $p$ is not a limit point of $E$, then $p$ is an \textbf{isolated} point of $E$. These are like islands.
+    \item $E$ is \textbf{closed} if every limit point of $E$ is a point of $E$
+    \item A point $p$ is an \textbf{interior point} of $E$ if there is some neighborhood $N$ around $p$ such that $N \subset E$
+    \item $E$ is \textbf{open} if every point of $E$ is an interior point of $E$
+    \item The \textbf{complement} of $E$, denoted $E^c$ is the set of all points $p$ in $X$ which are not in $E$
+    \item $E$ is \textbf{perfect} if it is closed and every point in $E$ is a limit point of $E$   
+    \item $E$ is \textbf{bounded} if there is a real number $m$ and a point $q$ in $X$ such that $d(p,q) < m$ for all $p$ in $E$
+    \item $E$ is \textbf{dense} in $X$ if every point of $X$ is a limit point of $E$ or a point of $E$ 
+\end{enumerate}
+
+\end{definition}
+
+\begin{theorem}
+\
+
+Every neighborhood is an open set
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let's first recall the definition of neighborhood and open set. A neighborhood $N_r(p)$ is the set of all points which are distance less than $r$ from $p$. A set is an open set if every point in it has some neighborhood where that neighborhood is a subset of the entire set.
+
+So to prove this, we want to show that every point in a neighborhood, $n \in N_r(p)$ has some neighborhood that is a subset of $N_r(p)$
+
+Take some $n$ in $N_r(p)$. Then, $d(p,n) < r$ by definition of a neighborhood. Now, choose some real number $k$ so that $r-d(p,n) > k$. This ensures that $d(p,n) + k < r$. Now, choose a neighborhood $N_{k}(n)$. All the points in this neighborhood are at most $d(p,n) + k$ distance away, which is less than $r$, so they are in the neighborhood. Therefore, we can find some distance $k$ for every point $n$ in $N_r(p)$ such that $N_k(n) \subset N_r(p)$, meaning $N_r(p)$ is open.
+\end{customproof}
+
+\begin{theorem}
+\
+
+If $p$ is a limit point of $E$, then every neighborhood of $p$ contains infinitely many points in $E$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose this was not true, that there was some neighborhood $N_r(p)$ that contains finitely many points of $E$. Then, order all these points by their distance to $p$, so $d(p,e)$ for all points $e$ in $E$. We choose the closest of these points, $e_0$, and choose any number $k < d(e_0,p)$. Then, the neighborhood $N_k(p)$ contains no points of $E$, since every point of $E$ is farther than the radius of the neighborhood. So, there exists a neighborhood $p$ which does not contain any points of $E$, so $p$ is not a limit point of $E$  
+\end{customproof}
+
+\begin{corollary}
+\
+
+A set with finitely many points has no limit points.
+\end{corollary}
+
+\begin{theorem}
+\
+
+Let $\{E_\alpha\}$ be a finite or infinite collection of sets. Then, $$(\bigcup_\alpha E_\alpha)^C = \cap_\alpha E_\alpha^c$$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose you were a member of $$(\bigcup_\alpha E_\alpha)^C$$Then you would need to not be in $E_1$ or $E_2$ or ..., so by demorgan's laws, you would need to be in not $E_1$ and not $E_2$ and ..., so you would need to be in the intersection of the complements.
+\end{customproof}
+
+\begin{theorem}
+\
+
+A set $E$ is open if and only if its complement is closed.
+\end{theorem}
+
+We do the forward proof first. Suppose $E$ is open. Then, every point $e$ in $E$ has some neighborhood around it where the entire neighborhood is a subset of $E$. Then, let $x$ be a limit point of $E^c$. Every neighborhood of $x$ must contain some point of $E^c$, otherwise it would only contain points of $E$ and be an interior point of $E$, so it would be in $E$, which is a contradiction, so every point $x$ in $E^c$ must be a limit point, and every limit point of $E^c$ must be in $E^c$, so $E^c$ is closed.
+
+To show the reverse, suppose $E^c$ is closed. Then, if $x$ is in $E$, then $x$ can't be in $E^c$ and $x$ can't be a limit point of $E^c$ (since every limit point of $E^c$ must be in $E^c$), so there must be some neighborhood of $x$ that has no points in $E^c$. Then, that neighborhood has only points in $E$, making it an interior point of $E$, so every point not in $E^c$ is interior to $E$, so $E$ is open.
+
+\begin{corollary}
+\
+
+A set $F$ is closed if and only if its complement is open.
+\end{corollary}
+
+\begin{theorem}
+\
+
+\begin{enumerate}
+    \item For any collection $\{G_\alpha\}$ of open sets, $\bigcup G_\alpha G_\alpha$ is also open
+    \item For any collection $\{F+\alpha\}$ of closed sets, $\bigcap F_\alpha$ is also closed.
+    \item For any finite collection $G_1, ..., G_n$ of open sets, $\bigcap_{i=1}^n G_i$ is also open
+    \item For any finite collection $F_1, ..., F_n$ of closed sets, $\bigcup_{i=1}^n F_i$ is also closed
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item If $N_r(p)$ is the neighborhood about some point $p$ in $G$ with $N_r(p) \subset G$ (such that $p$ is an interior point), then $N_r(p)$ will still be a subset of $\bigcup_\alpha G_\alpha$, so the point will still be an interior point if it is unioned with other sets. And if all of the constitutent sets are open sets, then the all the points in the union have their interior-ness preserved, so the union will still be an open set.
+    \item Let $F_\alpha$ be closed. If we recall, $$(\bigcap_\alpha F_\alpha)^c = \bigcup_\alpha F_\alpha^c$$We know the complement of a closed set is open, so $F_\alpha^c$ is open, and we know the union of open sets is open, so $\bigcup_\alpha F_\alpha^c$ is open, so by equality, $(\bigcap_\alpha F_\alpha)^c$ is open, so $\bigcap_\alpha F_\alpha$ must be closed.
+    \item Let $H$ be the intersection of all these sets, and let $x$ be in $H$. For every set $G_i$ which constitutes the intersection of $H$, there is some radius $r_i$ where the neighborhood about $x$ with that radius fits in $G_i$. We take the smallest such radius, and the resulting neighborhood will also fit in $H$. Repeat this with all $x$ in $H$ to find that $H$ is open.
+    \item We do the same bullshit with the complements to get this result.
+\end{enumerate}
+\end{customproof}
+
+\begin{definition}[Closure of Sets]
+\
+
+If $X$ is a metric space, and if $E \subset X$ and $E'$ denotes the set of all limit points of $E$, then the \textbf{closure} of $E$, $\bar{E} = E \cup E'$ 
+\end{definition}
+
+\begin{theorem}
+\
+
+If $X$ is a metric space and $E \subset X$, then:
+
+\begin{enumerate}
+    \item $\bar{E}$ is closed
+    \item $E = \bar{E}$ if and only if $E$ is closed
+    \item If $F$ is a closed set and $E \subset F$, then $\bar{E} \subset F$
+\end{enumerate}
+\end{theorem}
+
+\begin{solution}
+\
+
+\begin{enumerate}
+    \item If $p$ is not in $\bar{E}$ then it is not a limit point of $E$ or in $E$, so for some neighborhood of $p$, it doesn't intersect $E$, so it is interior to $\bar{E}^c$, so $\bar{E}$ must be closed.
+    \item If $E$ is closed, then $E' \subset E$ so $E = \bar{E}$
+    \item If $F$ is closed and $E \subset F$, then $F' \subset F$, so $E' \subset F$, so $\bar{E} \subset F$
+\end{enumerate}
+\end{solution}
+
+\begin{theorem}
+\
+
+Let $E$ be a nonempty set of real numbers with an upper bound. Let $y = \sup E$. Then, $y \in \bar{E}$, so $y \in E$ if $E$ is closed. 
+\end{theorem}
+
+\begin{customproof}
+\
+
+$y$ is a limit point of $E$ because for any real number $r$, there must be some number $y-r < x < y$ that is in $E$, otherwise $y-r$ would bound $E$ from above, and also be less than $y$, so it would be the supremum. So $y \in \bar{E}$, and so $y \in E$ if $E$ is closed.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose $Y \subset X$. A subset $E$ of $Y$ is open relative to $Y$ if and only if $E = Y \cap G$ for some open subset $G$ of $X$
+\end{theorem}
+
+\begin{customproof}
+\
+
+%No fucking cap i just copied this shit from the book I have a flight tmrw and my brain is FRIED i can't take it anymore
+
+To clarify, to be "open relative to another set" means that there is some neighborhood which is a subset of that other set. So for example, on the metric space of the real line, $(0.5,1]$ is not open, because $1$ is not an interior point. However, if we only consider the subset of the real line $[0,1]$, it is a metric space now, because the points which would have made $1$ not interior don't exist anymore. So $(0.5,1]$ is open relative to $[0,1]$.
+
+Suppose $E$ is open relative to $Y$. Then, for each $p \in E$, there is some positive real number $r_p$ so that $d(p,q) < r_p$ for $q \in Y$ so that $q \in E$ (the maximum radius so that the neighborhood is contained in $E$). Let $V_p$ be the set of all such $q \in X$ such that $d(p,q) < r_p$, and define $G = \bigcup_p V_p$, the union of all such $V_p$. Since all neighborhoods are open sets ($V_p$ is a neighborhood), the union of all of them is open, so $G$ is open. Notice that $V_p \cap Y \subset E$ for all $p \in E$, so $G \cap Y \subset E$, so $E = G \cap Y$.
+
+To prove the reverse implication, if $G$ is open in $X$ and $E = G \cap Y$, every $p \in E$ has a neighborhood $V_p \subset G$, so $V_p \cap Y \subset E$, so $E$ is open relative to $Y$.
+\end{customproof}
+
+\end{document}

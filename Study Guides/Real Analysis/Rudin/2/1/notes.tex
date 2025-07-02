@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 2: Finite, Countable, and Uncountable Sets}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Function]
+	Consider two sets, $A$ and $B$. Then suppose that each element $x$ of $A$ is associated in some manner with an element of $B$, which we denote $f(x)$. Then, $f$ is called a \textbf{function} from $A$ to $B$, and $A$ is called the \textbf{domain} of $f$, $B$ is called the \textbf{codomain} of $f$, and all elements $f(x) \subseteq B$ make up the \textbf{range} of $f$, and is denoted $f(A)$.
+\end{definition}
+
+\begin{definition}[Image]
+If we have a function $f: A \to B$, and a subset $E \subseteq A$, then the set of all elements $f(e)$, where $e$ is an element in $E$, is called the \textbf{image}	of $E$ under $f$. Likewise, if we have some $E \subseteq f(A)$, that is, some subset of the range, then the \textbf{preimage} of $E$ is all of the elements $x$ in $A$ such that $f(x)$ is in $E$.
+\end{definition}
+
+\begin{definition}[Injectivity and Surjectivity]
+	
+Suppose we have $f: A\to B$. 
+
+If the range of $f$ is equal to the codomain, that is $f(A) = B$, then the function is \textbf{surjective}.
+
+If every element in the range is only mapped to by one element in the domain, that is, $f(x_1) = f(x_2)$ implies $x_1 = x_2$ for all $x_1$, $x_2$ in $A$, then the function is called \textbf{injective}.
+
+If a function is both, it is called \textbf{bijective}.
+\end{definition}
+
+\begin{definition}[Set Cardinality]
+	
+If there exists a bijective mapping $f: A\to B$ between sets $A$ and $B$, then we say that the sets $A$ and $B$ have the same \textbf{cardinality}, denoted $A \sim B$. Alternatively, we can say that these sets have a \textbf{one to one correspondence} or they have the same \textbf{cardinal number}, or they are \textbf{equivalent}.
+\end{definition}
+
+\begin{proposition}
+
+Set equivalence is an equivalence relation, in other words, it obeys the following properties: \begin{enumerate}
+	\item $A \sim A$
+	\item $A \sim B$ means that $B \sim A$
+	\item $A \sim B$ and $B \sim C$ means that $A \sim C$
+\end{enumerate}
+	\end{proposition}
+
+\begin{customproof}
+
+\begin{enumerate}
+	\item We need to show that for any set $A$, there is some bijective mapping between $A$ and itself. There is always such a mapping, just map the elements of $A$ to themselves, so $f(x) = x$ for all $x$ in $A$. It seems pretty clear that this mapping is bijective.
+	\item Suppose there was a bijective mapping $f: A \to B$. Then, does there exist a bijective mapping $g: B \to A$? Yes, if we let $g$ be the inverse of $f$. Since $f$ was bijective, so is its inverse.
+
+\item Suppose we have $f: A \to B$ and $g: B \to C$ with $f, g$ bijective. Then, to show that set equivalency is transitive, we need to show that $g \circ f$ is bijective. Since the range of $f$ is equal to the domain of $g$, and the range of $g$ is the entire set $C$, we know that $g \circ f$ is surjective from $A$ to $C$. In addition, if we have $g(f(x_1)) = g(f(x_2))$ for some $x_1, x_2$ in $A$, since $g$ is injective, we know that $f(x_1) = f(x_2)$ and since $f$ is injective, we know that $x_1 = x_2$, so we know that $g \circ f$ is also injective, so it is bijective, meaning it is a valid set equivalence, meaning that set equivalency is transitive.
+\end{enumerate}
+\end{customproof}
+
+\begin{definition}[Finite Sets and Countability]
+
+	Let $J_n$ be the set of all natural numbers up to $n$, so $1,2,3, \dots ,n$. If $A \sim J_n$ for any natural number $n$, then $A$ is called \textbf{finite} and has cardinality $n$. 
+
+	If $A$ is not finite, it is \textbf{infinite}. 
+
+	Let $J$ be the set of all the positive natural numbers. If $A \sim J$, then $A$ is \textbf{countably infinite}.
+
+	If $A$ is not finite or countably infinite, it is \textbf{uncountably infinite}.
+\end{definition}
+
+
+\begin{example}
+	Let $A$ be the set of all integers. Then, $A$ is countable because we can construct a bijection from $J$ to $A$ where $$f(n) = \frac{n}{2} \text{ for even }n$$
+	$$f(n) = -\frac{n-1}{2} \text{ for odd } n$$ 
+\end{example}
+
+Note that a finite set cannot be equivalent to one of its strict subsets, as a bijection necessitates the same cardinality, but for infinite sets, an infinite subset may still be equivalent\dots
+
+\begin{definition}[Sequences]
+	A \textbf{sequence} is a function which has a domain on the set of positive integers, $J$. The terms of a sequence are all the values that $f$ can take on, so the set of all $f(n)$ for $n$ in the positive integers. If all the terms belong to some set $A$, so $f(n)$ is in $A$ for all $n$ in the positive integers, then the sequence can be said to be in $A$\dots
+\end{definition}
+
+Since bijections are a function, and a countable set is one where a bijection exists from the natural numbers to the set, we can say that any countable set can be arranged in a sequence.
+
+\begin{theorem}
+Every infinite subset of a countable set $A$ is countable.
+\end{theorem}
+
+\begin{proof}
+		Suppose $E \subset A$ and $E$ is infinite. Then, arrange the elements of $A$ in a sequence $\{x_n\}$, which is possible as $A$ is countable. Now, we make a new sequence $\{n_k\}$ as follows. The first value, $n_1$, is the smallest positive integer such that $x_n_1$ is in $E$, basically, it is the index of the first element in $\{x_n\}$ which is also in $E$. Then, every element $n_k$ is the smallest integer greater than $n_{k-1}$ where $x_n_k$ is in $E$.
+
+		Now, if we define a function $f(k) = x_n_k$, we can show that there is a 1-1 correspondence between $E$ and $J$, so $E$ is countable.
+		\end{proof}
+
+		\begin{theorem}
+
+			If we have a sequence of countable sets $\{E_n\}$ then the union of these sets, $$\bigcup_{n=1}^{\infty} \{E_n\}$$is countable.
+		\end{theorem}
+			\begin{proof}
+
+				Arrange $\{E_n\}$ sush that the elements of $E_n$ forms the $n$th row of a grid. Then, we can make a sequence of these elements $\{x_k\}$ by starting at the top left of the grid, and weaving diagonally back and forth, so the first element of $E_1$ is the first element of our new sequence, the first element of $E_2$ is the second element, the second element of $E_1$ is the third, the third element of $E_1$ is the fourth, the second element of $E_2$ is the fifth, and so on. Now, we map $f: J \to \{x_k\}$ with the function $f(k) = x_k$, so the sequence is countable. There is a subset of the terms of $x_k$ without any duplicates, which we will call $S$. Since a subset of a coutable set is countable, $S$ is countable, and since $S = \bigcup \{E_n\}$, we know that $\bigcup \{E_n\}$ is countable.
+		\end{proof}
+
+
+		\begin{theorem}
+		Let $A$ be a countable set, and let $B_n$ be the set of all $n$-tuples $(a_1, a_2, ..., a_n)$ where $a_k$ is in $A$, and the elements of the tuples can be repeated. Then, $B_n$ is countable
+		\end{theorem}
+
+		\begin{proof}
+			$B_1$ is countable, since $B_1$ is just all the elements of $A$ in $1$-ple form, and $A$ is countable. Now, if we let $B_{n-1}$ be countable, then the elements of $B$ are in the form $(b,a)$, where $b$ is a $n-1$-ple, and $a$ is just some element in $A$. For any possible $b$, the amount of unique possible $(b,a)$ pairs is countably infinite, and as $B_n$ is the union of all of the possible $(b,a)$ pairs, the union of countable number of $b$ tuples, each with a countably ininite amount of variations made by appending different elements of $A$ on them, is itself countable. 
+		\end{proof}
+
+		\begin{theorem}
+The set of all rationals is countable.
+		\end{theorem}
+
+		\begin{proof}
+All rationals are of the form $b/a$, where $a,b$ are integers and $a$ nonzero, and these are just tuples of integers, so if the integers are countable, then so are the rationals, by the last proof.
+		\end{proof}
+
+		\begin{theorem}
+			The set of all sequences whose elements are all $0$ or $1$ is uncountable.
+
+		\end{theorem}
+
+		\begin{proof}
+			Let $S$ be such set. Suppose this set was countable. Then, there would be some mapping $f: \mathbb{N} \to S$ which is bijective. Now, lets construct a new sequence, $\{x_k\}$. In this sequence, $x_k$ is the opposite of whatever $f(k)_k$ is, so if the $k$th value of the $k$th sequence in $S$ is $0$, then in our sequence, it will be $1$, and vice versa.
+
+			This new sequence differs between any of the sequences in $S$ by exactly one position, since we flipped one position per sequence, yet it still is a sequence composed entirely of zeroes and ones, so it belongs in $S$. However, it cannot belong to the range of $f$, since if it was, $\{x_k\} = f(a)$ for some $a$ in $\mathbb{N}$, which is impossible since we chose it to differ at at least one value for every sequence. So, it cannot be in the range, but it is in the domain, so $f$ is not surjective, so it is not bijective, so a bijection cannot exist mapping $\mathbb{N}$ to $S$, so it is uncountable.
+		\end{proof}
+
+\end{document}

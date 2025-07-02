@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{12.4: Fluid Flow}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Ideal Fluid]
+An \textbf{ideal fluid} is one which is incompressible and has no internal friction (viscosity). Most liquids are pretty close to incompressible, and we can ignore their viscosity in most cases.  
+\end{definition}
+
+\begin{definition}[Flow Lines]
+    \ 
+
+A \textbf{flow line} is the path a particle takes. \textbf{Steady flow} is when flow lines don't change.
+
+\textbf{Streamlines} are lines which are always tangent to the fluid velocity at every point 
+
+A collection of flow lines is called a \textbf{flow tube}
+
+\textbf{Laminar flow} occurs when adjacent layers of fluid slide past each other.
+
+\textbf{Turbulent flow} occurs when there is no steady-state pattern 
+\end{definition}
+
+\begin{theorem}[The Continuity Equation]
+The continuity equation states that at two points in a tube, the following holds: $$A_1v_1 = A_2v_2$$
+\end{theorem}
+
+\begin{customproof}
+In steady flow, the mass of a moving fluid can't change. Therefore, at a point, fluid is moving according to $$ds = v dt$$over a small time interval $dt$. Therefore, a cylinder with cross section $A$ is moving $$dV = A ds = A v dt$$amount of fluid over that interval. Since the fluid's mass can't change and it is incompressible, its volume can't change either, so therefore, $dV_1 = dV_2$, and as such, $$A_1v_1 = A_2v_2$$ 
+\end{customproof}
+
+\end{document}

@@ -1,8 +1,40 @@
 \documentclass{article}
 \usepackage{alexconfig}
-\title{12.2: }
+\title{12.2: Pressure in a Fluid}
 
 \begin{document}
 \maketitle
+
+\begin{definition}[Pressure]
+\textbf{Pressure} within a fluid at a small area is the normal force of the fluid exerted at that area over the area of the area.
+
+$$p = \frac{dF_\perp}{dA}$$we can imagine a thin sheet and calculate the normal force on one side. 
+\end{definition}
+
+If a fluid isn't flowing, the pressure within the fluid must be equal. 
+
+\begin{theorem}
+The deeper you go within a still fluid, the more pressure there is.
+\end{theorem}
+
+\begin{customproof}
+Imagine we analyze a small rectangular prism of fluid. It has top and bottom faces with area $A$ and a height $dy$, where we take the positive vertical direction to be upward. Since the fluid is still, the forces must be balanced. We will only look at the forces in the $y$ axis.
+
+The force on the bottom of the prism of fluid acting upwards is given by $pA$, the pressure of the fluid times the area of the bottom surface of the prism.
+
+The force on the prism acting downwards is given by $(p+dp)A + dw$, where we are assuming $dp$ is a small change in pressure and $dw$ is the weight of our prism of fluid. 
+
+In all, $$pA - (p+dp)A - dw = 0$$However, notice that weight is just density times volume times $g$, and volume is height times base area, so $$pA - (p+dp)A - Adyg\rho = 0$$Cancelling the $A$, we get $$p - p - dp - dyg\rho = 0$$We can cancel the $p$ and $-p$ to get $$-dp -dyg\rho = 0$$Adding $dyg\rho$ to both sides gets us $-dp = dyg\rho$, and finally, dividing by $-dy$ gives $$\frac{dp}{dy} = g\rho$$
+\end{customproof}
+
+\begin{lemma}
+If we integrate both sides with respect to $dy$, we get $$\int_{y_1}^{y_2} \frac{dp}{dy}dy = \int_{y_1}^{y_2} g\rho dy$$we get $$p_1 - p_2 = g\rho(y_2-y_1)$$(remember that we took upwards to be positive, and upwards means less pressure). From this we get $$p_1 = p_2 + g\rho h$$
+\end{lemma}
+
+\begin{definition}[Gauge Pressure]
+Most ways of measuring pressure involve comparing two different pressures. As such, when we use a pressure gauge, we are actually comparing the pressure inside to the atmospheric pressure. This is called \textbf{gauge pressure}. 
+\end{definition}
+
+
 
 \end{document}

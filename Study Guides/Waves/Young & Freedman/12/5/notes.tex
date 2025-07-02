@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{12.5: Bernoulli's Equation}
+
+\begin{document}
+\maketitle
+
+To derive Bernoulli's equation, lets try to find the work done on some fluid in a pipe.
+
+\begin{theorem}
+Change in work of a fluid in a pipe is given by $$dW = dV(p_1 - p_2)$$
+\end{theorem}
+
+\begin{customproof}
+
+    
+    Consider fluid at two points. Over some small time interval $dt$, the fluid at point $1$ moves $$ds_1 = v_1dt$$and the fluid at point $2$ moves $$ds_2 = v_2 dt$$Since the fluid is incompressible, $$ds_1A_1 = ds_2A_2$$
+    
+    If the fluid is not viscous, meaning there is no friction, then the only elements doing work are gravity and pressure.
+    
+    If the pressure at $1$ is $p_1$ and the pressure at $2$ is $p_2$, then the force at $1$ is $p_1A$ and the force at $2$ is $p_2A$. Therefore, the total work done on the fluid is $$dW = p_1Ads_1 - p_2Ads_2$$since work is force times distance, but the force at point $2$ opposes the displacement of the fluid at point $1$. 
+
+    Since $Ads_1 = dV$, we substitute to get our final equation
+    
+\end{customproof}
+    Since gravity is conservative, it doesn't change total energy, so we disregard it.
+    
+    We can also calculate kinetic energy.
+
+\begin{theorem}
+Change in kinetic energy of a fluid is given by $$dK = \frac{1}{2}\rho dV (v_2^2 - v_1^2)$$
+\end{theorem}
+
+\begin{customproof}
+Change in kinetic energy is given by $$\frac{1}{2}m(v_2^2 - v_1^2)$$and the mass of a fluid is equal to $\rho A_1 ds_1 = \rho dV_1$, so we get $$dK = \frac{1}{2} \rho dV (v_2^2 - v_1^2)$$
+\end{customproof}
+
+\begin{theorem}
+Change in gravitational potential energy of a fluid is given by $$dU = \rho dV g (y_2 - y_1)$$
+\end{theorem}
+
+\begin{customproof}
+Do the same substitution for mass as before.
+\end{customproof}
+
+\begin{theorem}
+Bernoulli's Equation is given by:
+
+$$p_1 - p_2 = \frac{1}{2} \rho (v_2^2 - v_1^2) + \rho g (y_2 - y_1)$$
+\end{theorem}
+
+\begin{customproof}
+
+The change in work can be described via this formula: $$dW = dK + dU$$and plugging in our values from before we get $$(p_1 - p_2)dV = \frac{1}{2}\rho dV (v_2^2 - v_1^2) + \rho dV g (y_2-y_1)$$and cancelling the $dV$ yields our final equation.
+
+\end{customproof}
+
+\end{document}

@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 1: Exercises}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}[1]
+\
+
+If $r$ is rational and $r \neq 0$ and $x$ is irrational, show that $r+x$ and $rx$ are irrational.
+\end{exercise}
+
+\begin{solution}
+\
+
+We do a proof by contradiction. Suppose $r$ is rational, $x$ is irrational, and $r+x$ is rational. Let $r = \frac{a}{b}$ for some integers $a,b$ and $b \neq 0$. Then, we can express $$r+x = \frac{q}{p}$$for integers $q,p$ and $p \neq 0$. Then, $$\frac{a}{b} + x = \frac{q}{p}$$and we subtract over to get $$x = \frac{q}{p} - \frac{a}{b}$$Since the rationals form a field, rational numbers are closed under addition and subtraction, so therefore, $x$ is rational, which is a contradiction.
+
+Likewise, if we assume that $rx$ is rational, we can say $$rx = \frac{q}{p}$$for some integers $q,p$ and nonzero $p$. Then, $$x = \frac{qb}{pa}$$and can be expressed as a rational number. The denominator is nonzero beacuse $r \neq 0$, so $a \neq 0$ and $p \neq 0$ either.
+\end{solution}
+
+\begin{exercise}[2]
+\
+
+Prove there is no rational number whose square is $12$.
+\end{exercise}
+
+\begin{solution}
+\
+
+Assume that there is some rational number $\frac{p}{q}$ where $(\frac{p}{q})^2 = 12$ and $p, q$ are coprime (we can say this without loss of generality because every rational number has some form where the numerator and denominator are coprime). Then, $$p^2 = 12 q^2$$this tells us that $p^2$ must be divisible by $12$. The only way this can happen is if $p$ is divisible by $2$ and $3$ (it must get all the prime factors of $12$ which are $2,2,3$ from one number squared, so the very minimum is $2,3$). 
+
+Then, $p^2$ is divisible by $36$, so $12q^2$ is divisible by $36$, so $q^2$ must be divisible by $3$. The only way this can happen is if $q$ is divisible by $3$, but this is impossible as we said that $p$ and $q$ are coprime, so this is a contradiction. 
+\end{solution}
+
+\begin{exercise}
+\
+
+Derive the following true statements from the field axioms:
+
+\begin{enumerate}
+    \item If $x\neq 0$ and $xy= xz$ then $y=z$
+    \item If $x\neq 0$ and $xy = x$ then $y=1$
+    \item If $x \neq 0$ and $xy=1$ then $y = \frac{1}{x}$
+    \item If $x\neq 0$ then $\frac{1}{\frac{1}{x}} = x$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\
+
+\begin{enumerate}
+    \item We start with $x\neq 0$ and $$xy = xz$$Then, we left multiply by $\frac{1}{x}$ to get $y = z$
+    \item We start with $$xy=x$$and left multiply by $\frac{1}{x}$ to get $y = 1$
+    \item $$xy=1$$and we left multiply by $\frac{1}{x}$ to get $y = \frac{1}{x}$
+    \item We start with$$\frac{1}{\frac{1}{x}} = x$$and left multiply by $\frac{1}{x}$ to get $$1 = 1$$so since this statement is true, and the initial statement is logically equivalent, the initial statement is true as well.
+\end{enumerate}
+\end{solution}
+
+\begin{exercise}[4]
+\
+
+Let $E$ be a nonempty subset and let $\alpha$ be a lower bound on $E$ and $\beta$ be an upper bound on $E$. Prove that $\alpha \leq \beta$
+\end{exercise}
+
+\begin{solution}
+\
+
+By definition of lower bound, $\alpha \leq e$ for all $e$ in $E$, and by definition of upper bound, $e \leq \beta$ for all $e$ in $E$. By the transitive property of order, this means that $\alpha \leq \beta$.
+\end{solution}
+
+\begin{exercise}[5]
+\
+
+Let $A$ be a nonempty set of real numbers which is bounded below and $-A$ be the set of all $-x$, for all $x$ in $A$. Prove that $\inf(A) = -\sup(-A)$
+\end{exercise}
+
+\begin{solution}
+\
+
+We do a proof by contradiction. Suppose that $\inf(A) \neq -\sup(-A)$. We have two cases. 
+
+Case 1: $\inf(A) < -\sup(-A)$
+
+Then, choose some $x$ where $\inf{A} < x < -\sup(A)$. This means that $-x > \sup(-A)$ meaning that for all $-a$ in $-A$, $-x > -a$. However, this implies that for all $a$ in $A$, $x < a$, which means that $x$ is a lower bound of $A$, but also, $x > \inf(A)$ which is impossible, hence a contradiction.   
+
+Case 2: $\inf(A) > -\sup(-A)$
+
+
+Then, choose some $x$ where $ -\sup(A) < x < \inf{A}$. Since $x < \inf(A)$, for all $a$ in $A$, $x < a$. This implies that for all $-a$ in $-A$, $-x > -a$, making $x$ an upper bound for $-A$, but also, $-x < \sup(A)$, which is a contradiction.
+\end{solution}
+
+\begin{exercise}[6]
+\
+
+Fix $b > 1$. 
+
+\begin{enumerate}
+    \item If $m,n,q,p$ are integers and $r = \frac{m}{n} = \frac{p}{q}$ and $n, q > 0$, then show that $(b^m)^\frac{1}{n} = (b^p)^\frac{1}{q}$, and hence, $b^r = (b^m)^{\frac{1}{n}}$.
+    \item Prove that $b^{r+s} = b^rb^s$ if $r,s$ are rational.
+    \item Define $B(x)$ to be the set of all $b^t$ for all rational $t \leq x$. Show that $b^r = \sup B(r)$, and hence, it is logical to define that $b^x = \sup B(x)$
+    \item Show that $b^{x+y} = b^xb^y$ for all real $x,y$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\
+
+\begin{enumerate}
+    \item We first observe that $\frac{m}{n} = \frac{p}{q}$, and when multiplying both sides by both $n$ and $p$, we get that $mq = pn$. 
+
+Secondly, observe that if $a,b$ are integers, then $(x^a)^b = x^{a*b}$. This is true as $(x^a)^b$ is a product of $b$ number of $x^a$, and $x^a$ is a product of $a$ number of $x$, so if we break them apart, we get $a*b$ number of $x$, which is $x^{a*b}$.
+
+We now note that $x^\frac{1}{n} = y$ implies $x = y^n$. We start with $$(b^m)^\frac{1}{n} = (b^p)^\frac{1}{q}$$and hope to transform it into some logically equivalent statement that we know the truth value of. We can say that the above statement is logically equivalent to $$b^m = ((b^p)^\frac{1}{q})^n$$
+
+%this is the sketchy part? is it correct to say the following?
+
+And this is equivalent to $$(b^m)^q = (b^p)^n$$and by the observation above, this means that $$b^{m*q} = b^{p*n}$$and since $mq = pn$, we know that the equality $b^{m*q} = b^{p*n}$ holds, and so the original statement, which is logically equivalent holds.
+
+Likewise, we know that $rn = m$ so by the same logic, we can say that $$b^r = (b^m)^\frac{1}{n}$$
+
+\item We let $r,s$ be rational, and $b>1$, and define $r = \frac{m}{n}$ and $s = \frac{p}{q}$ where $m,n,p,q$ are integers and $n,q > 0$. Then, $$b^{r+s} = b^{\frac{m}{n} + \frac{p}{q}} = b^{\frac{mq+np}{nq}}$$By the singular root theorem, which states that $x^\frac{1}{n} = y$ implies that $x = y^n$, and the previous result, we get that $$b^{r+s} = (b^{mq+np})^\frac{1}{nq}$$and so$$(b^{r+s})^{nq} = b^{mq+np}$$
+
+Now observe that $x^{a+b} = x^ax^b$ for integers $a,b$, since if $a$ or $b$ is greater than zero, then $x^a = x*x*...*x$ for $a$ number of times, and if either $a$ or $b$ is negative, then it will be $(x^{-1})$ for $a$ number of times, cancelling out one $x$ for each $x^{-1}$ in the product. 
+
+So now we have $$(b^{r+s})^{nq} = b^{mq} b^{np}$$and if we use our singular root identity one more time, and the corrolary to it, which states that $(xy)^a = x^ay^a$, we get that $$b^{r+s} = (b^{mq}b^{np})^\frac{1}{nq} = b^\frac{mq}{nq} b^\frac{np}{nq} = b^\frac{m}{n} b^\frac{p}{q}$$
+
+\item We first want to show that for $x>1$, then $a<b$ implies $x^a < x^b$. 
+
+We start with the statement that $$x^a<x^b$$By multiplying on both sides by $x^-b$, we get $$x^{a-b} < 1$$Since we know that $a<b$, we know that $a-b < 0$, so $b-a>0$, so we have $$\frac{1}{x^{b-a}} < 1$$Since we know that $x^{b-a}$ is greater than one (since $b-a > 0$ and $x>1$), the denominator is larger than the numerator, so this fraction is indeed less than one, which is true, making the logically equivalent original statement true.
+
+From here on out, it is simple to see that the supremum of the set $B(r)$ will be the largets $b^t$ possible, which is obtained by picking the largest $t$ possible, which happens to be $r$, so the supremum of the set $B(r)$ is $b^r$
+
+\item Let $\alpha$ be in $B(x)$ and $\beta$ be in $B(y)$. Then, consider the set composed of elements of the form $\alpha * \beta$. The supremum of this set is $b^{x+y}$, and the supremum of the individual $B(x)$, $B(y)$ are $b^x$ and $b^y$ respectively, so we can conclude that $b^{x+y} = b^xb^y$.
+\end{enumerate}
+\end{solution}
+
+\end{document}

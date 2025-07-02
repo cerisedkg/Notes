@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 1: Euclidean Spaces}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Euclidean Spaces]
+\
+
+\textbf{Euclidean spaces} $R^k$ are sets of $k$-tuples $a = (a_1, a_2, ..., a_k)$ where each $a_i$ is a real number. The tuples $a$ are called points, or vectors, and obey the following rules:
+
+Let $a = (a_1, a_2, ..., a_k)$ and $b = (b_1, b_2, ..., b_k)$ and let $\alpha$ be a real number.
+
+\begin{enumerate}
+    \item $a+b = (a_1 + b_1, a_2 + b_2, ..., a_k+b_k)$
+    \item $\alpha a = (\alpha * a_1, \alpha * a_2, ..., \alpha * a_k)$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Inner Product]
+\
+
+The \textbf{inner product} of two vectors $a \cdot b$ is: $$a \cdot b = \sum_{j=1}^k a_j* b_j$$ 
+\end{definition}
+
+\begin{definition}[Norm]
+\
+
+The \textbf{norm} of a vector is: $$\vert x \vert = (x \cdot x)^\frac{1}{2} = (\sum_{j=1}^k x_j * x_j)^{\frac{1}{2}}$$
+\end{definition}
+
+\begin{theorem}
+\
+
+\begin{enumerate}
+    \item $\vert x\vert \geq 0$
+    \item $\vert x\vert = 0$ iff $x = 0$
+    \item $\vert \alpha x \vert = \vert \alpha \vert \vert x\vert$
+    \item $\vert x \cdot y\vert \leq \vert x\vert * \vert y\vert$
+    \item $\vert x+y\vert \leq \vert x\vert + \vert y\vert$
+    \item $\vert x-z\vert \leq \vert x - y\vert + \vert y-z\vert$                
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item Since we are squaring every component and then summing them, the squares are always nonzero and therefore, the sum of them will be nonzero as well.
+    \item The only way to have a sum of zero is if each square of each component is zero, which can only happen if each component is zero.
+    \item $ \vert \alpha x\vert = (\sum (\alpha x_j)^2)^\frac{1}{2} = (\alpha^2 \sum x_j^2 )^\frac{1}{2} = \vert \alpha \vert * \vert x \vert$
+    \item If we look at the Schwarz Inequality which we proved in the last section, and imagine all the complex numbers are just sets of real components of vectors $a,b$, then the left side is the absolute value of the dot product, and the right side is the product of the norms, then, this inequality holds.
+    \item $\vert x + y\vert^2 = (x+y) \cdot (x+y) = (x \cdot x) + 2 (x \cdot y) + (y \cdot y) \leq \vert x\vert^2 + 2 \vert x\vert \vert y\vert + \vert y\vert^2$ (by our previous inequality)
+    \item Do the prior but replace $x$ with $x-y$ and $y$ with $y-z$            
+\end{enumerate}
+\end{customproof}
+
+\end{document}

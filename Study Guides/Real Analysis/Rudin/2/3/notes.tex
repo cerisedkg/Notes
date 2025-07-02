@@ -1,0 +1,191 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 2: Compact Sets}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Open Cover]
+\
+
+An \textbf{open cover} of a set $E$ in a metric space $X$ is a collection of open sets $\{G_\alpha\}$ where $$E \subset \bigcup_\alpha G_\alpha$$ 
+\end{definition}
+
+\begin{definition}[Compactness]
+\
+
+If every open cover of some set $K$ has a finite subset of open sets such that it still covers $K$, (called a finite subcover), then $K$ is considered \textbf{compact}. In simpler terms, if given any open cover of $K$, I can find a finite subset of that collection that also covers $K$, then that is considered compact.
+\end{definition}
+
+\begin{theorem}
+\
+
+Suppose $K \subset Y \subset X$. Then, $K$ is compact relative to $X$ if and only if $K$ is compact relative to $Y$
+\end{theorem}
+
+\begin{customproof}
+\
+
+We do the forward case. Suppose $K$ is compact relative to $X$. Then, by definition of compactness, every open covering of $K$ using open sets in $X$ has some finite subset of that covering which also covers $K$. Then, for each open set in that finite covering, we take the intersection with $Y$. These new intersections are open relative to $Y$ (see the last theorem of Chapter 2: Metric Spaces), and they still tile $K$ since $K$ is a subset of $Y$ and this should not get rid of any elements in $Y$. So, we have a finite collection of open sets relative to $Y$ which cover $K$, so $K$ is compact relative to $Y$.
+
+To prove the reverse case, suppose $K$ is compact relative to $Y$. Then, is $K$ compact relative to $X$? Let $\{G_\alpha\}$ be a collection of open subsets of $X$ which cover $K$. Let $V_\alpha = Y \cap G_\alpha$, then for some finitely many $\alpha$, $V_\alpha$ will cover $K$ because it is compact in $Y$, and since $\{G_\alpha\}$ are supersets and open in $X$, it will also cover $K$ in $X$.  
+\end{customproof}
+
+\begin{theorem}
+\
+
+Compact subsets of metric spaces are closed.
+\end{theorem}
+
+\begin{customproof}
+\
+
+The easiest way to do these closure proofs is to prove the complement is open.
+
+Let's say that $K$ is a compact subset of a metric space $X$, and let $K^c$ be its complement. A set is open if every point is an interior point, so every point has some neighborhood $N_r$ for where all the points in the neighborhood are entirely within that open set.
+
+Now let a point $p$ be in $K^c$, and $q$ be in $K$. Let $V_q$ be a neighborhood of $p$, and $W_q$ be a neighborhood of $q$, and let each radius be less than $\frac{1}{2}d(p,q)$. Since $K$ is compact, there are finitely many points $q$ we can pick so that the union of all the $W_q$ form an open cover of $K$ (neighborhoods are open). 
+
+Now, let the $V_q$ be the neighborhood around $p$, still. The intersection of all the $V_q$ (which are still centered around $p$) is some neighborhood $V$ which does not intersect the union of the $W_q$ at all, so it must be an interior neighborhood of $K^c$. We can do this process for any point $p$ in $K^c$, so it is open, so $K$ must be closed.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Closed subsets of compact sets are compact.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose $E \subset K$ and $K$ is compact (and closed) and $E$ is also closed. If $\{V_\alpha\}$ is an open cover of $E$, and we add $F^c$ (which is an open set) to the collection, then we get a covering of $K$. Since $K$ is compact, we can choose finitely many open sets in the collection to cover $K$, and by proxy, they cover $E$ as well, so $E$ is compact as well.
+\end{customproof}
+
+\begin{corollary}
+\
+
+If $F$ is closed and $K$ is compact then $F \cap K$ is compact
+\end{corollary}
+
+\begin{customproof}
+\
+
+Since $F$ and $K$ are both closed sets($F$ is closed since all closed sets are compact), so is their intersection. So $F \cap K$ is a closed subset of a compact set, $K$, so it is compact.
+\end{customproof}
+
+\begin{theorem}
+\
+
+If $\{K_\alpha\}$ is a collection of compact sets, and the intersection of every finite subcollection of $\{K_\alpha\}$ is nonempty, then the intersection of the entire collection. $\bigcap_\alpha K_\alpha$ is also nonempty.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Lets pick some $K_1$ in $\{K_\alpha\}$, and suppose that the intersection of the whole collection is empty. This means that there is no point in $K_1$ which is a part of every other $K_\alpha$ in the collection (if it was, it would be in the intersection of all of them). Now, notice that the sets $K^c_\alpha$ now form an open cover of $K_1$, since no single point is in all of the $K_\alpha$, every point of $K_1$ is in at least one $K_\alpha^c$. So, $K_1 \subset \bigcup K_\alpha^c$. Since $K_1$ is compact, we pick some finite set of $K_\alpha^c$ to cover $K_1$, but this now means that the intersection of $K_1$ and the non-complement versions of those sets is empty (since those sets cover $K_1$), but this is not allowed, since every finite subcollection of $K$ must have a nonempty intersection.
+\end{customproof}
+
+\begin{corollary}
+\
+
+If $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n \subset K_{n+1}$ then the intersection of the entire thing, $\bigcap_{n=1}^\infty K_n$ is nonempty.
+\end{corollary}
+
+\begin{theorem}
+\
+
+If $E$ is an infinte subset of $K$, and $K$ is compact, then $E$ must have a limit point in $K$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose this were not true, there was no $q$ in $K$ that was a limit point of $E$. Then, every $q$ in $K$ has some neighborhood that conatins either zero poitns in $E$ (if $q$ is not in $E$) or only one point in $E$, being $q$ itself if $q$ is in $E$. Then, lets make a covering out of all of these neighborhoods! There's no finite subcollection of this covering that can cover $E$, you could try to get all the points in $E$ by grabbing all the neighborhoods with a point in $E$ with them, but there's infinite points in $E$ so that wouldn't work. So you can't finitely cover $E$. Since $E \subset K$, you can't finitely cover $K$ either. But every infinite covering has some finite subcollection of open sets that can cover it too, so clearly $K$ isn't compact, a contradiction.
+\end{customproof}
+
+
+\begin{theorem}
+\
+
+If $\{I_n\}$ is a sequence of intervals in $\mathbb{R}^1$ such that $I_{n+1} \subset I_n$, then the intersection $\bigcap_n I_n$ is not empty.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Lets denote each element of the sequence, $I_n$ as some interval $I_n = [a_n,b_n]$. Since each interval must be the subset of the previous, the lower bound must increase and the upper bound must decrease (or stay the same) as we increase the index, so $a_1 \leq a_2 \leq a_3$ and $b_1 \geq b_2 \geq b_3$ and so on. Also, since for any interval, the lower bound must be less than the upper bound, we know that the set of all $a_n$ is bounded by $b_1$ above, so it has a supremum. Let the supremum of all the $a_n$ be $x$.
+
+Now, start with some interval $I_m$ and some positive integer $n$. Because the intervals are nested, $I_{m+n} \subset I_m$, so $a_n \leq a_{m+n} \leq b_{m+n} \leq b_m$ (since $n$ is always greater than $m+n$, we can say that $a_n \leq a_{m+n}$). So given any $n,m$, $a_n$ is less than $b_m$, so the entire set of $a_n$ is bounded by any $b$ above. But since $x$ is the supremum, it is smaller than any other upper bound of the set of all $a_n$, so it is smaller than any $b_m$ and larger than any $a_n$, so it is always in the interval $I_m$ for any $m$, so the union is nonempty, it contains at least $x$.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Let $k$ be a positive integer. If $\{I_n\}$ is a sequence of $k$-cells such that $I_{n+1} \subset I_n$, then the intersection $\bigcap_n I_n$ is nonempty.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let elements $I_n = [A_n, B_n]=[(a_{1n}, a_{2n}, ... , a_{kn}), (b_{1n}, b_{2n}, ... b_{kn})]$ be an interval of $k$-cells. Since each interval of $k$- cells must be a subset of the previous, each element in the tuple that composes the lower bounds of the interval must be greater or equal to the previous, and vice versa for the upper bounds.
+
+In other words, for all integers $j$ from $1$ to $k$, $a_{j1} \leq a_{j2} \leq a_{j3} ... $ and $b_{j1} \geq b_{j2} \geq b_{j3}$, and so on. So, for each $j$, there should be a supremum of all the $a_{jn}$, which we call $x_j$. Just like in the previous, we can show that all the $x_j$ are always less than any $b_{jn}$ and greater than any $a_{jn}$, so the tuple that is formed from all the $x_j$, being $(x_1, x_2, x_3, ... , x_k)$ is included in the intersection, so the intersection is nonempty.
+ \end{customproof}
+
+\begin{theorem}
+\
+
+Every $k$-cell is compact.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let $I$ be a $k$-cell that consists of all tuples $x$ where $a_j \leq x_j \leq b_j$ for $1 \leq j \leq k$. Then, let some number$$\delta = (\sum_{j=1}^k (b_j-a_2)^2)^\frac{1}{2}$$Then, for any $x,y$ in $I$, $\vert x-y \vert \leq \delta$ (and for many $x,y$ not in $I$ too).
+
+Now we try to fish for a contradiction. Suppose that $I$ wasn't compact, so there is some infinite covering of $I$ that has no finite subcovering. Call this infinite covering $\{G_\alpha\}$. We let $c_j = \frac{a_j+b_j}{2}$, so we are bisecting it along every dimension, and so we get $2^k$ resulting cells. For at least one of these cells, it cannot be covered finitely by some subcovering of $\{G_\alpha\}$, or else the whole thing could be covered finitely by the union of the cover of that block with the rest. So we call this block which cannot be finitely covered $I_1$. We then subdivide $I_1$ like we did before, call the block that cannot be finitely covered $I_2$, and repeat. 
+
+We get a sequence $I_n \subset I_{n-1} \subset ... \subset I_2 \subset I_1 \subset I$, and none of these can be finitely subcovered. Since these are all in $I$. Also, we know that if $x,y$ are in $I_n$, then $\vert x-y \vert \leq 2^{-n} \delta$. 
+
+By the previous theorem, we know there is some point $x$ which lies in every such $I_n$, and for some $\alpha$, $x \in G_\alpha$. Since $G_\alpha$ is an open set (as it is a member of the open covering of $I$), there is some $r>0$ where $\vert y - x \vert < r$ means that $y$ is in $G_\alpha$ (so there is some distance $r$ where all points of distance $r$ or less around $x$ are also in $G_\alpha$). If $2^{-n} \delta < r$, and it eventually will be, then the entirey of $I_n \subset G_\alpha$, so we actually do have a finite tiling!
+\end{customproof}
+
+\begin{theorem}
+\
+
+If a set $E$ in $\mathbb{R}^k$ has one of these properties, it has the other two:
+
+\begin{enumerate}
+    \item $E$ is closed and bounded
+    \item $E$ is compact
+    \item Every infinite subset of $E$ has a limit point in $E$
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+If $E$ is closed and bounded, then $E \subset I$ for some $k$-cell $I$, and so it is compact, as it is the subset of a $k$-cell which is also compact, so criterion $1$ implies criterion $2$. Since $E$ is now compact, then every infinite subset of a compact set has a limit point in $E$, which we proved before, so criterion $2$ implies criterion $3$.
+
+To complete the proof, we need to show that criterion $3$ implies criterion $1$.
+
+Suppose it is true that every infinite subset of $E$ has a limit point in $E$. 
+
+If $E$ is not bounded, then for every integer $n$, $E$ has some point where $\vert x \vert > n$, otherwise it would be bounded by $n$. The set $S$ consisting of one of these points for every integer $n$ is infinite, and has no limit point in $\mathbb{R}^k$. Since $S \subset E$, this violates the third criterion, so $E$ must be bounded.
+
+If $E$ is not closed, then there is a point $x_0$ which is a limit point of $E$ but not in $E$. For positive integers $n$, there are points $x_n$ where $\vert x_n - x_0 \vert < \frac{1}{n}$ because $x_0$ is a limit point of $E$. Let $S$ be a set consisting of one $x_n$ for each positive integer $n$. $S$ is infinite, otherwise there would be a closest point to $x_0$, and any neighborhoods with a radius less than their distance would not contain any points in $E$, so $x_0$ wouldn't be a limit point. So $x_0$ is a limit point of $S$, and $S$ has no other limit points, since if it had some other limit point $y$, then $\vert x_n - y \vert \geq \vert x_0 - y \vert - \vert x_n - x_0 \vert \geq \vert x_0 -y \vert - \frac{1}{n} \geq \frac{1}{2} \vert x_0 - y \vert$ for all but finitely many $n$, so $y$ can't be a limit point of $S$. So $S$ has no other limit points in $E$, so $E$ must be closed.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Every bounded infinite subset of $\mathbb{R}^k$ has a limit point in $\mathbb{R}^k$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Every bounded subset $S$ of $\mathbb{R}^k$ has some $k$-cell $I$ where $S \subset I$ and $I$ is compact. By the previous theorem, since $S$ is an infinite subset of $I$, $S$ must have a limit point in $I$, so $S$ must have a limit point in $\mathbb{R}^k$
+\end{customproof}
+
+\end{document}

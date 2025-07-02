@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 2: Perfect Sets}
+
+\begin{document}
+\maketitle
+
+
+\begin{definition}[Perfect Sets]
+\
+
+A \textbf{perfect set} is a set where all the points in the set are limit points of the set 
+\end{definition}
+
+\begin{theorem}
+\
+
+If $P$ is a nonempty perfect set in $\mathbb{R}^k$, then $P$ is uncountable.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Since $P$ has limit points (it's nonempty and a perfect set so there is at least one element in $P$, which is a limit point of $P$ since $P$ is perfect), $P$ must have an infinite number of elements. If it didn't, for every point in $P$ we could find a distance from a point in $P$ where there were no other elements of $P$, which means that that $P$ would have no limit points.
+
+Now we do proof by contradiction. Suppose $P$ was conuntable, and map points of $P$ to natural numbers, so we have $p_1, p_2, p_3, ... $. Now let $V_1$ be any neighborhood of $p_1$, so it is the set of all points $x$ where $\vert p_1 - x \vert < r$ for some $r$, and the closure of $V_1$, $\bar{V_1}$ is the set of all points $y$ where $\vert p_1 - y \vert \leq r$.
+
+Also suppose we choose the $V_n$s such that $V_n \cap P$ is nonempty. Since every point of $P$ is also a limit point of $P$, there is a neighborhood of $p_{n+1}$, called $V_{n+1}$, where $V_{n+1} \subset V_n$, $p_n$ is not in $V_{n+1}$, and $V_{n+1} \cap P$ is nonempty (we can find a neighborhood around $V_{n+1}$ that is in $V_n$, doesn't contain $p_n$, and overlaps with $P$). 
+
+Put $K_n = \bar{V_n} \cap P$. Since $\bar{V_n}$ is closed and bounded, it is also compact. Since $x_n$ is not in $K_{n+1}$, each subsequent $K_n$ excludes at least another point of $P$, so the intersection of all of these is empty. But each $K_n$ is nonempty, which is a contradiction of our earlier theorem that the intersection of nonempty nested sets is nonempty. This is a contradiction, so $P$ must be uncountable.
+\end{customproof}
+
+\begin{corollary}
+\
+
+Every interval $[a,b]$ is uncountable, and the real numbers are uncountable.
+\end{corollary}
+
+\begin{example}[The Cantor Set]
+\
+
+We will construct a set which is perfect in $\mathbb{R}$ but has no segment (a segment is like $(2,3)$ but an interval is like $[2,3]$).
+
+Let $E_0 = [0,1]$. Now, remove the segment $(\frac{1}{3}, \frac{2}{3})$, and let $E_1 = [0, \frac{1}{3}] \cup [\frac{2}{3}, 1]$. Remove the middle thirds of these intervals, and repeat, so $E_2 = [0, \frac{1}{9}] \cup [\frac{2}{9}, \frac{3}{9}] \cup [\frac{4}{9}, \frac{5}{9}] \cup [\frac{6}{9}, \frac{7}{9}] \cup [\frac{8}{9}, 1]$
+
+So we have a sequence of compact sets (the $E$s are closed and bounded) such that $E_1 \supset E_2 \supset E_3 \supset ...$, and that $E^n$ is the collective union of $2^n$ intervals, each with length $\frac{1}{3^n}$.
+
+The set $$P = \bigcap_{n=1}^\infty E_n$$is the \textbf{Cantor set}. It is compact, since it is a subset of $E_0$ which is compact, and since it is an intersection of compact sets where the intersection of any finite subcollection is nonempty, $P$ is nonempty as well.
+
+No segment of the form $(\frac{3k+1}{3^m}, \frac{3k+2}{3^m})$ has any points in common with $P$, if $k,m$ are positive integers (as these are the segments we cut out).
+
+Every segment contains some subsegment of the form above, so $P$ contains no segment. To show that $P$ is perfect, we need to show that $P$ has no isolated points. Let $x$ be in $P$, and let $S$ be some segment $(a,b)$ containing $x$. Let $I_n$ be the specific interval of $E_n$ which contains $x$, and make sure that $n$ is large enough so that $I_n \subset S$. Then let $x_n$ be an endpoint of $I_n$ where $x_n \neq x$. Then, $x_n$ is in $P$. Since if $x$ is in $P$, there is always some $x_n$ present and arbitrarily close to $x$, for any neighborhood of $x$, there is always an $x_n$ which is in $P$, so $x$ is a limit point of $P$, and $P$ is perfect.
+\end{example}
+\end{document}

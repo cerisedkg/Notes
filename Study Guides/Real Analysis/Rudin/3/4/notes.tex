@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Upper and Lower Limits}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Tending Towards Infinity]
+\
+
+Let $\{s_n\}$ be a sequence of real numbers with the following property: 
+
+for every real number $M$, there is an $N$ with $s_n > M$ for all $n > N$. This sequence is said to \textbf{tend towards positive infinity} and is written $$s_n \to +\infty$$Likewise, if $\{s_n\}$ had the property for every real number $M$, there is an $N$ with $s_n < M$ for all $n > N$, then the sequence would \textbf{tend towards negative infinity}, and could be written $$s_n \to -\infty$$ 
+\end{definition}
+
+\begin{definition}[Upper and Lower Limits]
+\
+
+Let $\{s_n\}$ be a sequence of real numbers. Let $E$ be the set of all subsequential limits (the set of all numbers to which subsequences can tend to). Then, $E$ is a subset of the extended real numbers (the reals with $\pm \infty$). Then, $s^* = \sup E$ and $s_* = \inf E$, and are called the \textbf{upper and lower bounds} of $\{s_n\}$ respectively. 
+
+We also can use the notation: $$s^* = \lim_{n \to \infty} \sup s_n$$and $$s_* = \lim_{n \to \infty} \inf s_n$$.
+\end{definition}
+
+\begin{theorem}
+\
+
+Let $\{s_n\}$ be a sequence of real numbers, and let $E$ be the set of all subsequential limits of $\{s_n\}$. Then, \begin{enumerate}
+    \item $s^*$ is in $E$
+    \item If $x > s^*$, there is an integer $N$ such that $n \geq N$ implies $s_n < x$
+\end{enumerate}
+
+The two proofs above can be extrapolated to lower limits as well.
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item If $s^* = + \infty$, then there is at least one subsequence which tends towards positive infinity, so its limit is $+ \infty$, so $s^*$ is in $E$.
+    
+    If $s^*$ is real, then $E$ is bounded above, with at least one subsequential limit existing, then $s^* \in \bar{E}$, and since the set of all subsequential limits must be closed, $E = \bar{E}$, so $s^*$ is in $E$.
+
+    If $s^* = - \infty$, then every subsequence must tend towards negative infinity, so $-\infty \in E$.
+
+    \item For this, we do a proof by contradiction. Suppose there was some $x > s^*$ where $s_n \geq x$ for infinitely many values of $n$. Then, we could make a subsequence out of these numbers whose limit will be greater than $s*$, which is a contradiction.
+\end{enumerate}
+\end{customproof}
+
+\begin{theorem}
+\
+
+If we have two sequences, $\{s_n\}$ and $\{t_n\}$ and $s_n \leq t_n$ for all $n > N$, where $N$ is a finite number, then $$s^* \leq t*$$and $$s_* \leq t_*$$
+\end{theorem}
+
+\begin{customproof}
+\
+
+$s^*$ must be less than or equal to $t^*$ because if we pick a subsequence of $\{t_n\}$ with all elements $n > N$, it will tend towards a limit greater than or equal to any limit of any subsequence of $\{s_n\}$, so $t^*$ must be greater than or equal to $s^*$. Likewise, any subsequence of $\{t_n\}$ must have infinitely many elements $n > N$, so even the lowest subsequential limit $t_*$ must be greater than or equal to $s_*$.
+\end{customproof}
+
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Convergent Sequences}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Convergent Sequences]
+\
+
+A sequence $\{p_n\}$ in a metric space $X$ is convergent in $X$ if there is some point $p$ with the property that for every $\epsilon > 0$ in the real numbers there is some nonnegative integer $N$ such that for all $n \geq N$, $d(p, p_n) \leq \epsilon$.
+
+In simpler terms, there is some point $p$ where the distance between the sequence and $p$ will eventually become smaller than any distance you can set. 
+\end{definition}
+
+\begin{example}
+\
+
+The sequence $\{p_n \} = \frac{1}{n}$ is convergent to $0$ in $\mathbb{R}$ but not in $\mathbb{R}^+$ because $0$ does not exist in it! The convergence of a sequence depends on the metric space it is in.
+\end{example}
+
+\begin{theorem}
+\
+
+Let $\{p_n\}$ be a sequence in a metric space $X$. Then:
+
+\begin{enumerate}
+    \item $\{p_n\}$ converges to $p \in X$ if and only if every neighborhood of $p$ contains $p_n$ for all but finitely many $n$.
+    \item If $p \in X$ and $p' \in X$, and if $\{p_n\}$ converges to both $p$ and $p'$, then $p = p'$
+    \item If $\{p_n\}$ converges, then $\{p_n\}$ is bounded. 
+    \item If $E \subset X$ and if $p$ is a limit point of $E$, then there is a sequence $\{p_n\}$ in $E$ such that $p = \lim_{n \to \infty} p_n$
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item We first do a forward proof by contradiction. Suppose $\{p_n\}$ converges to $p$ but there is some neighborhood of $p$ that excludes infinitely many $p_n$. Choose such a neighborhood $p$, called $k_d$ with distance $d$. Since $\{p_n\}$ converges to $p$, given the distance $d$, all but a finite number of $p_n$ lie within $d$ of $p$, so they are in the neighborhood, so there is a contradiction, the neighborhood must exclude infinitely many $p_n$ but also cannot exclude infintely many $p_n$.
+    
+    Now we do a reverse proof. Suppose every neighborhood contained all but finitely many $p_n$. Then, for every neighborhood of $p$, called $k_d$, by virtue of there only being finitely many $p_n$ not in the neighborhood, at some finite integer $N$, all $n > N$ would be less than distance $d$ from $p$, so $\{p_n\}$ does converge to $p$.
+    \item Suppose that $d(p,p') > 0$, and call that distance $d$. Suppose that $\{p_n\}$ converged to $p$, so for any $x = d(p_n,p)$, there were all but finitely many $p_n$ whose distance is greater than $x$. However, by the triangle inequality of metric spaces, $d(p_n,p) + d(p_n, p') \geq d(p,p')$, and so $d(p_n,p') \geq d(p,p') - d(p_n,p)$ so long as we choose $d(p_n,p) < d(p,p')$. Suppose we do just that. Then, there are an infinte number of terms closer to $p$ than $d(p_n,p)$, meaning there are an infinte number of terms farther than $d(p_n, p')$ from $p'$, which means that the sequence cannot converge to $p'$ if $d(p,p') > 0$ so they can only do it if $d(p, p') = 0$, or if $p = p'$
+    \item Suppose that $\{p_n\}$ converges, but $\{p_n\}$ was not bounded. Then, an infinite number of terms lie farther than $d(p, p_n)$ from $p$. If they didn't then we could pick the largest of those finite outliers, and set our bound to be that distance, $d(p, p_{max})$. Therefore, $\{p_n\}$ cannot be both convergent and unbounded.
+    \item Since $p$ is a limit point of $E$, this means that any neighborhood of $p$ will have elements of $E$ in it, so no matter the distance from $p$, there will always be an element of $E$ lesser than that distance from $p$, so we can pick that element for inclusion in our sequence. 
+
+\end{enumerate}
+\end{customproof}
+
+
+\begin{theorem}
+\
+
+Suppose $\{s_n\}$ is a sequence converging to $s$, and $\{t_n\}$ is a sequence converging to $t$. Then:
+
+\begin{enumerate}
+    \item $\{s_n + t_n\}$ converges to $s+t$
+    \item $\{cs_n\}$ converges to $c$
+    \item $\{s_nt_n\}$ converges to $st$
+    \item $\{\frac{1}{s_n}\}$ converges to $\frac{1}{s}$ provided none of the values of $s_n$ are zero and neither is $s$
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+\begin{enumerate}
+    \item Since $\{s_n\}$ converges to $s$ and $\{t_n\}$ converges to $t$, for any $\epsilon$ we take, we can find an $N_1$ such that $s_n$ where $n>N_1$ means that $d(s_n, s) < \frac{\epsilon}{2}$ and we can find $N_2$ such that $d(t_n, t) < \frac{\epsilon}{2}$. We take the greater of $N_1$ and $N_2$, and all $s_n + t_n$ where $n$ is greater than that will be less than $\epsilon$ from $s + t$, so the sequence $\{s_n + t_n\}$ converges to that number.
+    \item For any $\epsilon$, all the $s_n$ within $\frac{\epsilon}{c}$ of $s$ will correspond to $cs_n$ which are $\epsilon$ from $cs$
+    \item Given $\epsilon$, we can find $N_1$ and $N_2$ where $d(s_n,s) < \sqrt{epsilon}$ and $d(t_n,t) < \sqrt{epsilon}$ for all $n > N_1, N_2$ respectively. Then, if we take the greater of $N_1, N_2$, we know that all $n$ greater than that number will result in $d(s_nt_n, st) < \epsilon$. 
+    \item If we choose $N$ such that $\vert s_n \vert > \frac{1}{2} \vert s \vert$, then given $\epsilon > 0$, there is an integer $N > m$ such that $n \geq N$ implies $\vert s_n - s \vert < \frac{1}{2} \vert s \vert ^2 \epsilon$, so for $n \geq N$, $d(\frac{1}{s_n}, \frac{1}{s}) < \frac{2}{\vert s \vert^2} d(s_n, s) < \epsilon$
+\end{enumerate}
+\end{customproof}
+The results of the previous proof apply to operations in $\mathbb{R}^k$, not just $R^2$
+\begin{theorem}
+\
+
+Suppose $x_n \in \mathbb{R}^k$ and $x_n = (\alpha_{1,n}, \alpha_{2,n}, ..., \alpha_{k,n})$. Then, $\{x_n\}$ only converges to $x$ if $a_{m,n}$ converges to $a_m$ for every $m$ from $1$ to $k$.
+
+
+\end{theorem}
+
+\begin{customproof}
+\
+
+We do a proof by contradiction. Lets say that $\{x_n\}$ converged to $x$ but there was at least one dimension $\{x_{m,n}\}$ which did not converge to $x_m$. This means that for some $\epsilon > 0$, there was a finite number of $x_{m,n}$ where $d(x_{m,n}, x_m) < \epsilon$. Then, find the closest of those finite points, and we know that no element in the sequence $\{x_{m,n}\}$ can approach closer than that. Due to how distance works in $\mathbb{R}^k$, no element of $\{x_n\}$ can approach $x$ close than that either. Therefore, $\{x_n\}$ is not convergent. 
+\end{customproof}
+
+.
+\end{document}

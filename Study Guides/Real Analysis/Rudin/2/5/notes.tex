@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 2: Connected Sets}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Separated and Connected Sets]
+\
+
+Subsets $A$ and $B$ of a metric space $X$ are \textbf{separated} if both $A \cap \bar{B}$ and $\bar{A} \cap B$ are empty, so if no point of $A$ lies in the closure of $B$ and vice versa.
+
+If $E$ is not the union of any two separated sets, then it is \textbf{connected}. 
+\end{definition}
+
+\begin{example}
+\
+
+Separated sets are disjoint, but disjoint sets do not need to be separated. In $\mathbb{R}$, take $[0,1]$ and $(1,2)$. Since $1$ is in $[0,1]$ and is a limit point of $(1,2)$ (hence it is in the closure), these sets are not separate, but they are disjoint.
+\end{example}
+
+\begin{theorem}
+\
+
+A subset $E$ of the real line is connected if and only if it has the following property: If $x \in E, y \in E$, and $x < z < y$, then $z \in E$
+\end{theorem}
+
+\begin{customproof}
+\
+
+For the forward proof, suppose $E$ has the property, but is not connected. Then, there is at least one pair of subsets $A,B$ of $E$ that are separate, meaning that the limit points of one are not members of the other. Then, pick a limit point of $A$ and set it to $z$. $z$ is not a member of $A$ since it is a limit point of $A$, and since $A$ and $B$ are separate, it is not a member of $B$ either. Now, pick some $x < z < y$, and you see that it violates the property, so if $E$ has the property, it must be connected.
+
+Now, we show that if $E$ is connected, it must have the property. Suppose $E$ was connected, but that it didn't have the proeprty, so for some $x,y$, there existed a $z$ such that $x < z < y$ but $z \notin E$. Then, divide the set about $z$, forming two subsets $A$ and $B$ whose union is $E$, with the only limit points of both sets being $z$ (and whatever limit points $E$ had). Since $z$ is in neither, these sets are separated, so $E$ can't be connected, so this is a contradiction.
+\end{customproof}
+\end{document}

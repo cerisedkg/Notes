@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: The Number $e$}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[The Number $e$]
+\
+
+$$e = \sum_{n=0}^\infty \frac{1}{n!}$$
+\end{definition}
+
+
+\begin{theorem}
+\
+
+$\underset{x \to \infty}{\lim} (1 + \frac{1}{n})^n = e$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Hint: Try establishing a sequence where $n = 1, 2, 3, ...$ and find the upper and lower limits of the sequence.
+
+Let $s_n = \sum_{k=0}^n \frac{1}{k!}$ and $t_n = (1+\frac{1}{n})^n$. If we apply the binomial theorem, we get that $t_n = 1 + 1 + \frac{1}{2!}(1- \frac{1}{n}) + \frac{1}{3!}(1 - \frac{1}{n})(1-\frac{2}{n}) + ... + \frac{1}{n!} (1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{n-1}{n})$. Note that each term of this expanded sequence is less than $s_n$, so the lower limit of the sequence must be less than or equal to that of $s_n$, which is $e$. 
+
+Next, note that $t_n \geq 1 + 1 + \frac{1}{2!}(1-\frac{1}{n}) + ... + \frac{1}{m!}(1-\frac{1}{n})...(1 - \frac{m-1}{n})$ when $n \geq m$, and if we let $n \to \infty$, we get that the lower limit of $t_n$ is greather than or equal to $1 + 1 + \frac{1}{2!} + ... + \frac{1}{m!}$, and when we let $m \to \infty$, we get that the lower limit of $m$ is greater than or equal to $e$.
+
+If both the upper and lower limits are greater than or equal to and less than or equal to $e$ respectively, the sequence must tend to $e$.
+\end{customproof}
+
+\begin{theorem}
+\
+
+$e$ is irrational.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose $e$ was rational. Then $e = \frac{p}{q}$ for some positive integers $p,q$ (since $e$ is positive). Then, $0 < q!(e-s_q) < \frac{1}{q}$ (since $e-s_q = \frac{1}{(q+1)!} + \frac{1}{(q+2)!} + ... $).
+
+Since $q!e$ is an integer, and $q!s_q$ is an integer, then $q!(e-s_q)$ is an integer, and so $0 < q!(e-s_q) < \frac{1}{q} < 1$ implies the existence of an integer between $0$ and $1$.
+\end{customproof}
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Series}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Series]
+\
+
+Given the sequence $\{a_n\}$, we denote $$\sum_{n=q}^p a_n$$where $q\leq p$ to be the sum of the elements $q$ through $p$ inclusive. 
+
+We then write $\{s_n\}$ $s_n = \sum_{k=1}^n a_k$. The experssion of the sum $\{s_n\}$ is called an infinite \textbf{series}, and the individual $s_n$ are called \textbf{partial sums} of $\{a_n\}$.
+
+If $\{s_n\}$ converges to $s$, we write $\sum_{n=1}^\infty a_n = s$
+\end{definition}
+
+\begin{theorem}
+\
+
+The Cauchy criterion (a sequence must be Cauchy if it converges) can be restated as:
+
+$\sum a_n$ converges if and only if for every $\epsilon >0$ there is some integer $N$ so that $\vert \sum_{k=n}^m a_k \vert < \epsilon$ for all $m \geq n \geq N$
+
+In other words, if $\sum a_n$ converges then $\lim_{n\to \infty } a_n = 0$
+\end{theorem}
+
+Note that for the second part of the proof, a sequence can tend to zero, but its series might not converge. For example, $\{s_n\}$ where $s_n = \frac{1}{n}$ tends to zero but $\sum s_n$ does not converge.
+
+\begin{theorem}
+\
+
+A series of nonnegative real terms converges if and only if its partial sums form a bounded sequence.
+\end{theorem}
+
+\begin{customproof}
+\
+
+To do the forward part of the proof, a series of nonnegative real terms converges if its partial sums form a bounded sequence. Since the terms of the series are all positive, the sequence of partial sums is monotonically increasing. Since it is also bounded, a bounded sequence of monotonically increasing terms must always converge (as proved in a previous theorem).
+
+Now we do the reverse proof by contradiction. What if a series converges, but the partial sums do not form a bounded sequence? Well, since the series is consisting only of nonnegative numbers, the sum must be greater than or equal to all of the partial sums. However, if the sums are not bounded, the sum cannot be any definite number, as that would imply that the partial sums are bounedd above by the sum, so the series must diverge, hence a contradiction.
+\end{customproof}
+
+\begin{theorem}[The Convergence Test]
+\
+
+If we have two sequence $\{a_n\}$ and $\{c_n\}$, where $\vert a_n \vert \leq c_n$ for all $n \geq N_0$ where $N_0$ is some fixed integer, then if $\sum c_n$ converges then $\sum a_n$ converges.
+
+Also, if $a_n \geq d_n \geq 0$, and $\sum d_n$ diverges, then $\sum a_n$ diverges as well.
+\end{theorem}
+
+\begin{customproof}
+\
+
+According to the Cauchy criterion, if $\{c_n\}$ converges, then for all $\epsilon > 0$ there exists $m \geq n \geq N$ such that for all $m$, $n$, $$\sum_{k=n}^m c_k \leq \epsilon$$Since $a_n \leq c_n$, it follows that $a_n$ fulfills the Cauchy criterion as well.
+
+The reverse is true for the other scenario.
+\end{customproof}
+
+\end{document}

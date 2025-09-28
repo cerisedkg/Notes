@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Summation by Parts}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}
+\
+
+Given two sequences $\{a_n\}$ and $\{b_n\}$. We write $A_n$ to denote the $n$th partial sum of $\{a_n\}$, and $A_{-1} = 0$. Then, if $0 \geq q \geq p$, we get 
+
+$$\sum_{n = p}^q a_n b_n = \sum_{n=p}^{q-1} A_n(b_n - b_{n+1}) + A_qb_q - A_{p-1}b_p$$
+\end{theorem}
+
+\begin{customproof}
+\
+
+We start with $$\sum_{n=p}^q a_n b_n$$Since $a_n = A_n - A_{n-1}$, we get $$\sum_{n=p}^q (A_n - A_{n-1})b_n$$We then split the sum to get $$\sum_{n=p}^q A_nb_n - \sum_{n=p} A_{n-1}b_n$$and we can reindex the right sum to get $$\sum_{n=p}^q A_nb_n - \sum_{n=p-1}^{q-1} A_nb_{n+1}$$We now break out the last case of the left sum to get $$\sum_{n=q}^{q-1} A_nb_n + A_qb_q - \sum_{n=p-1}^{q-1} A_nb_{n+1}$$and we break out the first case of the right sum to get $$\sum_{n=q}^{q-1} A_nb_n + A_qb_q - \sum_{n=p}^{q-1} A_nb_{n+1} -A_{p-1}b_q$$Now that both of our sums have the correct indices, we can combine them to yield $$\sum_{n = p}^q a_n b_n = \sum_{n=p}^{q-1} A_n(b_n - b_{n+1}) + A_qb_q - A_{p-1}b_p$$
+\end{customproof}
+
+\begin{theorem}
+\
+
+If the following are true:
+
+\begin{enumerate}
+    \item the partial sums of $\{a_n\}$ form a bounded sequence
+    \item $b_0 \geq b_1 \geq b_2 ... $
+    \item $\lim_{n \to \infty} b_n = 0$
+\end{enumerate}
+then $\sum a_n b_n$ converges.
+\end{theorem}
+
+\begin{customproof}
+\
+
+We will use the Cauchy criterion. 
+
+Choose an $M$ that is greater than or equal to all $\vert A_n \vert$. This is possible since the partial sums are bounded. Then, given $\epsilon > 0$, it is possible to choose $N$ such that $b_N \leq \frac{\epsilon}{2M}$. For all $p, q$ where $N \leq p \leq q$, we have $$\vert \sum_{n=p}^q a_n b_n \vert = \vert \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{q-1} b_p$$Since $M$ is greater than all $A_n$, we know that $$M \vert \sum_{n=p}^{q-1} (b_n - b_{n+1}) + b_q + b_p$$is greater than the prior (it is the result of "factoring" out all of the $A_n$ and $A_{n-1}$). The above is equal to $$2Mb_p \leq 2Mb_N \leq \epsilon$$so the Cauchy criterion is fulfilled. 
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose $\{c_n\}$ has the following proeprties: 
+
+\begin{enumerate}
+    \item $\vert c_1 \vert \geq \vert c_2 \vert \geq ...$
+    \item $c_{2m-1} \geq 0$, $c_{2m} \leq 0$ for all $m$
+    \item $\lim_{n \to \infty} c_n = 0$
+\end{enumerate}
+
+This series is an \textbf{alternating series} and converges. 
+\end{theorem}
+
+\begin{customproof}
+\
+
+Just apply the previous theorem, letting $a_n = (-1)^{n+1}$, $b_n = \vert c_n \vert$
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose the radius of convergence of the power series $\sum c_n z^n$ is $1$, and suppose $c_0 \geq c_1 \geq c_2 ...$, and $\lim_{n \to \infty} c_n = 0$. Then, $\sum c_n z^n$ converges on every point of the complex circle $\vert z \vert = 1$ except for maybe $z = 1$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let $a_n = c_n$ and $b_n = z^n$. Then, $\vert B_n \vert$ forms a bounded sequence since $\vert \sum_{m=0}^n z^m \vert = \vert \frac{1 - z^{n+1}}{1-z} \vert$ is bounded above by $\vert \frac{2}{1-z} \vert$, if $z \neq 1$ and $\vert z \vert = 1$, and so the hypotheses of the prior theorem are fulfilled. 
+\end{customproof}
+
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Subsequences}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Subsequences]
+\
+
+Given a sequence $\{p_n\}$, if we have another sequence $\{n_i\}$ of strictly increasing positive integers, so $n_1 < n_2 < n_3 ...$, then the sequence $\{p_{n_i}\}$ is called a $\mathbb{subsequence}$ of $\{p_n\}$. If $\{p_{n_i}\}$ converges, then the number it converges to is called the \textbf{subsequential limit} of $\{p_{n_i}\}$ 
+\end{definition}
+
+\begin{theorem}
+\
+
+A sequence converges if and only if every subsequence of that sequence converges.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose we had a sequence $\{p_n\}$ and a subsequence of $\{p_n\}$ called $\{p_{n_i}\}$. 
+
+For the forward proof, we do a proof by contradiction. Suppose $\{p_n\}$ converged to $p$ but $\{p_{n_i}\}$ did not converge. Then, since $\{p_{n_i}\}$ did not converge, there must be some $\epsilon >0$ where we could not find an $I$ where all $i > I$ had the property that $d(p, p_{n_i}) < \epsilon$, so in other words, there was no element in $\{p_{n_i}\}$ such that all successive elements were less than $\epsilon$ away from $p$. However, since $\{p_n\}$ converges, this property must exist for every $\epsilon$ in relation to elements of $\{p_n\}$, and since elements of $\{p_{n_i}\}$ are elements of $\{p_n\}$ this property must exist for them as well. Therefore, we have a contradition, in the sense that we must be able to find some $I$ for which this property holds since $\{p_n\}$ is convergent, but we can find no such $I$ since $\{p_{n_i}\}$ does not converge.
+
+For the reverse proof, suppose that every $\{p_{n_i}\}$ converges to $p$. Then, we take some set of subsequences of $\{p_n\}$ where their union is $\{p_n\}$, and for every $\epsilon$, we take the $I$ where the property $i > I$ is $d(p_{n_i}, p) < \epsilon$ holds, and take the maxmimum of all these $I$. Then, the same property will hold true for the union, $\{p_n\}$. 
+\end{customproof}
+
+\begin{theorem}
+\
+
+If $\{p_n\}$ is a sequence in a compact metric space $X$, then some subsequence of $\{p_n\}$ must converge.
+
+Every bounded sequence in $\mathbb{R}^k$ contains a convergent subsequence
+\end{theorem}
+
+\begin{customproof}
+\
+
+For the first part, we have two scenarios. If the range of $\{p_n\}$ is finite, meaning the sequence hits a finite amount of elements of $X$, then since the sequence itself is infinite, we must hit some element in the range an infinite number of times, so we can construct a sequence consisting of only hits on that element.
+
+If the range is infinite, then the range is both infinite and compact (it is a subset of a compact space so it is compact with respect to $X$). This means that it has some limit point $p$, so we can just pick elements from successively smaller neighborhoods to make our subsequence.
+
+Since every bounded subset of $\mathbb{R}^k$ can be contained within a compact subset of $\mathbb{R}^k$, the above applies.
+\end{customproof}
+
+\begin{theorem}
+\
+
+The subsequential limits of a sequence $\{p_n\}$ in a metric space $X$ form a closed subset of $X$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+A closed set is a set which contains all of its limit points. Suppose our set of subsequential limits, $E$, has some limit point $p$. We want to show that $p$ is in $E$. Since $p$ is a limit point of $E$, there is some $x$ in $E$ so that $d(p,x) < \frac{\epsilon}{2}$. Since $x$ is the point of convergence for some subsequene, there is some $p_n$ where $d(p_n, x) < \frac{\epsilon}{2}$, so for any $\epsilon$, we can find a $p_n$ less than $\epsilon$ from it.
+
+%note: super sketchy, we can't order elements to form a subsequence. 
+\end{customproof}
+
+\end{document}

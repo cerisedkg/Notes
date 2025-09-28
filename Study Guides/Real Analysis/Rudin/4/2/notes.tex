@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 4: Continuous Functions}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Continuity]
+\
+
+Suppose $X$ and $Y$ are metric spaces, $E \subset X$, $p \in E$, and $f: E \to Y$. Then, $f$ is \textbf{continuous} at $p$ if:
+
+For every $\epsilon > 0$, there is a $\delta > 0$ such that $d_y(f(x), f(p)) < \epsilon$ for all points $x$ where $d_x(x, p) < \delta$.
+
+Basically, $f$ is continuous at $p$ if for all $\epsilon$, there is some neighborhood of points around $p$ in $E$ that map to within $\epsilon$ of $f(p)$.
+\end{definition}
+
+\begin{theorem}
+\
+
+If we also assume that $p$ is a limit point of $E$, then $f(x)$ is continuous at $p$ if and only if $\lim_{x \to p} f(x) = f(p)$
+\end{theorem}
+
+\begin{customproof}
+\
+
+The definitions are basically identical. 
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose $X,Y,Z$ are metric spaces, $E \subset X$, $f: E \to Y$, $g: f(E) \to Z$, and $h: E \to Z$ where $h(x) = g(f(x))$. Then, if $f$ is continuous at $p$ and $g$ is continuous at $f(p)$, $h$ is continuous at $p$ as well.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Choose some $\epsilon$ around $h(p)$. Then, since $g$ is continuous, we can find some $\delta$ around $f(p)$ that fulfills the criteria. We can then put that as our new $\epsilon$, and find a $\delta$ around $p$ that fulfills the continuity criteria for $h$.
+\end{customproof}
+
+\begin{theorem}
+\
+
+A mapping $f: X \to Y$ is continuous on $X$ if and only if $f ^{-1} (V)$ is open in $X$ for every open set $V$ in $Y$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Remember that open sets in metric spaces are neighborhoods. We do the forward proof first. Suppose $f^{-1} (V)$ is open in $X$ for every open set $V$ in $Y$, but that $f$ was not continuous. Then, for some $p$ and some $\epsilon > 0$, there is no $\delta$ where the neighborhood of radius $\delta$ at $p$ has the property that all of its elements map to within $\epsilon$ of $f(p)$. If we let the open set with radius $\epsilon$ centered at $f(p)$ be $V$, then $f ^{-1} (V)$ cannot be open, as if it was open, it would form a neighborhood and we could select a valid $\delta$ so that $f$ is continuous. Hence, a contradiction.
+
+For the reverse proof, suppose $f$ is continuous but there is at least one open set $V$ that did not have an open preimage. However, we could choose $\epsilon$ to be the radius of this neighborhood, and see that there is no $\delta$ for which all the elements within $\delta$ of the preimage of the.center of $V$ map to within $\epsilon$ of the center of $V$, violating our continuity criterion.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Let $f,g$ be continuous complex functions on a metric space $X$. Then, $f+g$, $fg$ and $\frac{f}{g}$ are continuous
+\end{theorem}
+
+\begin{customproof}
+\
+
+Just extrapolate the limit example to all points on the function.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Let $f_1 ... f_k$ be functions mapping a metric space $X$ to the reals, and let $\mathbf{f}(x)$ map $X$ to $\mathbb{R}^k$ by making an $n$-tuple like $(f_1(x), f_2(x), ... f_k(x))$. Then, if all $f_1 ... f_k$ are continuous, so is $\mathbf{f}$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Every open set in $\mathbb{R}^k$ is a $k$-tuple, and for each individual slice of the $k$-tuple, the respective $f_k$ inverse maps it to an open set by virtue of continuity. Therefore, the entire preimage of that $k$-tuple is the union of these open sets, which is itself an open set.
+\end{customproof}
+
+
+
+\end{document}

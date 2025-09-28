@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 4: Limits of Functions}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Limits of a Function]
+\
+
+If we have metric spaces $X$ and $Y$ where $E \subset X$ and a function $f : E \to Y$, and $p$ being a limit point of $E$, then we write $f(x) \to q$ as $x \to p$ or $\lim_{x \to p} f(x) = q$ if:
+
+For all $\epsilon > 0$, there exists a $\delta > 0$ where $d_y(f(x), q) < \epsilon$ for all $0 < d_x(x, p) < \delta$. 
+
+Basically, for every distance $\epsilon$, we can find a distance $\delta$ so that all the points within $\delta$ of $p$ also map to points that fall within $\epsilon$ of $q$. 
+\end{definition}
+
+\begin{theorem}
+\
+
+$\lim_{x \to p} f(x) = q$ if and only if $\lim_{n \to \infty} f(p_n) = q$ for every sequence $\{p_n\}$ in $E$ such that $p_n \neq p$, $\lim_{n \to \infty} p_n = p$
+\end{theorem}
+
+\begin{customproof}
+\
+
+We do the forward proof. What if $\lim_{n\to \infty} f(p_n) = q$ for every sequence with the above criteria, but $\lim_{x \to p} f(x) \neq q$. Then, there must be some $\epsilon > 0$ such that no $\delta > 0$ can be found where $d_x(x,p ) < \delta$ implies that $d_y(f(x), q) < \epsilon$. That means for every $\delta > 0$, there must be $k$ within $\delta$ of $p$ where $d_y(f(x), q) > \epsilon$, otherwise we could choose that $\delta$ to fulfill the criteria. Then, make a sequence of all of these $k$. This sequence fulfills the criteria above but the mapped points do not tend towards $q$. This is a contradiction.
+
+For the reverse proof, what if $\lim_{x\to p} f(x) = q$ but there was some sequence $\{a_n\}$ that fulfilled the above criteria and the mapped points $f(a_n)$ did not tend towards $q$? Then, for at least one $\epsilon > 0$, we can always find some $a_n$ where $d_x(a_n, p) < \delta$ and $d_y(f(a_n), q) > \epsilon$, therfore, $\lim_{x\to p} f(x) \neq q$, a contradiction. 
+\end{customproof}
+
+\begin{corollary}
+\
+
+If $f(x)$ has a limit $p$, it is unique.
+\end{corollary}
+
+\begin{customproof}
+\
+
+Sequences can't converge to two points, so if a function had two limits, some sequences would converge to one point, and others would converge to the other, breaking the above theorem.
+\end{customproof}
+
+\begin{theorem}
+\
+
+If $E \subset X$ and $p$ is a limit point of $E$ and $f, g$ are complex valued functions, with limits of $A$ and $B$ respectively, then
+
+\begin{enumerate}
+    \item $\lim_{x \to p} (f+g)(x) = A+B$
+    \item $\lim_{x \to p} (f \cdot g)(x) = AB$
+    \item $\lim_{x \to p} (\frac{f}{g})(x) = \frac{A}{B}$ if $B \neq 0$
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+This follows from the addition, multiplication, and division of sequences and their limits
+\end{customproof}
+
+\end{document}

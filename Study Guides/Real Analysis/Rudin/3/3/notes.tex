@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Cauchy Sequences}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Cauchy Sequences]
+\
+
+A sequence $\{p_n\}$ in a metric space $X$ is said to be a \textbf{Cauchy sequences} if for every $\epsilon > 0$ there is an integer $N$ such that $d(p_n, p_m) < \epsilon$ if $n \geq N$ and $m \geq N$
+
+In other words, if we pick a distance, at some point, all pairs formed with elements after than $n$ and $m$ respectively will have distance less than $\epsilon$ between them.
+\end{definition}
+
+\begin{definition}[Diameter]
+\
+
+Let $E$ be a nonempty subset of a metric space $X$, and let $S$ be the set of all real numbers of the form $d(p,q)$ with $p \in E$ and $q \in E$. The supremum of $S$ is the diameter of $E$.
+\end{definition}
+
+\begin{proposition}
+\
+
+If $E_N$ is the set of all elements of a sequence with indices $n > N$, then $E$ is a cauchy sequence if and only if 
+
+$$\lim_{N \to 0} \text{diam} E_N = 0$$
+\end{proposition}
+
+\begin{theorem}
+\
+
+If $\bar{E}$ is the closer of a set $E$ in a metric space $X$, then $$\text{diam} \bar{E} = \text{diam} E$$
+
+If $K_n$ is a sequence of compact sets $K$ and $$\lim_{n\to \infty} \text{diam} K_n = 0$$ then $\bigcap_1^\infty K_n$ contains only one point 
+\end{theorem}
+
+\begin{customproof}
+\
+
+For the first part, we do a proof by contradiction. What if $\text{diam} \bar{E}$ was greater than $\text{diam} E$ (it can't be less since the closure is a superset of $E$). Then, some limit point $p$ is at least $\text{diam} \bar {E} - \text{diam} E$ from every other point in the set (otherwise that other point could be the new diameter of $E$). Then, $p$ cannot be a limit point of $E$ since the neighborhood of radius $\epsilon < \text{diam} \bar {E} - \text{diam} E$ contains no points of $E$, hence a contradiction.
+
+For the second part, if the intersection of all these sets contained more than one point, then each set has some nonzero diameter, so the limit of the diameters cannot tend to zero.
+\end{customproof}
+
+\begin{theorem}
+\
+
+\begin{enumerate}
+    \item In a metric space $X$, every convergent sequence is a Cauchy sequence
+    \item If $X$ is a compact metric space and if $\{p_n\}$ is a Cauchy sequence in $X$, then $\{p_n\}$ converges to some point in $X$
+    \item In $\mathbb{R}^k$, every Cauchy sequence converges.
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+\begin{enumerate}
+\item If a sequence $\{p_n\}$ converges, it means that for any $\epsilon >0$, there is an $N$ such that all $p_n$ where $n>N$ are within $\epsilon$ of $p$. Then, suppose we pick two such points, $p_n, p_m$. We know that $d(p_n, p_m) \leq d(p, p_n) + d(p, p_m) < 2\epsilon$ so this sequence fulfills the Cauchy criterion.
+\item Let $\{p_n\}$ be a Cauchy sequence in a compact space $X$. Let $E_N$ be the subsequences comprised of elements $N$ and above. Since $\{p_n\}$ is Cauchy, $\lim_{N \to \infty} \text{diam} \bar{E_N} = 0$, note the closure. Since $\bar[E_N]$, the closure of $E_N$, is closed and the subset of a compact space, it is compact. We know that if a series of compact spaces tends to a diameter zero, there must be only one element common among them, which we will call $p$. Since successive elements of $\{p_n\}$ get closer to $p$ (hence why $\text{diam} \bar{E_N}$ tends to zero), this fulfills the criterion for converging to $p$.
+
+\item Since the sequence $\{p_n\}$ is Cauchy, at some point, $\text{diam} E_N < 1$, so it is bounded. The range of $\{p_n\}$ is bounded, and so the closure of the range is a compact subset of the compact set $\mathbb{R}^k$, so the above applies.
+\end{enumerate}
+\end{customproof}
+
+\begin{definition}[Complete Spaces]
+\
+
+A metric space where every Cauchy sequence converges is \textbf{complete}. 
+\end{definition}
+
+\begin{definition}[Monotonic Sequences]
+\
+
+A sequence of real numbers \textbf{monotonically increases} if every element is greater than or equal to the previous element, and \textbf{monotonically decreases} if every element is less than or equal to the previous element.   
+\end{definition}
+
+\begin{theorem}
+\
+
+A monotonic sequence in $\mathbb{R}$ only converges if it is bounded.
+\end{theorem}
+
+\begin{customproof}
+\
+
+We do the proof for increasing sequences, but just swap around all the signs and shit for decreasing sequences.
+
+Suppose we had some monotonically increasing sequence $\{s_n\}$. Then, let $s$ be the supremeum of the range of that sequence. For every $\epsilon$, there is some $s_n$ where $s - \epsilon < s_n < s$ otherwise $s_n$ would be the supremum. Therefore, it fulfills the convergence criteria, and it converges.
+\end{customproof}
+
+\end{document}

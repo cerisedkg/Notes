@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 4: Continuity and Compactness}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Boundedness]
+\
+
+A mapping $f: E \to \mathbb{R}^k$ is \textbf{bounded} if there is some $k$ where $\vert f(x) \vert \leq k$ for all $x$ in $E$.
+\end{definition}
+
+\begin{theorem}
+\
+
+Suppose that $f$ is a continuous mapping of a compact metric space $X$ to another metric space $Y$. Then $f(X)$ is compact.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let's first get our definitions in order. $f(x)$ is continuous meaning that for every $\epsilon >0$, there is a $p$ and $\delta$ such that all the points within $\delta$ of $p$ are also within $\epsilon$ of $f(p)$. 
+
+Compactness means that all coverings of $X$ also have a finite subcovering which also covers $X$.
+
+Let $V$ be an open cover of $f(X)$. Then the preimage of each open set in $V$ is also open (as per a previous theorem in this chapter). We take the preimage of all these, and they do cover $X$, and we find a finite subcovering since $X$ is compact. We then take the images of these and they do form a finite covering of $f(X)$. 
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose $f: X \to \mathbb{R}$ is a continuous function and $X$ is compact. Then, $\sup_{p \in X} f(p)$ and $\inf_{p \in X} f(p)$ are in $f(X)$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Since $X$ is compact, so is $f(X)$, and compact subsets of $\mathbb{R}^k$ are closed and bounded by the Heine-Borel theorem. Since it is both closed and bounded, the range must contain its bounds. 
+\end{customproof}
+
+\begin{theorem}
+\
+
+Suppose that $f: X \to Y$ is a continuous $1-1$ mapping between a compact metric space $X$ and a metric space $Y$. Then, the inverse mapping, $f ^{-1}$ is a continuous mapping from $Y$ to $X$.
+\end{theorem}
+
+\begin{customproof}
+\
+
+One way we can ascertain the continuity of a function $f$ is that it is only continuous if $f ^{-1} (V)$ is open in $X$ for every open set $V$ in $Y$.
+
+So in this case, to show that $f^{-1}$ is continuous, we want to show that $f(V)$ is open in $Y$ for every open $V$ in $X$.
+
+First, note that $V^c$ is closed in $X$, since $V$ is open. Closed subsets of compact spaces are compact, so $V^c$ is compact. Since $f$ is continuous, $f(V^c)$ is also compact, and closed in $Y$, since compact sets are closed. 
+\end{customproof}
+
+\begin{definition}[Uniformly Continuous]
+\
+
+Let $f$ be a mapping of a metric space $X$ into a metric space $Y$. $f$ is \textbf{uniformly continuous} on $X$ if for every $\epsilon > 0$ there exists a $\delta > 0$ such that $d_Y(f(p), f(q)) < \epsilon$ for all $p$ and $q$ where $d_X(p,q) < \delta$ 
+\end{definition}
+
+\begin{theorem}
+\
+
+Every uniformly continuous function is continuous.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Think about what uniformly continuous means. If I choose some $\epsilon > 0$, there will be a $\delta > 0$ such that any two points less than $\delta$ apart have images less than $\epsilon$ apart. Then, choose some $f(p)$ in the image. All points that are less than $\epsilon$ from $f(p)$ are less than $\delta$ from $p$, otherwise the function wouldn't be uniformly continuous, so the continuity criterion is fulfilled.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Let $f$ be a continous mapping of a compact metric space $X$ to a metric space $Y$. Then, $f$ is uniformly continuous on $X$. 
+\end{theorem}
+
+\begin{customproof}
+\
+
+Choose some $\epsilon >0$. Since $f$ is continuous, we can associate every $p$ in $X$ to some positive number $\Phi (p)$ where $q \in X$ and $d_X(p,q) < \Phi(p)$ implies that $d_Y(f(p), f(q)) < \frac{\epsilon}{2}$. Basically, let $\Phi(p)$ be the distance that another point has to be from $p$ such that the distance of their images is $\frac{\epsilon}{2}$. 
+
+Then, let $J(p)$ be the set of all points $q$ such that $d(p,q) < \frac{1}{2} \Phi(p)$. Since $p$ is in $J(p)$, the collection of all such $J(p)$ is a neighborhood and forms an open cover of $X$, and since $X$ is compact, there is a subset of this collection that covers $X$. Let $\delta$ be the smallest radius in this collection of $J(p)$. $\delta > 0$ since there is a finite number of $J(p)$.
+
+Now let $p,q$ be in $X$ such that $d(p,q) < \delta$. $p$ must be in at least some $J(p_m)$, and $d_X(p, p_m) \leq d_X(p,q) + d_X(p, p_m)$, and $d_X(p,q) + d_X(p, p_m) < \delta + \frac{1}{2} \Phi(p_m) \leq \Phi(p_m)$
+
+And since $d_X(p,q) < \Phi(p)$ implies $d_Y(f(p), f(q)) \leq \frac{\epsilon}{2}$, then $d_Y(f(p), f(q)) \leq d_Y(f(p), f(q)) + d_Y(f(p), f(p_m)) < \epsilon$, so $f$ is uniformly continuous.
+\end{customproof}
+
+\begin{theorem}
+\
+
+Let $E$ be a noncompact set in $\mathbb{R}^1$. Then: \begin{enumerate}
+    \item there exists a continuous function on $E$ which is not bounded
+    \item there exists a continuous and bounded function on $E$ which has no maximum. 
+    \item If $E$ is bounded, then there exists a continuous function on $E$ which is not uniformly continuous
+\end{enumerate}
+\end{theorem}
+
+\begin{customproof}
+\
+
+Suppose $E$ is bounded, so there is a limit point $x_0$ of $E$ which is not a point of $E$. (A compact set is closed and bounded so if $E$ is noncompact and bounded it must not be closed). $f(x) = \frac{1}{x-x_0}$ is not bounded, and not uniformly continuous, but is continuous. The function $g(x) = \frac{1}{1+(x-x_0)^2}$ is bounded but has no maximum. If $E$ is unbounded, $f(x) = x$ is continuous and unbounded, and $h(x) = \frac{x^2}{1+x^2}$ is continuous and bounded but has no maxiumum. 
+\end{customproof}
+
+\end{document}

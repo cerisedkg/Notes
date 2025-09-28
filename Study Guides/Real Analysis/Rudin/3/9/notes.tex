@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: The Root and Ratio Tests}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}[The Root Test]
+\
+
+Given $\sum a_n$, let $\alpha = \lim \sup \sqrt[n]{\vert a_n \vert}$
+
+Then, if $\alpha > 1$, the series diverges, if $\alpha < 1$, the series converges, and if $\alpha = 1$, the test gives no information.
+\end{theorem}
+
+\begin{customproof}
+\
+
+If $\alpha < 1$, we choose $\beta$ so $\alpha < \beta < 1$. Then, we choose an $N$ so that for all $n \geq N$, this means $\sqrt[n]{\vert a_n \vert} < \beta$, which means that $\vert a_n \vert < \beta^n$. Since $0 < \beta < 1$, $\sum \beta^n$ converges as $n \to \infty$. And $\sum a_n$ converges due to the comparison test.
+
+If $\alpha > 1$, there is a sequence of indices $\{k_n\}$ where $\sqrt[k_n]{\vert a_{k_n}\vert} > \alpha > 1$, which means that there is an infinite number of $a_{k_n}$ that are greater than $1$, so the series diverges.
+
+For the case of $\alpha = 1$, consider $\sum \frac{1}{n}$ and $\sum \frac{1}{n^2}$. In both these series, $\alpha =1$, but the first diverges, and the second converges, so the test is inconclusive.
+\end{customproof}
+
+\begin{theorem}[The Ratio Test]
+\
+
+The series $\sum a_n$ converges if $\lim \sup \vert \frac{a_{n+1}}{a_n} \vert < 1$ and diverges if $\lim \sup \vert \frac{a_{n+1}}{a_n} \vert \geq 1 $ for all $n \geq N$, where $N$ is some fixed integer.
+\end{theorem}
+
+\begin{customproof}
+\
+
+For the first case, it is possible to find a $\beta$ such that $\vert \frac{a_{n+1}}{a_n} < \beta < 1$ for all $n \geq N$ after some integer $N$. This means that $a_{n+1} < \beta a_n$, and $\vert a_{n+p} < \beta^p \vert a_n \vert$. Also, terms like $\vert a_n \vert$ are always less than terms in the series $\vert a_N \vert \beta^{-N} \beta^n$ for $n \geq N$, so by the comparison test, this series converges since $\sum \beta^n$ converges.
+
+For the second case, since the terms are increasing, the sequence does not tend to zero, so it cannot converge.
+\end{customproof}
+
+\begin{theorem}
+\
+
+For any sequence $\{c_n\}$ of numbers, the following inequalities hold:
+
+$$\lim \inf \frac{c_{n+1}}{c_n} \leq \lim \inf \sqrt[n]{c_n}$$$$\lim \sup \sqrt[n]{c_n} \leq \lim \sup \frac{c_{n+1}}{c_n}$$
+\end{theorem}
+
+\end{document}

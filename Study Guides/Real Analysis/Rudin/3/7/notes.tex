@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Series of Nonnegative Terms}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}
+\
+
+If $0 \leq x < 1$ then $\sum_{n=0}^\infty x^n = \frac{1}{1-x}$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Hint: Think about your series identities, and apply them to partial sums of the geometric series!
+
+The $n$th partial sum $s_n$ is equal to $$s_n = \sum_{k=0}^n x^k = \frac{1-x^{n+1}}{1-x}$$for $x \neq 1$. This is due to the identity that if we let $S = 1 + x + x^2 + ... + x^n$, then $xS = x + x^2 + ... + x^{n+1}$ and so $S - xS = 1- x^{n+1}$ and so $S = \frac{1 - x^{n+1}}{1-x}$.
+
+If we let $n\to \infty$ then we get the result above.
+\end{customproof}
+
+
+\begin{theorem}
+\
+
+Suppose the sequence $\{a_n\}$ monotonically decreases and has all positive terms. Then $\sum_{n=1}^\infty a_n$ converges if and only if $\sum_{k=0}^\infty 2^k a_{2^k}$ converges.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Hint: This is a sequence with nonnegative real terms.... what properties do these series have?
+
+In a previous proof, we showed that a series which has all nonnegative real terms converges if and only if the partial sums form a bounded sequence. Let $s_n$ be the $n$th partial sum of $\{a_n\}$ and let $t_k = a_1 + 2a_2 + ... + 2^ka_{2^k}$.
+
+If $n < 2^k$ then $s_n \leq a_1 + (a_2 + a_3) + (a_4 + a_5 + a_6 + a_7) + ...$ (grouping terms into groups which double in size), which is less than $a_1 + 2a_2 + ... + 2^k a_{2k}$ since $a_3 < a_2$ and so on, so $s_n < t_k$.
+
+If $n > 2^k$, then $s_n \geq \frac{1}{2} t_k$ by the same logic above, so when $n = 2^k$, the boundedness of both sequences is linked, and the convergence of the sequence is linked by those as well.
+\end{customproof}
+
+\begin{theorem}
+\
+
+$\sum_{n=1}^\infty \frac{1}{n^p}$ converges if $p > 1$ and diverges if $p \leq 1$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Hint: You will need to apply both of the prior theorems and some algebra!
+
+At least when $p \leq 0$ the terms are increasing so this will always diverge. If $p > 0$, then this is a case of the prior theorem, so this series will converge if the series $\sum_{k=0}^\infty 2^{k} \frac{1}{2^{kp}} = \sum_{k=0}^\infty 2^{k-kp} =  \sum_{k=0}^\infty 2^{k(1-p)}$. Now, if we compare this to the first proof (the one with the geometric series), we see this converges only if $p > 1$.
+\end{customproof}
+
+
+\begin{theorem}
+\
+
+If $p>1$, then $\sum_{n=2}^\infty \frac{1}{n (\log n)^p}$ converges, else it diverges.
+\end{theorem}
+
+\begin{customproof}
+\
+
+Hint: You will need the previous two theorems and a lot of algebra skills!
+
+The log function monotonically increases, so $\frac{1}{n \log n}$ monotonically decreases, and we can apply our previous theorem to this. We get that $$\sum_{k=1}^\infty 2^k \frac{1}{2^k (\log 2^k)^p} = \frac{1}{(\log 2)^p} \sum \frac{1}{k^p}$$and we can apply the preivous theorem here.
+\end{customproof}
+
+\end{document}

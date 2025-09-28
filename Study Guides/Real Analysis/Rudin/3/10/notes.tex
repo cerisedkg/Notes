@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{alexconfig}
+\title{Rudin Chapter 3: Power Series}
+
+\begin{document}
+\maketitle
+
+\begin{definition}[Power Series]
+\
+
+A series of the form $\sum_{n=0}^\infty c_nz^n$, where $\{c_n\}$ is a sequence of complex numbers, is caled a \textbf{power series}. The numbers $c_n$ are called the \textbf{coefficients} of the series, and $z$ is a complex number.   
+\end{definition}
+
+\begin{theorem}
+\
+
+Given the power series $\sum c_nz^n$, let $\alpha = \lim \sup \sqrt[n]{c_n}$ and $R = \frac{1}{\alpha}$. Then, $\sum c_nz^n$ converges if $\vert z \vert < R$ and diverges if $\vert z \vert > R$
+\end{theorem}
+
+\begin{customproof}
+\
+
+Let $a_n = c_nz^n$ and apply the root test.
+\end{customproof}
+
+\end{document}

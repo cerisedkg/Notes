@@ -7,7 +7,7 @@ I believe that teaching is the best way to learn a topic yourself, so I create s
 
 Most of the topics in this repository are taught through self-study, although I may take classes on them at UCI afterwards.
 
-This repo is a living document, and you can see my style shift over time as I develop new tools and techniques for creating better documents.
+This repo is a living document, and you can see my style shift over time as I develop new tools and techniques for creating better notes.
 
 # **Setup:**
 Most of the writing is done in LaTex using MacTex/TexLive, with a custom package called alexconfig, which provides the block highlighting and formatting for the document.
@@ -15,18 +15,7 @@ Alexconfig can be accessed in the Alexconfig repo on my profile.
 I edit the document in VSCode using LaTeX Workshop, with custom macros to help facilitate live typing in lecture.
 
 # **Schedule:**
-I split subjects into two categories: Permanent and Leisure.
-Subjects in the permanent category are for classes that I am currently taking or subjects that I need to study urgently.
-Subjects in the leisure category are topics I find personally interesting and are learned via self-study. 
-
-I will try to complete a chapter for every subject in the permanent category at least once per business day, with exceptions in case of illness and injury, holidays, or other extenuating circumstances.
-I will try to complete one chapter from one subject in the leisure category every day, though this is conditional on whether I have the time and willpower to continue studying at the end of the day.
-
-Subjects in the Permament category:
-- Partial Differential Equations
-- Waves
-
-All other subjects are in the Leisure category.
+Updates will be sporadic, apologies in advance
 
 # **TODO:**
 - Create a style guide outlining the philosophy and formatting of the project
